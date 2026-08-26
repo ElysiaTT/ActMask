@@ -1,0 +1,231 @@
+{
+  "attempted_branch_executions": 8,
+  "direct_frozen_comparison": {
+    "all_retained_arrays_exact": false,
+    "join_key": "metadata: (pair_id, branch); outcomes: (condition, family, mechanism, world_id, candidate_id)",
+    "max_retained_array_abs_error": 2.47955322265625e-05,
+    "metadata_all_exact": true,
+    "outcomes_all_exact": true,
+    "per_case_array_comparisons": {
+      "id_m0_seed6101": {
+        "labels.static_features": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": false,
+          "max_abs_error": 2.47955322265625e-05,
+          "shape": [
+            4,
+            29
+          ]
+        },
+        "labels.success": {
+          "dtype_exact": true,
+          "dtype_fresh": "bool",
+          "dtype_frozen": "bool",
+          "exact": true,
+          "max_abs_error": null,
+          "shape": [
+            4
+          ]
+        },
+        "model_inputs.candidate_actions": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": false,
+          "max_abs_error": 2.4616718292236328e-05,
+          "shape": [
+            4,
+            20,
+            3
+          ]
+        },
+        "model_inputs.history": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": false,
+          "max_abs_error": 1.7434358596801758e-06,
+          "shape": [
+            4,
+            6,
+            20
+          ]
+        },
+        "model_inputs.nominal_action_timing": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": true,
+          "max_abs_error": 0.0,
+          "shape": [
+            4,
+            20
+          ]
+        },
+        "model_inputs.observation_confidence": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": true,
+          "max_abs_error": 0.0,
+          "shape": [
+            4,
+            6,
+            1
+          ]
+        },
+        "model_inputs.tcp_state": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": false,
+          "max_abs_error": 9.834766387939453e-07,
+          "shape": [
+            4,
+            3
+          ]
+        },
+        "model_inputs.timestamps": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": true,
+          "max_abs_error": 0.0,
+          "shape": [
+            4,
+            6
+          ]
+        },
+        "model_inputs.visibility": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": true,
+          "max_abs_error": 0.0,
+          "shape": [
+            4,
+            6,
+            1
+          ]
+        }
+      },
+      "temporal_m1_seed6401": {
+        "labels.static_features": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": false,
+          "max_abs_error": 1.7642974853515625e-05,
+          "shape": [
+            2,
+            29
+          ]
+        },
+        "labels.success": {
+          "dtype_exact": true,
+          "dtype_fresh": "bool",
+          "dtype_frozen": "bool",
+          "exact": true,
+          "max_abs_error": null,
+          "shape": [
+            2
+          ]
+        },
+        "model_inputs.candidate_actions": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": false,
+          "max_abs_error": 1.6808509826660156e-05,
+          "shape": [
+            2,
+            20,
+            3
+          ]
+        },
+        "model_inputs.history": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": false,
+          "max_abs_error": 7.413327693939209e-07,
+          "shape": [
+            2,
+            6,
+            20
+          ]
+        },
+        "model_inputs.nominal_action_timing": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": true,
+          "max_abs_error": 0.0,
+          "shape": [
+            2,
+            20
+          ]
+        },
+        "model_inputs.observation_confidence": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": true,
+          "max_abs_error": 0.0,
+          "shape": [
+            2,
+            6,
+            1
+          ]
+        },
+        "model_inputs.tcp_state": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": false,
+          "max_abs_error": 7.152557373046875e-07,
+          "shape": [
+            2,
+            3
+          ]
+        },
+        "model_inputs.timestamps": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": true,
+          "max_abs_error": 0.0,
+          "shape": [
+            2,
+            6
+          ]
+        },
+        "model_inputs.visibility": {
+          "dtype_exact": true,
+          "dtype_fresh": "float32",
+          "dtype_frozen": "float32",
+          "exact": true,
+          "max_abs_error": 0.0,
+          "shape": [
+            2,
+            6,
+            1
+          ]
+        }
+      }
+    }
+  },
+  "examples": 6,
+  "filter_summary": {
+    "attempted_pairs": 4,
+    "flip_pairs": 3,
+    "fresh_and_frozen_flip_status_exact": true,
+    "nonflip_pairs": 1,
+    "retained_exactly_equals_flip_pairs": true,
+    "retained_pairs": 3
+  },
+  "pairs": 3,
+  "status": "completed_with_mismatch"
+}

@@ -1,0 +1,87 @@
+# Milestone 2E: frozen-protocol bottleneck isolation, CPU only.
+experiment:
+  name: milestone2e_coordinate_invariant_bottleneck_isolation
+  output_dir: outputs/actmask/milestone2e
+  device: cpu
+  deterministic: true
+  training_seeds: [1601, 2603, 3607, 4611, 5613]
+
+dataset:
+  # Matches the grouped 2C candidate-verification protocol.
+  training_master_seed: 20260718
+  evaluation_master_seed: 20260719
+  train_groups: 72
+  val_groups: 48
+  id_test_groups: 500
+  ood_groups_per_axis: 250
+  num_points: 48
+  observation_frames: 4
+  future_steps: 32
+  observation_noise_std: 0.006
+  point_dropout_rate: 0.04
+  occlusion_rate: 0.08
+
+model:
+  history_hidden_dim: 32
+  action_hidden_dim: 20
+  fusion_hidden_dim: 56
+  contact_hidden_dim: 32
+  utility_hidden_dim: 32
+
+training:
+  epochs: 12
+  batch_size: 66
+  evaluation_batch_size: 110
+  learning_rate: 0.003
+  weight_decay: 0.0001
+  max_pos_weight: 12.0
+  num_threads: 1
+
+statistics:
+  bootstrap_resamples: 2000
+  permutation_samples: 4096
+
+ranking:
+  candidate_counts: [5, 10, 20, 50]
+  validation_groups: 80
+  test_groups: 500
+  score_selection: validation_only
+  tie_tolerance: 1.0e-10
+
+correspondence:
+  variants:
+    - GroundTruthIdentityCorrespondence
+    - CoordinateInvariantMutualNN
+    - SoftCoordinateInvariantCorrespondence
+    - NoExplicitCorrespondence
+  soft_temperature: 0.035
+  soft_minimum_peak_weight: 0.15
+  maximum_normalized_distance: 3.0
+
+backbone:
+  variants:
+    - OriginalVectorBackbone
+    - ScalarInvariantFeatureBackbone
+    - ActionFrameRelativeBackbone
+
+ranking_head:
+  variants:
+    - success_bce
+    - pairwise
+    - success_bce_plus_pairwise
+
+runtime:
+  candidates: 20
+  warmup: 8
+  repeats: 40
+  minimum_hz: 5.0
+
+gates:
+  top1_or_regret_ci_excludes_zero: true
+  dynamic_ood_positive_axes: 2
+  transformed_top1_delta_abs_max: 0.02
+  transformed_regret_delta_abs_max: 0.02
+  history_or_action_ranking_drop: 0.05
+  action_only_gap: 0.05
+  static_geometry_only_gap: 0.05
+  shared_c20_hz: 5.0

@@ -1,0 +1,554 @@
+{
+  "artifacts": {
+    "audit_home_physx_symlink": {
+      "bytes": 236705440,
+      "exists": true,
+      "is_symlink": true,
+      "path": "/data/project/tzh/papers/ActMask/audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+      "resolved_path": "/data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+      "sha256": "4c582a16509a71faf5592fe9708586dfcc7ab61ae932eabc1ddd81f290818706"
+    },
+    "local_maniskill_wheel": {
+      "bytes": 101729066,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/mani_skill-3.0.1-py3-none-any.whl",
+      "sha256": "685de2f03c300b1ede49881a1bf6306ad062082d39c8d3be8b8e85603f32e33a"
+    },
+    "local_sapien_wheel": {
+      "bytes": 51304469,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/sapien-3.0.3-cp311-cp311-manylinux_2_28_x86_64.whl",
+      "sha256": "9a5eb4dc2efdf9b451cdd77a955d45578a5d81474d4e98089bbc36eeb4a07e45"
+    },
+    "physx_archive": {
+      "bytes": 77938378,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/linux-so.zip",
+      "sha256": "167a01aad7381afef963b89169968c289e7b653880a7a823c116d87ee5c00fc6"
+    },
+    "physx_gpu_library": {
+      "bytes": 236705440,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+      "sha256": "4c582a16509a71faf5592fe9708586dfcc7ab61ae932eabc1ddd81f290818706"
+    }
+  },
+  "auxiliary_version_checks": {
+    "opencv_python_recorded_version": true
+  },
+  "blockers": [],
+  "command_results": {
+    "conda_explicit_lock": {
+      "command": [
+        "/root/miniconda3/bin/conda",
+        "list",
+        "--explicit",
+        "-p",
+        "/data/envs/actmask-audit"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "# This file may be used to create an environment using:\n# $ conda create --name <env> --file <this file>\n# platform: linux-64\n# created-by: conda 25.1.1\n@EXPLICIT\nhttps://repo.anaconda.com/pkgs/main/linux-64/_libgcc_mutex-0.1-main.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/_openmp_mutex-5.1-52_gnu.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/ca-certificates-2026.7.16-h06a4308_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/ld_impl_linux-64-2.44-h9e0c5a2_3.conda\nhttps://repo.anaconda.com/pkgs/main/noarch/tzdata-2026c-he532380_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libgcc-15.2.0-h69a1729_8.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libgcc-ng-15.2.0-h166f726_8.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libstdcxx-15.2.0-h39759b7_8.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libzlib-1.3.2-h47b2149_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/openssl-3.5.7-h1b28b03_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/pthread-stubs-0.3-h47b2149_2.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/xorg-xorgproto-2024.1-h47b2149_2.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/xz-5.8.2-h448239c_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/bzip2-1.0.8-h5eee18b_6.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libexpat-2.8.2-h7354ed3_1.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libffi-3.4.8-h06d3fd0_3.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libnsl-2.0.0-h5eee18b_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libuuid-1.41.5-h5eee18b_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/ncurses-6.5-h7934f7d_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/xorg-libxau-1.0.12-h9b100fa_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/xorg-libxdmcp-1.1.5-h9b100fa_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/zlib-1.3.2-h47b2149_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libxcb-1.17.0-h9b100fa_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/readline-8.3-hc2a1206_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/sqlite-3.53.2-h795bf6d_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/xorg-libx11-1.8.12-h9b100fa_1.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/tk-8.6.15-h54e0aa7_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/python-3.11.15-h17756b0_1.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/packaging-26.2-py311h06a4308_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/setuptools-83.0.0-py311h06a4308_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/wheel-0.47.0-py311h06a4308_0.conda\nhttps://repo.anaconda.com/pkgs/main/noarch/pip-26.1.2-pyhc872135_0.conda\n"
+    },
+    "native_import_probe": {
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "/data/project/tzh/papers/ActMask/audit/environment/import_probe_worker.py"
+      ],
+      "exit_code": 0,
+      "stderr": "/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/_vulkan_tricks.py:42: UserWarning: Failed to find system libvulkan. Fallback to SAPIEN builtin libvulkan.\n  warn(\"Failed to find system libvulkan. Fallback to SAPIEN builtin libvulkan.\")\n/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/_vulkan_tricks.py:78: UserWarning: Failed to find Vulkan ICD file. This is probably due to an incorrect or partial installation of the NVIDIA driver. SAPIEN will attempt to provide an ICD file anyway but it may not work.\n  warn(\n",
+      "stdout": "{\n  \"errors\": [],\n  \"imports\": {\n    \"mani_skill\": {\n      \"module_file\": \"/data/envs/actmask-audit/lib/python3.11/site-packages/mani_skill/__init__.py\",\n      \"ok\": true\n    },\n    \"numpy\": {\n      \"module_file\": \"/data/envs/actmask-audit/lib/python3.11/site-packages/numpy/__init__.py\",\n      \"ok\": true\n    },\n    \"sapien\": {\n      \"module_file\": \"/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/__init__.py\",\n      \"ok\": true\n    },\n    \"torch\": {\n      \"module_file\": \"/data/envs/actmask-audit/lib/python3.11/site-packages/torch/__init__.py\",\n      \"ok\": true\n    }\n  },\n  \"observed_versions\": {\n    \"mani_skill\": \"3.0.1\",\n    \"numpy\": \"2.2.6\",\n    \"opencv_python\": \"4.10.0.84\",\n    \"sapien\": \"3.0.3\",\n    \"torch\": \"2.6.0+cu124\"\n  },\n  \"torch_cuda\": {\n    \"available\": true,\n    \"compiled_cuda\": \"12.4\",\n    \"device_0\": \"NVIDIA A16\",\n    \"device_count\": 1\n  }\n}\n"
+    },
+    "nvidia_smi": {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=index,name,driver_version,memory.total",
+        "--format=csv,noheader,nounits"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "0, NVIDIA A16, 580.65.06, 15356\n"
+    },
+    "pip_check": {
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "No broken requirements found.\n"
+    },
+    "pip_freeze_all": {
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "-m",
+        "pip",
+        "freeze",
+        "--all"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "absl-py==2.5.0\nanyio==4.14.2\narm_pytorch_utilities==0.5.0\nasttokens==3.0.2\ncertifi==2026.7.22\ncharset-normalizer==3.4.9\nclick==8.4.2\ncloudpickle==3.1.2\ncontourpy==1.3.3\ncycler==0.12.1\ndacite==1.9.2\ndefusedxml==0.7.1\ndocstring_parser==0.18.0\nexecuting==2.2.1\nFarama-Notifications==0.0.6\nfilelock==3.32.2\nfonttools==4.63.0\nfsspec==2026.7.0\ngitdb==4.0.12\nGitPython==3.1.59\ngymnasium==1.3.0\nh11==0.16.0\nh5py==3.16.0\nhf-xet==1.6.0\nhttpcore==1.0.9\nhttpx==0.28.1\nhuggingface_hub==1.27.0\nidna==3.18\nImageIO==2.37.4\nimageio-ffmpeg==0.6.0\nimportlib_resources==7.1.0\niniconfig==2.3.0\nipython==9.16.1\nipython_pygments_lexers==1.1.1\njedi==0.20.0\nJinja2==3.1.6\nkiwisolver==1.5.0\nlxml==6.1.1\nmani_skill @ file:///data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/mani_skill-3.0.1-py3-none-any.whl#sha256=685de2f03c300b1ede49881a1bf6306ad062082d39c8d3be8b8e85603f32e33a\nMarkupSafe==3.0.3\nmatplotlib==3.10.3\nmatplotlib-inline==0.2.2\nmplib==0.1.1\nmpmath==1.3.0\nnetworkx==3.6.1\nnumpy==2.2.6\nnvidia-cublas-cu12==12.4.5.8\nnvidia-cuda-cupti-cu12==12.4.127\nnvidia-cuda-nvrtc-cu12==12.4.127\nnvidia-cuda-runtime-cu12==12.4.127\nnvidia-cudnn-cu12==9.1.0.70\nnvidia-cufft-cu12==11.2.1.3\nnvidia-curand-cu12==10.3.5.147\nnvidia-cusolver-cu12==11.6.1.9\nnvidia-cusparse-cu12==12.3.1.170\nnvidia-cusparselt-cu12==0.6.2\nnvidia-ml-py==13.610.43\nnvidia-nccl-cu12==2.21.5\nnvidia-nvjitlink-cu12==12.4.127\nnvidia-nvtx-cu12==12.4.127\nopencv-python==4.10.0.84\npackaging==26.2\nparso==0.8.7\npexpect==4.9.0\npillow==12.3.0\npip @ file:///home/task_178229373358736/croot/pip_1782293756958/work\npluggy==1.6.0\nprompt_toolkit==3.0.53\npsutil==7.2.2\nptyprocess==0.7.0\npure_eval==0.2.3\nPygments==2.20.0\npyparsing==3.3.2\npyperclip==1.11.0\npytest==8.4.1\npython-dateutil==2.9.0.post0\npytorch-kinematics==0.7.6\npytorch-seed==0.2.0\nPyYAML==6.0.2\nrequests==2.34.2\nsapien @ file:///data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/sapien-3.0.3-cp311-cp311-manylinux_2_28_x86_64.whl#sha256=9a5eb4dc2efdf9b451cdd77a955d45578a5d81474d4e98089bbc36eeb4a07e45\nscipy==1.17.1\nsetuptools==83.0.0\nsix==1.17.0\nsmmap==5.0.3\nstack-data==0.6.3\nsympy==1.13.1\ntabulate==0.10.0\ntoppra==0.6.9\ntorch==2.6.0+cu124\ntqdm==4.70.0\ntraitlets==5.16.1\ntransforms3d==0.4.2\ntrimesh==5.0.0\ntriton==3.2.0\ntypeguard==4.6.0\ntyping_extensions==4.16.0\ntyro==1.0.15\nurllib3==2.7.0\nwcwidth==0.8.2\nwheel==0.47.0\n"
+    },
+    "state_gpu_smoke_subprocess": {
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "/data/project/tzh/papers/ActMask/audit/environment/state_smoke_worker.py"
+      ],
+      "exit_code": 0,
+      "stderr": "/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/_vulkan_tricks.py:42: UserWarning: Failed to find system libvulkan. Fallback to SAPIEN builtin libvulkan.\n  warn(\"Failed to find system libvulkan. Fallback to SAPIEN builtin libvulkan.\")\n/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/_vulkan_tricks.py:78: UserWarning: Failed to find Vulkan ICD file. This is probably due to an incorrect or partial installation of the NVIDIA driver. SAPIEN will attempt to provide an ICD file anyway but it may not work.\n  warn(\n",
+      "stdout": "{\n  \"cuda\": \"12.4\",\n  \"gpu\": \"NVIDIA A16\",\n  \"gpu_vector_smoke\": {\n    \"aggregate_steps_per_second\": 1167.660251995575,\n    \"control_steps\": 40,\n    \"num_envs\": 8,\n    \"observation_shape\": [\n      8,\n      20\n    ]\n  },\n  \"peak_torch_gpu_memory_bytes\": 24064,\n  \"state_observation_smoke\": {\n    \"deterministic_reset\": true,\n    \"observation_shape\": [\n      1,\n      20\n    ],\n    \"success_field_present\": true\n  },\n  \"task_id\": \"ActMaskMovingCubeIntercept-v1\",\n  \"torch\": \"2.6.0+cu124\",\n  \"visual_rgbd_pointcloud_status\": \"blocked: vulkaninfo is unavailable and prior SAPIEN renderer probe failed to find a rendering device; no system package was installed\",\n  \"vulkaninfo_available\": false\n}\n"
+    }
+  },
+  "commands": [
+    {
+      "command": [
+        "/root/miniconda3/bin/conda",
+        "create",
+        "-p",
+        "/data/envs/actmask-audit",
+        "python=3.11.15",
+        "pip",
+        "-y"
+      ],
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "evidence": "/data/envs/actmask-audit/conda-meta/history",
+      "exit_code": 0,
+      "name": "create_isolated_conda_environment",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /root/miniconda3/bin/conda create -p /data/envs/actmask-audit python=3.11.15 pip -y"
+    },
+    {
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--retries",
+        "20",
+        "--resume-retries",
+        "20",
+        "--timeout",
+        "120",
+        "--report",
+        "/data/project/tzh/papers/ActMask/audit/environment/pip_base_install_report.json",
+        "numpy==2.2.6",
+        "PyYAML==6.0.2",
+        "matplotlib==3.10.3",
+        "pytest==8.4.1"
+      ],
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "evidence": "/data/project/tzh/papers/ActMask/audit/environment/pip_base_install_report.json",
+      "exit_code": 0,
+      "name": "install_base_audit_dependencies",
+      "note": "Two earlier downloads failed with IncompleteRead; the successful transaction is the one recorded here.",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip install --retries 20 --resume-retries 20 --timeout 120 --report /data/project/tzh/papers/ActMask/audit/environment/pip_base_install_report.json numpy==2.2.6 PyYAML==6.0.2 matplotlib==3.10.3 pytest==8.4.1"
+    },
+    {
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--index-url",
+        "https://download.pytorch.org/whl/cu124",
+        "--extra-index-url",
+        "https://pypi.org/simple",
+        "--timeout",
+        "120",
+        "--retries",
+        "20",
+        "--resume-retries",
+        "20",
+        "--log",
+        "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_torch_2.6.0_cu124.log",
+        "--report",
+        "/data/project/tzh/papers/ActMask/audit/environment/pip_torch_2.6.0_cu124_report.json",
+        "torch==2.6.0+cu124"
+      ],
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "evidence": "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_torch_2.6.0_cu124.log",
+      "exit_code": 0,
+      "name": "install_exact_torch_cuda124",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip install --index-url https://download.pytorch.org/whl/cu124 --extra-index-url https://pypi.org/simple --timeout 120 --retries 20 --resume-retries 20 --log /data/project/tzh/papers/ActMask/audit/environment/logs/pip_torch_2.6.0_cu124.log --report /data/project/tzh/papers/ActMask/audit/environment/pip_torch_2.6.0_cu124_report.json 'torch==2.6.0+cu124'"
+    },
+    {
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--timeout",
+        "120",
+        "--retries",
+        "20",
+        "--resume-retries",
+        "20",
+        "--constraint",
+        "/data/project/tzh/papers/ActMask/audit/environment/core_constraints.txt",
+        "--log",
+        "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_maniskill_sapien.log",
+        "--report",
+        "/data/project/tzh/papers/ActMask/audit/environment/pip_maniskill_sapien_report.json",
+        "/data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/sapien-3.0.3-cp311-cp311-manylinux_2_28_x86_64.whl",
+        "/data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/mani_skill-3.0.1-py3-none-any.whl"
+      ],
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "evidence": "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_maniskill_sapien.log",
+      "exit_code": 0,
+      "name": "install_local_sapien_maniskill_and_dependencies",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip install --timeout 120 --retries 20 --resume-retries 20 --constraint /data/project/tzh/papers/ActMask/audit/environment/core_constraints.txt --log /data/project/tzh/papers/ActMask/audit/environment/logs/pip_maniskill_sapien.log --report /data/project/tzh/papers/ActMask/audit/environment/pip_maniskill_sapien_report.json /data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/sapien-3.0.3-cp311-cp311-manylinux_2_28_x86_64.whl /data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/mani_skill-3.0.1-py3-none-any.whl"
+    },
+    {
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--constraint",
+        "/data/project/tzh/papers/ActMask/audit/environment/core_constraints.txt",
+        "--log",
+        "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_opencv_4.10.log",
+        "--report",
+        "/data/project/tzh/papers/ActMask/audit/environment/pip_opencv_4.10_report.json",
+        "opencv-python==4.10.0.84"
+      ],
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "evidence": "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_opencv_4.10.log",
+      "exit_code": 0,
+      "name": "pin_recorded_opencv_auxiliary_version",
+      "note": "The dependency resolver first installed 5.0.0.93; this explicit transaction replaced it with the recorded 4.10.0.84 regular wheel.",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip install --constraint /data/project/tzh/papers/ActMask/audit/environment/core_constraints.txt --log /data/project/tzh/papers/ActMask/audit/environment/logs/pip_opencv_4.10.log --report /data/project/tzh/papers/ActMask/audit/environment/pip_opencv_4.10_report.json opencv-python==4.10.0.84"
+    },
+    {
+      "command": [
+        "ln",
+        "-s",
+        "/data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+        "/data/project/tzh/papers/ActMask/audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so"
+      ],
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "evidence": "/data/project/tzh/papers/ActMask/audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+      "exit_code": 0,
+      "name": "route_existing_physx_gpu_asset_to_audit_home",
+      "note": "No PhysX asset was downloaded. Both symlinks point to pre-existing project-local assets.",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && mkdir -p audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0 && ln -s /data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so && ln -s /data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/linux-so.zip audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/linux-so.zip"
+    },
+    {
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "exit_code": 0,
+      "name": "pip_check",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip check"
+    },
+    {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=index,name,driver_version,memory.total",
+        "--format=csv,noheader,nounits"
+      ],
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "exit_code": 0,
+      "name": "nvidia_smi",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && nvidia-smi --query-gpu=index,name,driver_version,memory.total --format=csv,noheader,nounits"
+    },
+    {
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "-m",
+        "pip",
+        "freeze",
+        "--all"
+      ],
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "exit_code": 0,
+      "name": "pip_freeze_all",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip freeze --all"
+    },
+    {
+      "command": [
+        "/root/miniconda3/bin/conda",
+        "list",
+        "--explicit",
+        "-p",
+        "/data/envs/actmask-audit"
+      ],
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "exit_code": 0,
+      "name": "conda_explicit_lock",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /root/miniconda3/bin/conda list --explicit -p /data/envs/actmask-audit"
+    },
+    {
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "/data/project/tzh/papers/ActMask/audit/environment/import_probe_worker.py"
+      ],
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "exit_code": 0,
+      "name": "native_import_probe",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && HOME=/data/project/tzh/papers/ActMask/audit/environment/home PYTHONPATH=/data/project/tzh/papers/ActMask /data/envs/actmask-audit/bin/python /data/project/tzh/papers/ActMask/audit/environment/import_probe_worker.py"
+    },
+    {
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "/data/project/tzh/papers/ActMask/audit/environment/state_smoke_worker.py"
+      ],
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "exit_code": 0,
+      "name": "state_gpu_smoke_subprocess",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && HOME=/data/project/tzh/papers/ActMask/audit/environment/home PYTHONPATH=/data/project/tzh/papers/ActMask /data/envs/actmask-audit/bin/python /data/project/tzh/papers/ActMask/audit/environment/state_smoke_worker.py"
+    },
+    {
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "/data/project/tzh/papers/ActMask/audit/environment/collect_and_run_smoke.py"
+      ],
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "exit_code": 0,
+      "name": "collect_environment_evidence",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && HOME=/data/project/tzh/papers/ActMask/audit/environment/home PYTHONPATH=/data/project/tzh/papers/ActMask /data/envs/actmask-audit/bin/python /data/project/tzh/papers/ActMask/audit/environment/collect_and_run_smoke.py"
+    }
+  ],
+  "core_environment_smoke_passed": true,
+  "core_versions_exact": true,
+  "current_hardware": {
+    "driver": "580.65.06",
+    "gpu": "NVIDIA A16",
+    "libc": [
+      "glibc",
+      "2.35"
+    ],
+    "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35"
+  },
+  "differences": [
+    {
+      "current": "NVIDIA A16",
+      "kind": "historical_hardware_records_differ_by_stage",
+      "milestone3p": "NVIDIA GeForce RTX 4090 D",
+      "milestone3s": "NVIDIA A16"
+    },
+    {
+      "current": "580.65.06",
+      "kind": "driver_mismatch_vs_milestone3p",
+      "milestone3p": "580.76.05"
+    },
+    {
+      "current": "glibc2.35",
+      "historical": "glibc2.39",
+      "kind": "libc_mismatch_vs_historical_platform_records"
+    },
+    {
+      "current": "isolated conda prefix plus pip packages; only the pre-existing PhysX GPU asset is symlinked under audit HOME",
+      "historical": "milestone3s records repaired cross-environment package symlinks",
+      "kind": "environment_construction_differs"
+    }
+  ],
+  "environment_root": "/data/envs/actmask-audit",
+  "errors": [],
+  "finished_at_utc": "2026-08-12T09:25:54.184437+00:00",
+  "gpu_import_smoke_ok": true,
+  "imports": {
+    "mani_skill": {
+      "module_file": "/data/envs/actmask-audit/lib/python3.11/site-packages/mani_skill/__init__.py",
+      "ok": true
+    },
+    "numpy": {
+      "module_file": "/data/envs/actmask-audit/lib/python3.11/site-packages/numpy/__init__.py",
+      "ok": true
+    },
+    "sapien": {
+      "module_file": "/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/__init__.py",
+      "ok": true
+    },
+    "torch": {
+      "module_file": "/data/envs/actmask-audit/lib/python3.11/site-packages/torch/__init__.py",
+      "ok": true
+    }
+  },
+  "legacy_exact_reproduction": false,
+  "legacy_provenance_gaps": [
+    "No historical full dependency lock is present.",
+    "No Git/source commit identifies the historical generator code.",
+    "No simulator snapshot or per-step execution trace is present."
+  ],
+  "locks": {
+    "conda_explicit_lock": {
+      "bytes": 2644,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/audit/environment/conda-explicit.lock.txt",
+      "sha256": "e574f00c7f3db71b2c5a803814619354be0cd24065e985e97637fd9402f85d5b"
+    },
+    "pip_freeze_all": {
+      "bytes": 2382,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/audit/environment/requirements.lock.txt",
+      "sha256": "570d4904d09cecbda33d4ab5d4c78a47663b966c88577674819261dc78753887"
+    }
+  },
+  "logs": {
+    "base_install_report": {
+      "bytes": 259844,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/audit/environment/pip_base_install_report.json",
+      "sha256": "e777f81789c76c5dbe57fb20fe295137e0ed9d426f463fcf80182504e26c8cd7"
+    },
+    "native_import_probe": {
+      "bytes": 1418,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/audit/environment/logs/native_import_probe.log",
+      "sha256": "eaa3c10d9416f79d500a5c9ca634baf51030ee2205146ba8458e331b1fa208c5"
+    },
+    "simulator_install": {
+      "bytes": 6837875,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_maniskill_sapien.log",
+      "sha256": "bab95efd986c5679e8863376fc18cc3c3b03e3a19ce2790880f03bad60db2744"
+    },
+    "simulator_install_report": {
+      "bytes": 743576,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/audit/environment/pip_maniskill_sapien_report.json",
+      "sha256": "0f8f8f16fbda7247925040dc25670f62e86f7d03ae7fe814deff3274f177e386"
+    },
+    "state_gpu_smoke_json": {
+      "bytes": 693,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/audit/environment/smoke/maniskill_state_gpu_smoke.json",
+      "sha256": "4f3aca85a52159c2276013418c3ece6617bfb7eec597be39dac17e0c2838c06b"
+    },
+    "state_gpu_smoke_subprocess": {
+      "bytes": 1231,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/audit/environment/logs/state_gpu_smoke_subprocess.log",
+      "sha256": "0331a345b9ea1bef8cb669961c6bd5f0fd8d39fd4ab0ccc376014e9b30e292a1"
+    },
+    "torch_install": {
+      "bytes": 1857148,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_torch_2.6.0_cu124.log",
+      "sha256": "874478239bb507b33d5587b33f6e71a74785823a8bf498693bf6367ffbf48229"
+    },
+    "torch_install_report": {
+      "bytes": 127494,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/audit/environment/pip_torch_2.6.0_cu124_report.json",
+      "sha256": "5a403a63892027d57e71de0ca45862e9f61d7aab56c86acbae639e21e0792834"
+    }
+  },
+  "observed_versions": {
+    "mani_skill": "3.0.1",
+    "numpy": "2.2.6",
+    "opencv_python": "4.10.0.84",
+    "python": "3.11.15",
+    "sapien": "3.0.3",
+    "torch": "2.6.0+cu124",
+    "torch_cuda": "12.4"
+  },
+  "physx_gpu_asset": {
+    "bytes": 236705440,
+    "exists": true,
+    "path": "/data/project/tzh/papers/ActMask/audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+    "resolved_path": "/data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+    "sha256": "4c582a16509a71faf5592fe9708586dfcc7ab61ae932eabc1ddd81f290818706"
+  },
+  "pip_check": true,
+  "pip_check_ok": true,
+  "prior_environment_references": {
+    "interpretation": "These records describe different stages: milestone3p names an RTX 4090 D, while the later milestone3s packaging manifest names an A16. They are retained together rather than silently reconciled.",
+    "milestone3p_gpu_qualification_runtime": {
+      "bytes": 2364,
+      "driver": "580.76.05",
+      "exists": true,
+      "gpu": "NVIDIA GeForce RTX 4090 D",
+      "path": "/data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/gpu_qualification_runtime.json",
+      "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.39",
+      "sha256": "e06821fed1201c9c0ff31a1a4ba63071809508b5f13b99f28c856f693f41d329",
+      "torch": "2.6.0+cu124"
+    },
+    "milestone3s_artifact_manifest": {
+      "bytes": 18536,
+      "driver": null,
+      "environment_path": "/home/tzh/conda_envs/actmask",
+      "exists": true,
+      "gpu": "NVIDIA A16",
+      "package_symlink_repairs": 24,
+      "path": "/data/project/tzh/papers/ActMask/outputs/actmask/milestone3s_paper_package/artifact_manifest.json",
+      "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.39",
+      "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:45:40) [GCC 14.3.0]",
+      "sha256": "b96ffea1d7b3c0fafdf83f88880d4e2f67ec594403a8d4c6fb749ff2e841f665"
+    }
+  },
+  "process_environment": {
+    "HOME": "/data/project/tzh/papers/ActMask/audit/environment/home",
+    "PYTHONPATH": "/data/project/tzh/papers/ActMask",
+    "cwd": "/data/project/tzh/papers/ActMask"
+  },
+  "python": {
+    "executable": "/data/envs/actmask-audit/bin/python",
+    "implementation": "CPython",
+    "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35",
+    "version": "3.11.15"
+  },
+  "requested_versions": {
+    "mani_skill": "3.0.1",
+    "opencv_python_auxiliary": "4.10.0.84",
+    "python": "3.11.15",
+    "sapien": "3.0.3",
+    "torch": "2.6.0+cu124",
+    "torch_cuda": "12.4"
+  },
+  "schema_version": 1,
+  "smoke_gpu": true,
+  "smoke_import": true,
+  "started_at_utc": "2026-08-12T09:25:02.459532+00:00",
+  "state_gpu_smoke": {
+    "ok": true,
+    "result": {
+      "cuda": "12.4",
+      "gpu": "NVIDIA A16",
+      "gpu_vector_smoke": {
+        "aggregate_steps_per_second": 1167.660251995575,
+        "control_steps": 40,
+        "num_envs": 8,
+        "observation_shape": [
+          8,
+          20
+        ]
+      },
+      "peak_torch_gpu_memory_bytes": 24064,
+      "state_observation_smoke": {
+        "deterministic_reset": true,
+        "observation_shape": [
+          1,
+          20
+        ],
+        "success_field_present": true
+      },
+      "task_id": "ActMaskMovingCubeIntercept-v1",
+      "torch": "2.6.0+cu124",
+      "visual_rgbd_pointcloud_status": "blocked: vulkaninfo is unavailable and prior SAPIEN renderer probe failed to find a rendering device; no system package was installed",
+      "vulkaninfo_available": false
+    },
+    "subprocess_exit_code": 0
+  },
+  "status": "passed",
+  "torch_cuda": {
+    "available": true,
+    "compiled_cuda": "12.4",
+    "device_0": "NVIDIA A16",
+    "device_count": 1
+  },
+  "version_checks": {
+    "mani_skill_exact": true,
+    "python_exact": true,
+    "sapien_exact": true,
+    "torch_cuda_exact": true,
+    "torch_exact": true
+  }
+}

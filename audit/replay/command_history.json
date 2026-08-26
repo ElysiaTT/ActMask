@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "execution_environment": {
+    "cwd": "/data/project/tzh/papers/ActMask",
+    "HOME": "/data/project/tzh/papers/ActMask/audit/environment/home",
+    "PYTHONPATH": "/data/project/tzh/papers/ActMask",
+    "python": "/data/envs/actmask-audit/bin/python"
+  },
+  "commands": [
+    {
+      "name": "generate_id_bounded_subset",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && HOME=/data/project/tzh/papers/ActMask/audit/environment/home PYTHONPATH=/data/project/tzh/papers/ActMask /data/envs/actmask-audit/bin/python -c \"from actmask.experiments.milestone3r_nl_v2 import generate; generate('audit/replay/minimal_id_m0_w1_c2_seed6101', worlds=1, seed=6101, condition='id', mechanisms=(0,), candidates=2, families=('damped_moving_capture',))\"",
+      "exit_code": 0,
+      "log": "/data/project/tzh/papers/ActMask/audit/replay/generate_id_m0_w1_c2_seed6101.log"
+    },
+    {
+      "name": "generate_temporal_bounded_subset_with_nonflip",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && HOME=/data/project/tzh/papers/ActMask/audit/environment/home PYTHONPATH=/data/project/tzh/papers/ActMask /data/envs/actmask-audit/bin/python -c \"from actmask.experiments.milestone3r_nl_v2 import generate; generate('audit/replay/minimal_temporal_m1_w1_c2_seed6401', worlds=1, seed=6401, condition='temporal_ood', mechanisms=(1,), candidates=2, families=('damped_moving_capture',))\"",
+      "exit_code": 0,
+      "log": "/data/project/tzh/papers/ActMask/audit/replay/generate_temporal_m1_w1_c2_seed6401.log"
+    },
+    {
+      "name": "verify_id_against_frozen_raw",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python audit/replay/verify_minimal_replay.py --case-name id_m0_seed6101 --fresh audit/replay/minimal_id_m0_w1_c2_seed6101 --frozen outputs/actmask/milestone3r_nl_v2/full_raw/id_core --output audit/replay/id_m0_seed6101_comparison.json --seed 6101 --condition id --mechanism 0 --candidates 2 --family damped_moving_capture",
+      "exit_code": 1,
+      "exit_semantics": "Expected nonzero because retained float arrays did not match bit-exactly; the comparison JSON was still fully written.",
+      "log": "/data/project/tzh/papers/ActMask/audit/replay/verify_id_m0_seed6101.log"
+    },
+    {
+      "name": "verify_temporal_against_frozen_raw",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python audit/replay/verify_minimal_replay.py --case-name temporal_m1_seed6401 --fresh audit/replay/minimal_temporal_m1_w1_c2_seed6401 --frozen outputs/actmask/milestone3r_nl_v2/full_raw/temporal_delay_ood --output audit/replay/temporal_m1_seed6401_comparison.json --seed 6401 --condition temporal_ood --mechanism 1 --candidates 2 --family damped_moving_capture --require-nonflip",
+      "exit_code": 1,
+      "exit_semantics": "Expected nonzero because retained float arrays did not match bit-exactly; exact nonflip outcome/filter evidence was still written.",
+      "log": "/data/project/tzh/papers/ActMask/audit/replay/verify_temporal_m1_seed6401.log"
+    },
+    {
+      "name": "aggregate_replay_evidence",
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python audit/replay/aggregate_replay_evidence.py --case audit/replay/id_m0_seed6101_comparison.json --case audit/replay/temporal_m1_seed6401_comparison.json --output audit/replay/replay_verification.json",
+      "exit_code": 0,
+      "log": "/data/project/tzh/papers/ActMask/audit/replay/aggregate_replay_verification.log"
+    }
+  ]
+}

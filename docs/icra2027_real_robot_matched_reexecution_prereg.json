@@ -1,0 +1,77 @@
+{
+  "schema": "actmask-real-robot-matched-prereg-v1",
+  "frozen_date": "2026-08-09",
+  "status": "preregistered-not-executed",
+  "claim": "Across three controlled physical families, early ordered history is necessary to distinguish outcomes of family-fixed robot candidate actions from matched measured decision states.",
+  "design": {
+    "cell": "three-family actuated-target early-history swap with a family-fixed robot intercept trajectory",
+    "candidate_space": "tcp_xyz_m",
+    "families": [
+      "linear_x_intercept",
+      "linear_y_intercept",
+      "circular_intercept"
+    ],
+    "history_frames": 6,
+    "early_frames": 4,
+    "common_suffix_frames": 2,
+    "min_complete_pairs": 36,
+    "min_complete_pairs_per_family": 12,
+    "branches": [
+      "A",
+      "B"
+    ],
+    "expected_success_branch": "A",
+    "expected_failure_branch": "B",
+    "success_distance_threshold_m": 0.015,
+    "maximum_candidate_tracking_error_m": 0.005,
+    "evaluation_window_s": [
+      0.45,
+      0.75
+    ]
+  },
+  "ladder": {
+    "tie_value": 0.5,
+    "shortcut_controls": [
+      "action_only",
+      "current_only",
+      "unordered_history",
+      "final_two_velocity"
+    ],
+    "ordered_fair_estimators": [
+      "multi_frame_linear_velocity",
+      "early_endpoint_velocity"
+    ],
+    "maximum_shortcut_pair_order": 0.625,
+    "maximum_family_shortcut_pair_order": 0.6666666666666666,
+    "minimum_shortcut_one_sided_sign_p": 0.05,
+    "minimum_ordered_pair_order": 0.8,
+    "minimum_family_ordered_pair_order": 0.75,
+    "maximum_ordered_one_sided_sign_p": 0.01,
+    "learned_method_decision": "reject if any ordered fair estimator reaches the ordered threshold; otherwise leave method headroom unresolved"
+  },
+  "matching_tolerances": {
+    "early_swap_position_m": 0.004,
+    "minimum_early_same_order_separation_m": 0.02,
+    "common_suffix_position_m": 0.002,
+    "decision_target_position_m": 0.002,
+    "decision_target_velocity_m_s": 0.005,
+    "maximum_decision_target_speed_m_s": 0.005,
+    "decision_tcp_position_m": 0.002,
+    "decision_joint_position_rad": 0.00873,
+    "decision_joint_velocity_rad_s": 0.01,
+    "history_timestamp_s": 0.01
+  },
+  "acceptance": {
+    "minimum_correct_discordant_fraction": 0.8,
+    "minimum_family_correct_discordant_fraction": 0.75,
+    "maximum_wrong_discordant_pairs": 1,
+    "maximum_wrong_discordant_pairs_per_family": 1,
+    "minimum_wilson_lower_95": 0.5,
+    "maximum_one_sided_sign_p": 0.01,
+    "maximum_first-branch_imbalance": 2,
+    "require_all_matching_gates": true,
+    "require_identical_candidate_hash": true,
+    "require_measured_tracking_outcomes": true,
+    "require_no_safety_abort": true
+  }
+}

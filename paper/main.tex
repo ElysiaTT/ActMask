@@ -1,0 +1,30 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{graphicx,booktabs,amsmath,amssymb,hyperref}
+\graphicspath{{../outputs/actmask/milestone3s_paper_package/figures/}}
+\newcommand{\bench}{\textsc{TimeArrow-Bench}}
+\title{\bench: Execution-Grounded Counterfactual Evaluation of Temporal Shortcuts in Dynamic Robot Action Verification}
+\author{Anonymous Authors}
+\date{}
+\begin{document}\maketitle
+\input{abstract}
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/problem_setup}
+\input{sections/shortcut_taxonomy}
+\input{sections/benchmark_design}
+\input{sections/baselines}
+\input{sections/experiments}
+\input{sections/results}
+\input{sections/limitations}
+\input{sections/conclusion}
+\bibliographystyle{plain}\bibliography{references}
+\appendix
+\input{appendix/benchmark_details}
+\input{appendix/task_definitions}
+\input{appendix/metric_definitions}
+\input{appendix/statistical_protocol}
+\input{appendix/leakage_audits}
+\input{appendix/additional_results}
+\input{appendix/reproducibility}
+\end{document}

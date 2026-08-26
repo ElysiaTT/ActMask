@@ -1,0 +1,34 @@
+{
+  "condition": "held camera and all non-complete history corruptions (frozen key: combined_held_dropout)",
+  "confidence_intervals_reported": false,
+  "rows": [
+    {
+      "action_only": 0.5,
+      "centroid_top1": 0.6733333333333333,
+      "centroid_velocity": 1.0,
+      "current_rgbd": 0.5,
+      "family": "Moving cube",
+      "ordered_rgbd_gru": 0.6646666666666667,
+      "world_pointcloud_gru": 0.86
+    },
+    {
+      "action_only": 0.5,
+      "centroid_top1": 0.6533333333333333,
+      "centroid_velocity": 1.0,
+      "current_rgbd": 0.5,
+      "family": "Moving window",
+      "ordered_rgbd_gru": 0.5366666666666667,
+      "world_pointcloud_gru": 0.7266666666666667
+    },
+    {
+      "action_only": 0.5,
+      "centroid_top1": 0.7266666666666666,
+      "centroid_velocity": 1.0,
+      "current_rgbd": 0.5,
+      "family": "Rotating window",
+      "ordered_rgbd_gru": 0.5693333333333334,
+      "world_pointcloud_gru": 0.7666666666666666
+    }
+  ],
+  "schema": "actmask-icra2027-visual-admission-v1"
+}

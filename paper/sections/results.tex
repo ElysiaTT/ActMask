@@ -1,0 +1,10 @@
+\section{Results}
+The final learned comparator is GRU and the validation-selected fair analytic comparator is MultiFrameLinearVelocity. Their frozen ID pair-order accuracies are 1.000 and 0.600, respectively, for a +0.400 advantage with grouped 95\% interval [0.3951, 0.4052]. GRU also exceeds the selected fair analytic baseline on physical-parameter OOD (1.000 vs. 0.500), temporal-delay OOD (1.000 vs. 0.857), and held-mechanism OOD (0.787 vs. 0.667). These values are controlled benchmark separations, not evidence of broad real-world mastery.
+
+The causal controls support the intended interpretation: correct history has pair-order 1.000, final-two-only is 0.500, and the valid pair-swap and score-swap consistency are both 1.000. The generic full-reversal diagnostic remains high and is explicitly not used as a causal gate. Dynamic ranking has Top-1/NDCG 1.000 at C5/C10/C20; static/action controls have C20 Top-1 0.500. The full audit reports nondegenerate-world and branch-dependent-outcome-change fractions of 1.000, no template-rate span or index leakage, and C20 p95 latency 0.816 ms.
+
+\input{tables/main_v2_results}
+\input{tables/causal_controls}
+\input{tables/candidate_diversity_efficiency}
+\begin{figure}[t]\centering\includegraphics[width=.92\linewidth]{main_performance.png}\caption{Frozen ID and mean OOD pair-order comparison. ``Not measured'' controls are not silently converted to zero. Source: \texttt{full\_evaluation.json}.}\label{fig:performance}\end{figure}
+\begin{figure}[t]\centering\includegraphics[width=.78\linewidth]{candidate_diversity_histogram.png}\caption{Frozen success rate by C20 candidate template. Equal rates are an audit against template/index lookup, not a claim that every action has identical physical effect. Source: \texttt{full\_evaluation.json}.}\label{fig:diversity}\end{figure}

@@ -1,0 +1,494 @@
+{
+  "all_arrays_exact": false,
+  "argument_data_binding": {
+    "config_sha256_matches_frozen_parent": true,
+    "expected_metadata_seed": 7401,
+    "expected_outcome_keys_exact": true,
+    "generation_count_binding": {
+      "accepted_pairs_matches_retained_pairs": true,
+      "audit_pairs_matches_retained_pairs": true,
+      "candidate_executions_matches_outcome_branches": true,
+      "examples_matches_metadata_rows": true
+    },
+    "generation_counts_exact": true,
+    "metadata_argument_consistency": true
+  },
+  "array_comparisons": {
+    "labels.static_features": {
+      "dtype_exact": true,
+      "dtype_fresh": "float32",
+      "dtype_frozen": "float32",
+      "exact": false,
+      "max_abs_error": 1.7642974853515625e-05,
+      "shape": [
+        2,
+        29
+      ]
+    },
+    "labels.success": {
+      "dtype_exact": true,
+      "dtype_fresh": "bool",
+      "dtype_frozen": "bool",
+      "exact": true,
+      "max_abs_error": null,
+      "shape": [
+        2
+      ]
+    },
+    "model_inputs.candidate_actions": {
+      "dtype_exact": true,
+      "dtype_fresh": "float32",
+      "dtype_frozen": "float32",
+      "exact": false,
+      "max_abs_error": 1.6808509826660156e-05,
+      "shape": [
+        2,
+        20,
+        3
+      ]
+    },
+    "model_inputs.history": {
+      "dtype_exact": true,
+      "dtype_fresh": "float32",
+      "dtype_frozen": "float32",
+      "exact": false,
+      "max_abs_error": 7.413327693939209e-07,
+      "shape": [
+        2,
+        6,
+        20
+      ]
+    },
+    "model_inputs.nominal_action_timing": {
+      "dtype_exact": true,
+      "dtype_fresh": "float32",
+      "dtype_frozen": "float32",
+      "exact": true,
+      "max_abs_error": 0.0,
+      "shape": [
+        2,
+        20
+      ]
+    },
+    "model_inputs.observation_confidence": {
+      "dtype_exact": true,
+      "dtype_fresh": "float32",
+      "dtype_frozen": "float32",
+      "exact": true,
+      "max_abs_error": 0.0,
+      "shape": [
+        2,
+        6,
+        1
+      ]
+    },
+    "model_inputs.tcp_state": {
+      "dtype_exact": true,
+      "dtype_fresh": "float32",
+      "dtype_frozen": "float32",
+      "exact": false,
+      "max_abs_error": 7.152557373046875e-07,
+      "shape": [
+        2,
+        3
+      ]
+    },
+    "model_inputs.timestamps": {
+      "dtype_exact": true,
+      "dtype_fresh": "float32",
+      "dtype_frozen": "float32",
+      "exact": true,
+      "max_abs_error": 0.0,
+      "shape": [
+        2,
+        6
+      ]
+    },
+    "model_inputs.visibility": {
+      "dtype_exact": true,
+      "dtype_fresh": "float32",
+      "dtype_frozen": "float32",
+      "exact": true,
+      "max_abs_error": 0.0,
+      "shape": [
+        2,
+        6,
+        1
+      ]
+    }
+  },
+  "attempted": 4,
+  "case_name": "temporal_m1_seed6401",
+  "command": [
+    "/data/envs/actmask-audit/bin/python",
+    "-c",
+    "from actmask.experiments.milestone3r_nl_v2 import generate; generate('audit/replay/minimal_temporal_m1_w1_c2_seed6401', worlds=1, seed=6401, condition='temporal_ood', mechanisms=(1,), candidates=2, families=('damped_moving_capture',))"
+  ],
+  "configuration": {
+    "candidates": 2,
+    "condition": "temporal_ood",
+    "expected_branch_executions": 4,
+    "families": [
+      "damped_moving_capture"
+    ],
+    "generate_seed": 6401,
+    "mechanisms": [
+      1
+    ],
+    "worlds": 1
+  },
+  "cwd": "/data/project/tzh/papers/ActMask",
+  "environment": {
+    "HOME": "/data/project/tzh/papers/ActMask/audit/environment/home",
+    "PYTHONPATH": "/data/project/tzh/papers/ActMask"
+  },
+  "examples": 2,
+  "files": {
+    "fresh": {
+      "candidate_outcomes.jsonl": {
+        "bytes": 416,
+        "sha256": "cd22799083195441fcc7ddce9cd46873f1675f4ae61dc89ed786ab26d2bdaa91"
+      },
+      "generation_report.json": {
+        "bytes": 467,
+        "sha256": "018d0929f1a220b243e66d7957d20e92919716b9657d001dd5d430c782ab9130"
+      },
+      "labels.npz": {
+        "bytes": 479,
+        "sha256": "57edc3699dbe4e73a64ced8633f565010b5a5bb8186a085023fbf1c43f4825f0"
+      },
+      "metadata.jsonl": {
+        "bytes": 811,
+        "sha256": "b1a62ba63178c77030411f6870b7ef33ea75705f5879cadc744ad173f2616cfd"
+      },
+      "model_inputs.npz": {
+        "bytes": 1772,
+        "sha256": "cc21739b79467b03dab3347c52efb28bcd451213e34bea3549bb3cdfbdf10e30"
+      }
+    },
+    "frozen": {
+      "candidate_outcomes.jsonl": {
+        "bytes": 1266400,
+        "sha256": "79fd34c03f1a6f60ea2245382ba34ec078cc51119292f5b69960c2d1184bffac"
+      },
+      "generation_report.json": {
+        "bytes": 483,
+        "sha256": "4e7d13f5cf214f0ae46f88581ba87bd48464936f575af324761d04d4b4e75a2c"
+      },
+      "labels.npz": {
+        "bytes": 45518,
+        "sha256": "ee10c74d40fbac6982dfc5a71833eefa528e8d93c5c9ba8e8cc3cfb3dfa75539"
+      },
+      "metadata.jsonl": {
+        "bytes": 2297528,
+        "sha256": "83e610a15c8cd48fb4480b2aa239b4e177a0c3d4e8f6610ad2f9cd3108c7da88"
+      },
+      "model_inputs.npz": {
+        "bytes": 232920,
+        "sha256": "4d89f1edc7d94b69538d8269602af6d623ceddcad5e22179299d860d22fc81d3"
+      }
+    }
+  },
+  "filter_consistency": true,
+  "fresh_generation_report": {
+    "accepted_pairs": 1,
+    "audit": {
+      "label_flip_rate": 1.0,
+      "max_matching_error": 0.0,
+      "pair_swap_max_error": 0.0,
+      "pairs": 1
+    },
+    "candidate_executions": 4,
+    "candidates": 2,
+    "condition": "temporal_ood",
+    "config_sha256": "9dc510bdec94e4715df96f6cc6f960f932d4dd37babea957e0f14325cf98e564",
+    "examples": 2,
+    "generation_seconds": 15.275697346776724,
+    "label_balance": 0.5,
+    "mechanisms": [
+      "hysteretic_mode_memory"
+    ],
+    "worlds": 1
+  },
+  "frozen_parent_generation_report": {
+    "accepted_pairs": 2800,
+    "audit": {
+      "label_flip_rate": 1.0,
+      "max_matching_error": 0.0,
+      "pair_swap_max_error": 0.0,
+      "pairs": 2800
+    },
+    "candidate_executions": 12000,
+    "candidates": 20,
+    "condition": "temporal_ood",
+    "config_sha256": "9dc510bdec94e4715df96f6cc6f960f932d4dd37babea957e0f14325cf98e564",
+    "examples": 5600,
+    "generation_seconds": 23.009780558757484,
+    "label_balance": 0.5,
+    "mechanisms": [
+      "hysteretic_mode_memory"
+    ],
+    "worlds": 100
+  },
+  "join_key": "metadata: (pair_id, branch); outcomes: (condition, family, mechanism, world_id, candidate_id)",
+  "limitations": [
+    "Fresh worlds/candidates are reduced versus the frozen parent generation; this is a seed/world/candidate subset re-execution, not the same parent batch configuration.",
+    "No historical simulator snapshot or per-step trace exists.",
+    "A match supports repeatability under the reconstructed environment, not independent proof of how every frozen result was produced.",
+    "Only one world, one family, one mechanism, and two candidates were re-executed; no full dataset or training run was attempted.",
+    "Filtered nonflip observations/actions are absent from both fresh and frozen NPZ files, so nonflip comparison is limited to exact outcome booleans and absence from retained metadata/arrays."
+  ],
+  "matched_outcomes": 2,
+  "matched_rows": 2,
+  "max_array_abs_error": 1.7642974853515625e-05,
+  "metadata_all_exact": true,
+  "metadata_exact_by_row": {
+    "temporal_ood:damped_moving_capture:1:0:1|branch=0": true,
+    "temporal_ood:damped_moving_capture:1:0:1|branch=1": true
+  },
+  "not_numerically_comparable_fields": [
+    "labels.success"
+  ],
+  "numeric_array_max_abs_error_by_field": {
+    "labels.static_features": 1.7642974853515625e-05,
+    "model_inputs.candidate_actions": 1.6808509826660156e-05,
+    "model_inputs.history": 7.413327693939209e-07,
+    "model_inputs.nominal_action_timing": 0.0,
+    "model_inputs.observation_confidence": 0.0,
+    "model_inputs.tcp_state": 7.152557373046875e-07,
+    "model_inputs.timestamps": 0.0,
+    "model_inputs.visibility": 0.0
+  },
+  "outcomes_all_exact": true,
+  "outcomes_exact_by_pair": {
+    "temporal_ood|damped_moving_capture|hysteretic_mode_memory|0|0": true,
+    "temporal_ood|damped_moving_capture|hysteretic_mode_memory|0|1": true
+  },
+  "pairs": 1,
+  "retention_filter": {
+    "attempted_pairs": 2,
+    "flip_pairs": 1,
+    "fresh_and_frozen_flip_status_exact": true,
+    "nonflip_pairs": 1,
+    "outcome_flip_invariant": true,
+    "required_nonflip_present": true,
+    "retained_exactly_equals_flip_pairs": true,
+    "retained_pair_branches_exact": true,
+    "retained_pairs": 1
+  },
+  "schema_detail": {
+    "labels.npz": {
+      "expected_keys": [
+        "static_features",
+        "success"
+      ],
+      "fields": {
+        "static_features": {
+          "dtype_exact": true,
+          "fresh_batch_matches_metadata": true,
+          "fresh_dtype": "float32",
+          "fresh_shape": [
+            2,
+            29
+          ],
+          "frozen_batch_matches_metadata": true,
+          "frozen_dtype": "float32",
+          "frozen_shape": [
+            5600,
+            29
+          ],
+          "non_batch_shape_exact": true
+        },
+        "success": {
+          "dtype_exact": true,
+          "fresh_batch_matches_metadata": true,
+          "fresh_dtype": "bool",
+          "fresh_shape": [
+            2
+          ],
+          "frozen_batch_matches_metadata": true,
+          "frozen_dtype": "bool",
+          "frozen_shape": [
+            5600
+          ],
+          "non_batch_shape_exact": true
+        }
+      },
+      "fresh_keys": [
+        "static_features",
+        "success"
+      ],
+      "frozen_keys": [
+        "static_features",
+        "success"
+      ],
+      "key_sets_exact": true
+    },
+    "model_inputs.npz": {
+      "expected_keys": [
+        "candidate_actions",
+        "history",
+        "nominal_action_timing",
+        "observation_confidence",
+        "tcp_state",
+        "timestamps",
+        "visibility"
+      ],
+      "fields": {
+        "candidate_actions": {
+          "dtype_exact": true,
+          "fresh_batch_matches_metadata": true,
+          "fresh_dtype": "float32",
+          "fresh_shape": [
+            2,
+            20,
+            3
+          ],
+          "frozen_batch_matches_metadata": true,
+          "frozen_dtype": "float32",
+          "frozen_shape": [
+            5600,
+            20,
+            3
+          ],
+          "non_batch_shape_exact": true
+        },
+        "history": {
+          "dtype_exact": true,
+          "fresh_batch_matches_metadata": true,
+          "fresh_dtype": "float32",
+          "fresh_shape": [
+            2,
+            6,
+            20
+          ],
+          "frozen_batch_matches_metadata": true,
+          "frozen_dtype": "float32",
+          "frozen_shape": [
+            5600,
+            6,
+            20
+          ],
+          "non_batch_shape_exact": true
+        },
+        "nominal_action_timing": {
+          "dtype_exact": true,
+          "fresh_batch_matches_metadata": true,
+          "fresh_dtype": "float32",
+          "fresh_shape": [
+            2,
+            20
+          ],
+          "frozen_batch_matches_metadata": true,
+          "frozen_dtype": "float32",
+          "frozen_shape": [
+            5600,
+            20
+          ],
+          "non_batch_shape_exact": true
+        },
+        "observation_confidence": {
+          "dtype_exact": true,
+          "fresh_batch_matches_metadata": true,
+          "fresh_dtype": "float32",
+          "fresh_shape": [
+            2,
+            6,
+            1
+          ],
+          "frozen_batch_matches_metadata": true,
+          "frozen_dtype": "float32",
+          "frozen_shape": [
+            5600,
+            6,
+            1
+          ],
+          "non_batch_shape_exact": true
+        },
+        "tcp_state": {
+          "dtype_exact": true,
+          "fresh_batch_matches_metadata": true,
+          "fresh_dtype": "float32",
+          "fresh_shape": [
+            2,
+            3
+          ],
+          "frozen_batch_matches_metadata": true,
+          "frozen_dtype": "float32",
+          "frozen_shape": [
+            5600,
+            3
+          ],
+          "non_batch_shape_exact": true
+        },
+        "timestamps": {
+          "dtype_exact": true,
+          "fresh_batch_matches_metadata": true,
+          "fresh_dtype": "float32",
+          "fresh_shape": [
+            2,
+            6
+          ],
+          "frozen_batch_matches_metadata": true,
+          "frozen_dtype": "float32",
+          "frozen_shape": [
+            5600,
+            6
+          ],
+          "non_batch_shape_exact": true
+        },
+        "visibility": {
+          "dtype_exact": true,
+          "fresh_batch_matches_metadata": true,
+          "fresh_dtype": "float32",
+          "fresh_shape": [
+            2,
+            6,
+            1
+          ],
+          "frozen_batch_matches_metadata": true,
+          "frozen_dtype": "float32",
+          "frozen_shape": [
+            5600,
+            6,
+            1
+          ],
+          "non_batch_shape_exact": true
+        }
+      },
+      "fresh_keys": [
+        "candidate_actions",
+        "history",
+        "nominal_action_timing",
+        "observation_confidence",
+        "tcp_state",
+        "timestamps",
+        "visibility"
+      ],
+      "frozen_keys": [
+        "candidate_actions",
+        "history",
+        "nominal_action_timing",
+        "observation_confidence",
+        "tcp_state",
+        "timestamps",
+        "visibility"
+      ],
+      "key_sets_exact": true
+    }
+  },
+  "schema_matches": true,
+  "schema_version": 1,
+  "scope": "bounded_frozen_subset_reexecution_under_reduced_batch_not_same_parent_configuration_or_snapshot_replay",
+  "scope_limitations": [
+    "Fresh worlds/candidates are reduced versus the frozen parent generation; this is a seed/world/candidate subset re-execution, not the same parent batch configuration.",
+    "No historical simulator snapshot or per-step trace exists.",
+    "A match supports repeatability under the reconstructed environment, not independent proof of how every frozen result was produced.",
+    "Only one world, one family, one mechanism, and two candidates were re-executed; no full dataset or training run was attempted.",
+    "Filtered nonflip observations/actions are absent from both fresh and frozen NPZ files, so nonflip comparison is limited to exact outcome booleans and absence from retained metadata/arrays."
+  ],
+  "shell_command": "cd /data/project/tzh/papers/ActMask && HOME=/data/project/tzh/papers/ActMask/audit/environment/home PYTHONPATH=/data/project/tzh/papers/ActMask /data/envs/actmask-audit/bin/python -c 'from actmask.experiments.milestone3r_nl_v2 import generate; generate('\"'\"'audit/replay/minimal_temporal_m1_w1_c2_seed6401'\"'\"', worlds=1, seed=6401, condition='\"'\"'temporal_ood'\"'\"', mechanisms=(1,), candidates=2, families=('\"'\"'damped_moving_capture'\"'\"',))'",
+  "status": "completed_with_mismatch",
+  "success_consistency": true,
+  "verification_passed": false
+}

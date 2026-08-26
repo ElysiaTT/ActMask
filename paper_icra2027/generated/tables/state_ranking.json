@@ -1,0 +1,35 @@
+{
+  "rows": [
+    {
+      "action_top1": 0.5,
+      "candidates": "C5",
+      "contexts": 600,
+      "dynamic_ndcg": 1.0,
+      "dynamic_regret": 0.0,
+      "dynamic_top1": 1.0,
+      "mixed_context_fraction": 1.0,
+      "static_top1": 0.5
+    },
+    {
+      "action_top1": 0.5,
+      "candidates": "C10",
+      "contexts": 600,
+      "dynamic_ndcg": 1.0,
+      "dynamic_regret": 0.0,
+      "dynamic_top1": 1.0,
+      "mixed_context_fraction": 1.0,
+      "static_top1": 0.5
+    },
+    {
+      "action_top1": 0.5,
+      "candidates": "C20",
+      "contexts": 600,
+      "dynamic_ndcg": 1.0,
+      "dynamic_regret": 0.0,
+      "dynamic_top1": 1.0,
+      "mixed_context_fraction": 1.0,
+      "static_top1": 0.5
+    }
+  ],
+  "schema": "actmask-icra2027-state-ranking-v1"
+}

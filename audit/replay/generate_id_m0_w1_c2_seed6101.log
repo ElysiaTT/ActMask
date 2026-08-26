@@ -1,0 +1,24 @@
+/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/_vulkan_tricks.py:42: UserWarning: Failed to find system libvulkan. Fallback to SAPIEN builtin libvulkan.
+  warn("Failed to find system libvulkan. Fallback to SAPIEN builtin libvulkan.")
+/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/_vulkan_tricks.py:78: UserWarning: Failed to find Vulkan ICD file. This is probably due to an incorrect or partial installation of the NVIDIA driver. SAPIEN will attempt to provide an ICD file anyway but it may not work.
+  warn(
+{
+  "accepted_pairs": 2,
+  "audit": {
+    "label_flip_rate": 1.0,
+    "max_matching_error": 0.0,
+    "pair_swap_max_error": 0.0,
+    "pairs": 2
+  },
+  "candidate_executions": 4,
+  "candidates": 2,
+  "condition": "id",
+  "config_sha256": "9dc510bdec94e4715df96f6cc6f960f932d4dd37babea957e0f14325cf98e564",
+  "examples": 4,
+  "generation_seconds": 24.961406724527478,
+  "label_balance": 0.5,
+  "mechanisms": [
+    "history_identifiable_damping_drive"
+  ],
+  "worlds": 1
+}

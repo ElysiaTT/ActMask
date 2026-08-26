@@ -1,0 +1,17 @@
+# Immutable reference for Milestone 2C regression.  It documents, rather
+# than replaces, the original 2B run at outputs/actmask/milestone2b.
+reference:
+  source_config: configs/actmask/milestone2b_cpu.yaml
+  source_output: outputs/actmask/milestone2b
+  resolved_config_sha256: 477a116b44927299b315b24aae05b91112b6f6cc1228579f6da3c8bf51a02a73
+  split_manifest_sha256: ae6d6e081a8a379e1d764c454e7dfff975729a83f77542629d0df899d65c050a
+  frozen_seed: 1401
+  expected_seed_test_ap: 0.9017510430809621
+  tolerance_ap: 0.010
+  expected_five_seed_ap_mean: 0.9030
+  tolerance_five_seed_ap: 0.010
+
+experiment:
+  device: cpu
+  seeds: [1401, 2403, 3407, 4411, 5413]
+

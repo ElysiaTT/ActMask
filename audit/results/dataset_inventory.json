@@ -1,0 +1,2873 @@
+{
+  "all_directories_arrow_action_accuracy": 1.0,
+  "all_directories_metadata_parity_accuracy": 0.9806585160747785,
+  "directories": 30,
+  "items": [
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 12000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 12000,
+      "input_shapes": {
+        "candidate_actions": [
+          12000,
+          20,
+          3
+        ],
+        "history": [
+          12000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          12000,
+          20
+        ],
+        "observation_confidence": [
+          12000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          12000,
+          3
+        ],
+        "timestamps": [
+          12000,
+          6
+        ],
+        "visibility": [
+          12000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        12000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 12000,
+      "minimum_absolute_score": 0.018132533878087997,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 3000,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 3000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 3000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 3000,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 12000,
+        "attempted_pairs": 6000,
+        "attempted_parity_rule_accuracy": 1.0,
+        "attempted_parity_rule_correct": 12000,
+        "attempted_parity_rule_total": 12000,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 12000,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 12000,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 12000,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 12000,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 12000
+        },
+        "filtered_nonflip_pairs": 0,
+        "flip_pairs": 6000,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 12000,
+        "nonflip_pairs": 0,
+        "nonflip_parity_rule_accuracy": null,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 3000,
+          "10": 3000,
+          "11": 0
+        },
+        "outcome_unique_keys": 6000,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 6000,
+        "retention_rate": 1.0
+      },
+      "pairs": 6000,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/held_mechanism_ood",
+      "static_features_shape": [
+        12000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 6000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 6000,
+      "input_shapes": {
+        "candidate_actions": [
+          6000,
+          20,
+          3
+        ],
+        "history": [
+          6000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          6000,
+          20
+        ],
+        "observation_confidence": [
+          6000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          6000,
+          3
+        ],
+        "timestamps": [
+          6000,
+          6
+        ],
+        "visibility": [
+          6000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        6000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 6000,
+      "minimum_absolute_score": 0.018132533878087997,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 1500,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 1500,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 1500,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 1500,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 3000,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/held_mechanism_ood_c10",
+      "static_features_shape": [
+        6000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 3000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 3000,
+      "input_shapes": {
+        "candidate_actions": [
+          3000,
+          20,
+          3
+        ],
+        "history": [
+          3000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          3000,
+          20
+        ],
+        "observation_confidence": [
+          3000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          3000,
+          3
+        ],
+        "timestamps": [
+          3000,
+          6
+        ],
+        "visibility": [
+          3000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        3000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 3000,
+      "minimum_absolute_score": 0.018132533878087997,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 900,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 600,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 900,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 600,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 1500,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/held_mechanism_ood_c5",
+      "static_features_shape": [
+        3000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 60000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 60000,
+      "input_shapes": {
+        "candidate_actions": [
+          60000,
+          20,
+          3
+        ],
+        "history": [
+          60000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          60000,
+          20
+        ],
+        "observation_confidence": [
+          60000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          60000,
+          3
+        ],
+        "timestamps": [
+          60000,
+          6
+        ],
+        "visibility": [
+          60000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        60000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 60000,
+      "minimum_absolute_score": 0.01813310943543911,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 15000,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 15000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 15000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 15000,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 60000,
+        "attempted_pairs": 30000,
+        "attempted_parity_rule_accuracy": 1.0,
+        "attempted_parity_rule_correct": 60000,
+        "attempted_parity_rule_total": 60000,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 60000,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 60000,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 60000,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 60000,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 60000
+        },
+        "filtered_nonflip_pairs": 0,
+        "flip_pairs": 30000,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 60000,
+        "nonflip_pairs": 0,
+        "nonflip_parity_rule_accuracy": null,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 15000,
+          "10": 15000,
+          "11": 0
+        },
+        "outcome_unique_keys": 30000,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 30000,
+        "retention_rate": 1.0
+      },
+      "pairs": 30000,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/id",
+      "static_features_shape": [
+        60000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 30000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 30000,
+      "input_shapes": {
+        "candidate_actions": [
+          30000,
+          20,
+          3
+        ],
+        "history": [
+          30000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          30000,
+          20
+        ],
+        "observation_confidence": [
+          30000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          30000,
+          3
+        ],
+        "timestamps": [
+          30000,
+          6
+        ],
+        "visibility": [
+          30000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        30000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 30000,
+      "minimum_absolute_score": 0.01813310943543911,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 7500,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 7500,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 7500,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 7500,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 15000,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/id_c10",
+      "static_features_shape": [
+        30000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 15000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 15000,
+      "input_shapes": {
+        "candidate_actions": [
+          15000,
+          20,
+          3
+        ],
+        "history": [
+          15000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          15000,
+          20
+        ],
+        "observation_confidence": [
+          15000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          15000,
+          3
+        ],
+        "timestamps": [
+          15000,
+          6
+        ],
+        "visibility": [
+          15000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        15000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 15000,
+      "minimum_absolute_score": 0.01813310943543911,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 4500,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 3000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 4500,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 3000,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 7500,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/id_c5",
+      "static_features_shape": [
+        15000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 8000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 8000,
+      "input_shapes": {
+        "candidate_actions": [
+          8000,
+          20,
+          3
+        ],
+        "history": [
+          8000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          8000,
+          20
+        ],
+        "observation_confidence": [
+          8000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          8000,
+          3
+        ],
+        "timestamps": [
+          8000,
+          6
+        ],
+        "visibility": [
+          8000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        8000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 8000,
+      "minimum_absolute_score": 0.7449865341186523,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 2000,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 2000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 2000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 2000,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 8000,
+        "attempted_pairs": 4000,
+        "attempted_parity_rule_accuracy": 1.0,
+        "attempted_parity_rule_correct": 8000,
+        "attempted_parity_rule_total": 8000,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 8000,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 8000,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 8000,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 8000,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 8000
+        },
+        "filtered_nonflip_pairs": 0,
+        "flip_pairs": 4000,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 8000,
+        "nonflip_pairs": 0,
+        "nonflip_parity_rule_accuracy": null,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 2000,
+          "10": 2000,
+          "11": 0
+        },
+        "outcome_unique_keys": 4000,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 4000,
+        "retention_rate": 1.0
+      },
+      "pairs": 4000,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/physical_parameter_ood",
+      "static_features_shape": [
+        8000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 4000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 4000,
+      "input_shapes": {
+        "candidate_actions": [
+          4000,
+          20,
+          3
+        ],
+        "history": [
+          4000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          4000,
+          20
+        ],
+        "observation_confidence": [
+          4000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          4000,
+          3
+        ],
+        "timestamps": [
+          4000,
+          6
+        ],
+        "visibility": [
+          4000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        4000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 4000,
+      "minimum_absolute_score": 0.7449865341186523,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 1000,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 1000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 1000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 1000,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 2000,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/physical_parameter_ood_c10",
+      "static_features_shape": [
+        4000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 2000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 2000,
+      "input_shapes": {
+        "candidate_actions": [
+          2000,
+          20,
+          3
+        ],
+        "history": [
+          2000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          2000,
+          20
+        ],
+        "observation_confidence": [
+          2000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          2000,
+          3
+        ],
+        "timestamps": [
+          2000,
+          6
+        ],
+        "visibility": [
+          2000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        2000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 2000,
+      "minimum_absolute_score": 0.7499865293502808,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 600,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 400,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 600,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 400,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 1000,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/physical_parameter_ood_c5",
+      "static_features_shape": [
+        2000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 5600,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 5600,
+      "input_shapes": {
+        "candidate_actions": [
+          5600,
+          20,
+          3
+        ],
+        "history": [
+          5600,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          5600,
+          20
+        ],
+        "observation_confidence": [
+          5600,
+          6,
+          1
+        ],
+        "tcp_state": [
+          5600,
+          3
+        ],
+        "timestamps": [
+          5600,
+          6
+        ],
+        "visibility": [
+          5600,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        5600
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 5600,
+      "minimum_absolute_score": 0.16963942348957062,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 1000,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 1800,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 1000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 1800,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 12000,
+        "attempted_pairs": 6000,
+        "attempted_parity_rule_accuracy": 0.7333333333333333,
+        "attempted_parity_rule_correct": 8800,
+        "attempted_parity_rule_total": 12000,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 5600,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 5600,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 5600,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 5600,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 5600
+        },
+        "filtered_nonflip_pairs": 3200,
+        "flip_pairs": 2800,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 5600,
+        "nonflip_pairs": 3200,
+        "nonflip_parity_rule_accuracy": 0.5,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 1800,
+          "10": 1000,
+          "11": 3200
+        },
+        "outcome_unique_keys": 6000,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 2800,
+        "retention_rate": 0.4666666666666667
+      },
+      "pairs": 2800,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/temporal_delay_ood",
+      "static_features_shape": [
+        5600,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 2800,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 2800,
+      "input_shapes": {
+        "candidate_actions": [
+          2800,
+          20,
+          3
+        ],
+        "history": [
+          2800,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          2800,
+          20
+        ],
+        "observation_confidence": [
+          2800,
+          6,
+          1
+        ],
+        "tcp_state": [
+          2800,
+          3
+        ],
+        "timestamps": [
+          2800,
+          6
+        ],
+        "visibility": [
+          2800,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        2800
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 2800,
+      "minimum_absolute_score": 0.16963942348957062,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 500,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 900,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 500,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 900,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 1400,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/temporal_delay_ood_c10",
+      "static_features_shape": [
+        2800,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 1400,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 1400,
+      "input_shapes": {
+        "candidate_actions": [
+          1400,
+          20,
+          3
+        ],
+        "history": [
+          1400,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          1400,
+          20
+        ],
+        "observation_confidence": [
+          1400,
+          6,
+          1
+        ],
+        "tcp_state": [
+          1400,
+          3
+        ],
+        "timestamps": [
+          1400,
+          6
+        ],
+        "visibility": [
+          1400,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        1400
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 1400,
+      "minimum_absolute_score": 0.16963942348957062,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 300,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 400,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 300,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 400,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 700,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/temporal_delay_ood_c5",
+      "static_features_shape": [
+        1400,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 12000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 12000,
+      "input_shapes": {
+        "candidate_actions": [
+          12000,
+          20,
+          3
+        ],
+        "history": [
+          12000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          12000,
+          20
+        ],
+        "observation_confidence": [
+          12000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          12000,
+          3
+        ],
+        "timestamps": [
+          12000,
+          6
+        ],
+        "visibility": [
+          12000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        12000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 12000,
+      "minimum_absolute_score": 0.018132533878087997,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 3000,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 3000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 3000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 3000,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 12000,
+        "attempted_pairs": 6000,
+        "attempted_parity_rule_accuracy": 1.0,
+        "attempted_parity_rule_correct": 12000,
+        "attempted_parity_rule_total": 12000,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 12000,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 12000,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 12000,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 12000,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 12000
+        },
+        "filtered_nonflip_pairs": 0,
+        "flip_pairs": 6000,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 12000,
+        "nonflip_pairs": 0,
+        "nonflip_parity_rule_accuracy": null,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 3000,
+          "10": 3000,
+          "11": 0
+        },
+        "outcome_unique_keys": 6000,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 6000,
+        "retention_rate": 1.0
+      },
+      "pairs": 6000,
+      "path": "outputs/actmask/milestone3r_nl_v2/full_raw/held_mechanism_ood",
+      "static_features_shape": [
+        12000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 48000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 48000,
+      "input_shapes": {
+        "candidate_actions": [
+          48000,
+          20,
+          3
+        ],
+        "history": [
+          48000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          48000,
+          20
+        ],
+        "observation_confidence": [
+          48000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          48000,
+          3
+        ],
+        "timestamps": [
+          48000,
+          6
+        ],
+        "visibility": [
+          48000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        48000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 48000,
+      "minimum_absolute_score": 0.43560197949409485,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 12000,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 12000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 12000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 12000,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 48000,
+        "attempted_pairs": 24000,
+        "attempted_parity_rule_accuracy": 1.0,
+        "attempted_parity_rule_correct": 48000,
+        "attempted_parity_rule_total": 48000,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 48000,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 48000,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 48000,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 48000,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 48000
+        },
+        "filtered_nonflip_pairs": 0,
+        "flip_pairs": 24000,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 48000,
+        "nonflip_pairs": 0,
+        "nonflip_parity_rule_accuracy": null,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 12000,
+          "10": 12000,
+          "11": 0
+        },
+        "outcome_unique_keys": 24000,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 24000,
+        "retention_rate": 1.0
+      },
+      "pairs": 24000,
+      "path": "outputs/actmask/milestone3r_nl_v2/full_raw/id_core",
+      "static_features_shape": [
+        48000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 12000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 12000,
+      "input_shapes": {
+        "candidate_actions": [
+          12000,
+          20,
+          3
+        ],
+        "history": [
+          12000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          12000,
+          20
+        ],
+        "observation_confidence": [
+          12000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          12000,
+          3
+        ],
+        "timestamps": [
+          12000,
+          6
+        ],
+        "visibility": [
+          12000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        12000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 12000,
+      "minimum_absolute_score": 0.01813310943543911,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 3000,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 3000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 3000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 3000,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 12000,
+        "attempted_pairs": 6000,
+        "attempted_parity_rule_accuracy": 1.0,
+        "attempted_parity_rule_correct": 12000,
+        "attempted_parity_rule_total": 12000,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 12000,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 12000,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 12000,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 12000,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 12000
+        },
+        "filtered_nonflip_pairs": 0,
+        "flip_pairs": 6000,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 12000,
+        "nonflip_pairs": 0,
+        "nonflip_parity_rule_accuracy": null,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 3000,
+          "10": 3000,
+          "11": 0
+        },
+        "outcome_unique_keys": 6000,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 6000,
+        "retention_rate": 1.0
+      },
+      "pairs": 6000,
+      "path": "outputs/actmask/milestone3r_nl_v2/full_raw/id_rotation",
+      "static_features_shape": [
+        12000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 8000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 8000,
+      "input_shapes": {
+        "candidate_actions": [
+          8000,
+          20,
+          3
+        ],
+        "history": [
+          8000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          8000,
+          20
+        ],
+        "observation_confidence": [
+          8000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          8000,
+          3
+        ],
+        "timestamps": [
+          8000,
+          6
+        ],
+        "visibility": [
+          8000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        8000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 8000,
+      "minimum_absolute_score": 0.7449865341186523,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 2000,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 2000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 2000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 2000,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 8000,
+        "attempted_pairs": 4000,
+        "attempted_parity_rule_accuracy": 1.0,
+        "attempted_parity_rule_correct": 8000,
+        "attempted_parity_rule_total": 8000,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 8000,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 8000,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 8000,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 8000,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 8000
+        },
+        "filtered_nonflip_pairs": 0,
+        "flip_pairs": 4000,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 8000,
+        "nonflip_pairs": 0,
+        "nonflip_parity_rule_accuracy": null,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 2000,
+          "10": 2000,
+          "11": 0
+        },
+        "outcome_unique_keys": 4000,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 4000,
+        "retention_rate": 1.0
+      },
+      "pairs": 4000,
+      "path": "outputs/actmask/milestone3r_nl_v2/full_raw/physical_parameter_ood",
+      "static_features_shape": [
+        8000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 5600,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 5600,
+      "input_shapes": {
+        "candidate_actions": [
+          5600,
+          20,
+          3
+        ],
+        "history": [
+          5600,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          5600,
+          20
+        ],
+        "observation_confidence": [
+          5600,
+          6,
+          1
+        ],
+        "tcp_state": [
+          5600,
+          3
+        ],
+        "timestamps": [
+          5600,
+          6
+        ],
+        "visibility": [
+          5600,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        5600
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 5600,
+      "minimum_absolute_score": 0.16963942348957062,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 1000,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 1800,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 1000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 1800,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 12000,
+        "attempted_pairs": 6000,
+        "attempted_parity_rule_accuracy": 0.7333333333333333,
+        "attempted_parity_rule_correct": 8800,
+        "attempted_parity_rule_total": 12000,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 5600,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 5600,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 5600,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 5600,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 5600
+        },
+        "filtered_nonflip_pairs": 3200,
+        "flip_pairs": 2800,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 5600,
+        "nonflip_pairs": 3200,
+        "nonflip_parity_rule_accuracy": 0.5,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 1800,
+          "10": 1000,
+          "11": 3200
+        },
+        "outcome_unique_keys": 6000,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 2800,
+        "retention_rate": 0.4666666666666667
+      },
+      "pairs": 2800,
+      "path": "outputs/actmask/milestone3r_nl_v2/full_raw/temporal_delay_ood",
+      "static_features_shape": [
+        5600,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 480,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 0.5,
+      "examples": 480,
+      "input_shapes": {
+        "candidate_actions": [
+          480,
+          20,
+          3
+        ],
+        "history": [
+          480,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          480,
+          20
+        ],
+        "observation_confidence": [
+          480,
+          6,
+          1
+        ],
+        "tcp_state": [
+          480,
+          3
+        ],
+        "timestamps": [
+          480,
+          6
+        ],
+        "visibility": [
+          480,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        480
+      ],
+      "metadata_parity_accuracy": 0.5,
+      "metadata_parity_correct": 240,
+      "minimum_absolute_score": 0.018131298944354057,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 120,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 120,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 120,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 120,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 480,
+        "attempted_pairs": 240,
+        "attempted_parity_rule_accuracy": 0.5,
+        "attempted_parity_rule_correct": 240,
+        "attempted_parity_rule_total": 480,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 480,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 480,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 480,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 480,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 480
+        },
+        "filtered_nonflip_pairs": 0,
+        "flip_pairs": 240,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 480,
+        "nonflip_pairs": 0,
+        "nonflip_parity_rule_accuracy": null,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 120,
+          "10": 120,
+          "11": 0
+        },
+        "outcome_unique_keys": 240,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 240,
+        "retention_rate": 1.0
+      },
+      "pairs": 240,
+      "path": "outputs/actmask/milestone3r_nl_v2/full_smoke_c20",
+      "static_features_shape": [
+        480,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 160,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 160,
+      "input_shapes": {
+        "candidate_actions": [
+          160,
+          20,
+          3
+        ],
+        "history": [
+          160,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          160,
+          20
+        ],
+        "observation_confidence": [
+          160,
+          6,
+          1
+        ],
+        "tcp_state": [
+          160,
+          3
+        ],
+        "timestamps": [
+          160,
+          6
+        ],
+        "visibility": [
+          160,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        160
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 160,
+      "minimum_absolute_score": 0.8755980134010315,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 40,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 40,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 40,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 40,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 160,
+        "attempted_pairs": 80,
+        "attempted_parity_rule_accuracy": 1.0,
+        "attempted_parity_rule_correct": 160,
+        "attempted_parity_rule_total": 160,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 160,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 160,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 160,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 160,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 160
+        },
+        "filtered_nonflip_pairs": 0,
+        "flip_pairs": 80,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 160,
+        "nonflip_pairs": 0,
+        "nonflip_parity_rule_accuracy": null,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 40,
+          "10": 40,
+          "11": 0
+        },
+        "outcome_unique_keys": 80,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 80,
+        "retention_rate": 1.0
+      },
+      "pairs": 80,
+      "path": "outputs/actmask/milestone3r_nl_v2/full_smoke_interleaved",
+      "static_features_shape": [
+        160,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 960,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 0.6,
+      "examples": 960,
+      "input_shapes": {
+        "candidate_actions": [
+          960,
+          20,
+          3
+        ],
+        "history": [
+          960,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          960,
+          20
+        ],
+        "observation_confidence": [
+          960,
+          6,
+          1
+        ],
+        "tcp_state": [
+          960,
+          3
+        ],
+        "timestamps": [
+          960,
+          6
+        ],
+        "visibility": [
+          960,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        960
+      ],
+      "metadata_parity_accuracy": 0.6,
+      "metadata_parity_correct": 576,
+      "minimum_absolute_score": 0.018132492899894714,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 240,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 240,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 240,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 240,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 480,
+      "path": "outputs/actmask/milestone3r_nl_v2/probe/held_mechanism_ood",
+      "static_features_shape": [
+        960,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 3200,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 0.6,
+      "examples": 3200,
+      "input_shapes": {
+        "candidate_actions": [
+          3200,
+          20,
+          3
+        ],
+        "history": [
+          3200,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          3200,
+          20
+        ],
+        "observation_confidence": [
+          3200,
+          6,
+          1
+        ],
+        "tcp_state": [
+          3200,
+          3
+        ],
+        "timestamps": [
+          3200,
+          6
+        ],
+        "visibility": [
+          3200,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        3200
+      ],
+      "metadata_parity_accuracy": 0.6,
+      "metadata_parity_correct": 1920,
+      "minimum_absolute_score": 0.018132438883185387,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 800,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 800,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 800,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 800,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 1600,
+      "path": "outputs/actmask/milestone3r_nl_v2/probe/id",
+      "static_features_shape": [
+        3200,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 640,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 0.6,
+      "examples": 640,
+      "input_shapes": {
+        "candidate_actions": [
+          640,
+          20,
+          3
+        ],
+        "history": [
+          640,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          640,
+          20
+        ],
+        "observation_confidence": [
+          640,
+          6,
+          1
+        ],
+        "tcp_state": [
+          640,
+          3
+        ],
+        "timestamps": [
+          640,
+          6
+        ],
+        "visibility": [
+          640,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        640
+      ],
+      "metadata_parity_accuracy": 0.6,
+      "metadata_parity_correct": 384,
+      "minimum_absolute_score": 0.7449951767921448,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 160,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 160,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 160,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 160,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 320,
+      "path": "outputs/actmask/milestone3r_nl_v2/probe/physical_parameter_ood",
+      "static_features_shape": [
+        640,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 448,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 0.5714285714285714,
+      "examples": 448,
+      "input_shapes": {
+        "candidate_actions": [
+          448,
+          20,
+          3
+        ],
+        "history": [
+          448,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          448,
+          20
+        ],
+        "observation_confidence": [
+          448,
+          6,
+          1
+        ],
+        "tcp_state": [
+          448,
+          3
+        ],
+        "timestamps": [
+          448,
+          6
+        ],
+        "visibility": [
+          448,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        448
+      ],
+      "metadata_parity_accuracy": 0.5714285714285714,
+      "metadata_parity_correct": 256,
+      "minimum_absolute_score": 0.16963712871074677,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 80,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 144,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 80,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 144,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 224,
+      "path": "outputs/actmask/milestone3r_nl_v2/probe/temporal_delay_ood",
+      "static_features_shape": [
+        448,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 960,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 0.6,
+      "examples": 960,
+      "input_shapes": {
+        "candidate_actions": [
+          960,
+          20,
+          3
+        ],
+        "history": [
+          960,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          960,
+          20
+        ],
+        "observation_confidence": [
+          960,
+          6,
+          1
+        ],
+        "tcp_state": [
+          960,
+          3
+        ],
+        "timestamps": [
+          960,
+          6
+        ],
+        "visibility": [
+          960,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        960
+      ],
+      "metadata_parity_accuracy": 0.6,
+      "metadata_parity_correct": 576,
+      "minimum_absolute_score": 0.018132492899894714,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 240,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 240,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 240,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 240,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 960,
+        "attempted_pairs": 480,
+        "attempted_parity_rule_accuracy": 0.6,
+        "attempted_parity_rule_correct": 576,
+        "attempted_parity_rule_total": 960,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 960,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 960,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 960,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 960,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 960
+        },
+        "filtered_nonflip_pairs": 0,
+        "flip_pairs": 480,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 960,
+        "nonflip_pairs": 0,
+        "nonflip_parity_rule_accuracy": null,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 240,
+          "10": 240,
+          "11": 0
+        },
+        "outcome_unique_keys": 480,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 480,
+        "retention_rate": 1.0
+      },
+      "pairs": 480,
+      "path": "outputs/actmask/milestone3r_nl_v2/probe_final/held_mechanism_ood",
+      "static_features_shape": [
+        960,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 3200,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 0.6,
+      "examples": 3200,
+      "input_shapes": {
+        "candidate_actions": [
+          3200,
+          20,
+          3
+        ],
+        "history": [
+          3200,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          3200,
+          20
+        ],
+        "observation_confidence": [
+          3200,
+          6,
+          1
+        ],
+        "tcp_state": [
+          3200,
+          3
+        ],
+        "timestamps": [
+          3200,
+          6
+        ],
+        "visibility": [
+          3200,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        3200
+      ],
+      "metadata_parity_accuracy": 0.6,
+      "metadata_parity_correct": 1920,
+      "minimum_absolute_score": 0.018132438883185387,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 800,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 800,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 800,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 800,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 3840,
+        "attempted_pairs": 1920,
+        "attempted_parity_rule_accuracy": 0.5833333333333334,
+        "attempted_parity_rule_correct": 2240,
+        "attempted_parity_rule_total": 3840,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 3200,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 3200,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 3200,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 3200,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 3200
+        },
+        "filtered_nonflip_pairs": 320,
+        "flip_pairs": 1600,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 3200,
+        "nonflip_pairs": 320,
+        "nonflip_parity_rule_accuracy": 0.5,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 800,
+          "10": 800,
+          "11": 320
+        },
+        "outcome_unique_keys": 1920,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 1600,
+        "retention_rate": 0.8333333333333334
+      },
+      "pairs": 1600,
+      "path": "outputs/actmask/milestone3r_nl_v2/probe_final/id",
+      "static_features_shape": [
+        3200,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 640,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 0.6,
+      "examples": 640,
+      "input_shapes": {
+        "candidate_actions": [
+          640,
+          20,
+          3
+        ],
+        "history": [
+          640,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          640,
+          20
+        ],
+        "observation_confidence": [
+          640,
+          6,
+          1
+        ],
+        "tcp_state": [
+          640,
+          3
+        ],
+        "timestamps": [
+          640,
+          6
+        ],
+        "visibility": [
+          640,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        640
+      ],
+      "metadata_parity_accuracy": 0.6,
+      "metadata_parity_correct": 384,
+      "minimum_absolute_score": 0.7449951767921448,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 160,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 160,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 160,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 160,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 960,
+        "attempted_pairs": 480,
+        "attempted_parity_rule_accuracy": 0.5666666666666667,
+        "attempted_parity_rule_correct": 544,
+        "attempted_parity_rule_total": 960,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 640,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 640,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 640,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 640,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 640
+        },
+        "filtered_nonflip_pairs": 160,
+        "flip_pairs": 320,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 640,
+        "nonflip_pairs": 160,
+        "nonflip_parity_rule_accuracy": 0.5,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 160,
+          "10": 160,
+          "11": 160
+        },
+        "outcome_unique_keys": 480,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 320,
+        "retention_rate": 0.6666666666666666
+      },
+      "pairs": 320,
+      "path": "outputs/actmask/milestone3r_nl_v2/probe_final/physical_parameter_ood",
+      "static_features_shape": [
+        640,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 448,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 0.5714285714285714,
+      "examples": 448,
+      "input_shapes": {
+        "candidate_actions": [
+          448,
+          20,
+          3
+        ],
+        "history": [
+          448,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          448,
+          20
+        ],
+        "observation_confidence": [
+          448,
+          6,
+          1
+        ],
+        "tcp_state": [
+          448,
+          3
+        ],
+        "timestamps": [
+          448,
+          6
+        ],
+        "visibility": [
+          448,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        448
+      ],
+      "metadata_parity_accuracy": 0.5714285714285714,
+      "metadata_parity_correct": 256,
+      "minimum_absolute_score": 0.16963712871074677,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 80,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 144,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 80,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 144,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 960,
+        "attempted_pairs": 480,
+        "attempted_parity_rule_accuracy": 0.5333333333333333,
+        "attempted_parity_rule_correct": 512,
+        "attempted_parity_rule_total": 960,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 448,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 448,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 448,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 448,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 448
+        },
+        "filtered_nonflip_pairs": 256,
+        "flip_pairs": 224,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 448,
+        "nonflip_pairs": 256,
+        "nonflip_parity_rule_accuracy": 0.5,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 144,
+          "10": 80,
+          "11": 256
+        },
+        "outcome_unique_keys": 480,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 224,
+        "retention_rate": 0.4666666666666667
+      },
+      "pairs": 224,
+      "path": "outputs/actmask/milestone3r_nl_v2/probe_final/temporal_delay_ood",
+      "static_features_shape": [
+        448,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 328,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 0.6097560975609756,
+      "examples": 328,
+      "input_shapes": {
+        "candidate_actions": [
+          328,
+          20,
+          3
+        ],
+        "history": [
+          328,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          328,
+          20
+        ],
+        "observation_confidence": [
+          328,
+          6,
+          1
+        ],
+        "tcp_state": [
+          328,
+          3
+        ],
+        "timestamps": [
+          328,
+          6
+        ],
+        "visibility": [
+          328,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        328
+      ],
+      "metadata_parity_accuracy": 0.6097560975609756,
+      "metadata_parity_correct": 200,
+      "minimum_absolute_score": 0.10807900875806808,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 76,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 88,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 76,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 88,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 164,
+      "path": "outputs/actmask/milestone3r_nl_v2/smoke",
+      "static_features_shape": [
+        328,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 320,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 0.6,
+      "examples": 320,
+      "input_shapes": {
+        "candidate_actions": [
+          320,
+          20,
+          3
+        ],
+        "history": [
+          320,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          320,
+          20
+        ],
+        "observation_confidence": [
+          320,
+          6,
+          1
+        ],
+        "tcp_state": [
+          320,
+          3
+        ],
+        "timestamps": [
+          320,
+          6
+        ],
+        "visibility": [
+          320,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        320
+      ],
+      "metadata_parity_accuracy": 0.6,
+      "metadata_parity_correct": 192,
+      "minimum_absolute_score": 0.43560174107551575,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 80,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 80,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 80,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 80,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 160,
+      "path": "outputs/actmask/milestone3r_nl_v2/smoke_fix1",
+      "static_features_shape": [
+        320,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 160,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 0.6,
+      "examples": 160,
+      "input_shapes": {
+        "candidate_actions": [
+          160,
+          20,
+          3
+        ],
+        "history": [
+          160,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          160,
+          20
+        ],
+        "observation_confidence": [
+          160,
+          6,
+          1
+        ],
+        "tcp_state": [
+          160,
+          3
+        ],
+        "timestamps": [
+          160,
+          6
+        ],
+        "visibility": [
+          160,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        160
+      ],
+      "metadata_parity_accuracy": 0.6,
+      "metadata_parity_correct": 96,
+      "minimum_absolute_score": 0.43560174107551575,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 40,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 40,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 40,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 40,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": null,
+      "pairs": 80,
+      "path": "outputs/actmask/milestone3r_nl_v2/smoke_fix2_rot",
+      "static_features_shape": [
+        160,
+        29
+      ],
+      "zero_score_count": 0
+    }
+  ],
+  "stored_examples_including_derived_duplicates": 247344
+}

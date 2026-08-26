@@ -1,0 +1,22 @@
+{
+  "errors": [],
+  "gpu_import_smoke_ok": true,
+  "observed_versions": {
+    "mani_skill": "3.0.1",
+    "numpy": "2.2.6",
+    "opencv_python": "4.10.0.84",
+    "python": "3.11.15",
+    "sapien": "3.0.3",
+    "torch": "2.6.0+cu124",
+    "torch_cuda": "12.4"
+  },
+  "pip_check_ok": true,
+  "status": "passed",
+  "version_checks": {
+    "mani_skill_exact": true,
+    "python_exact": true,
+    "sapien_exact": true,
+    "torch_cuda_exact": true,
+    "torch_exact": true
+  }
+}

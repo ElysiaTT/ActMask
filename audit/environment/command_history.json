@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "commands": [
+    {
+      "name": "create_isolated_conda_environment",
+      "command": [
+        "/root/miniconda3/bin/conda",
+        "create",
+        "-p",
+        "/data/envs/actmask-audit",
+        "python=3.11.15",
+        "pip",
+        "-y"
+      ],
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /root/miniconda3/bin/conda create -p /data/envs/actmask-audit python=3.11.15 pip -y",
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "exit_code": 0,
+      "evidence": "/data/envs/actmask-audit/conda-meta/history"
+    },
+    {
+      "name": "install_base_audit_dependencies",
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--retries",
+        "20",
+        "--resume-retries",
+        "20",
+        "--timeout",
+        "120",
+        "--report",
+        "/data/project/tzh/papers/ActMask/audit/environment/pip_base_install_report.json",
+        "numpy==2.2.6",
+        "PyYAML==6.0.2",
+        "matplotlib==3.10.3",
+        "pytest==8.4.1"
+      ],
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip install --retries 20 --resume-retries 20 --timeout 120 --report /data/project/tzh/papers/ActMask/audit/environment/pip_base_install_report.json numpy==2.2.6 PyYAML==6.0.2 matplotlib==3.10.3 pytest==8.4.1",
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "exit_code": 0,
+      "evidence": "/data/project/tzh/papers/ActMask/audit/environment/pip_base_install_report.json",
+      "note": "Two earlier downloads failed with IncompleteRead; the successful transaction is the one recorded here."
+    },
+    {
+      "name": "install_exact_torch_cuda124",
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--index-url",
+        "https://download.pytorch.org/whl/cu124",
+        "--extra-index-url",
+        "https://pypi.org/simple",
+        "--timeout",
+        "120",
+        "--retries",
+        "20",
+        "--resume-retries",
+        "20",
+        "--log",
+        "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_torch_2.6.0_cu124.log",
+        "--report",
+        "/data/project/tzh/papers/ActMask/audit/environment/pip_torch_2.6.0_cu124_report.json",
+        "torch==2.6.0+cu124"
+      ],
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip install --index-url https://download.pytorch.org/whl/cu124 --extra-index-url https://pypi.org/simple --timeout 120 --retries 20 --resume-retries 20 --log /data/project/tzh/papers/ActMask/audit/environment/logs/pip_torch_2.6.0_cu124.log --report /data/project/tzh/papers/ActMask/audit/environment/pip_torch_2.6.0_cu124_report.json 'torch==2.6.0+cu124'",
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "exit_code": 0,
+      "evidence": "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_torch_2.6.0_cu124.log"
+    },
+    {
+      "name": "install_local_sapien_maniskill_and_dependencies",
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--timeout",
+        "120",
+        "--retries",
+        "20",
+        "--resume-retries",
+        "20",
+        "--constraint",
+        "/data/project/tzh/papers/ActMask/audit/environment/core_constraints.txt",
+        "--log",
+        "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_maniskill_sapien.log",
+        "--report",
+        "/data/project/tzh/papers/ActMask/audit/environment/pip_maniskill_sapien_report.json",
+        "/data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/sapien-3.0.3-cp311-cp311-manylinux_2_28_x86_64.whl",
+        "/data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/mani_skill-3.0.1-py3-none-any.whl"
+      ],
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip install --timeout 120 --retries 20 --resume-retries 20 --constraint /data/project/tzh/papers/ActMask/audit/environment/core_constraints.txt --log /data/project/tzh/papers/ActMask/audit/environment/logs/pip_maniskill_sapien.log --report /data/project/tzh/papers/ActMask/audit/environment/pip_maniskill_sapien_report.json /data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/sapien-3.0.3-cp311-cp311-manylinux_2_28_x86_64.whl /data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/mani_skill-3.0.1-py3-none-any.whl",
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "exit_code": 0,
+      "evidence": "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_maniskill_sapien.log"
+    },
+    {
+      "name": "pin_recorded_opencv_auxiliary_version",
+      "command": [
+        "/data/envs/actmask-audit/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--constraint",
+        "/data/project/tzh/papers/ActMask/audit/environment/core_constraints.txt",
+        "--log",
+        "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_opencv_4.10.log",
+        "--report",
+        "/data/project/tzh/papers/ActMask/audit/environment/pip_opencv_4.10_report.json",
+        "opencv-python==4.10.0.84"
+      ],
+      "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip install --constraint /data/project/tzh/papers/ActMask/audit/environment/core_constraints.txt --log /data/project/tzh/papers/ActMask/audit/environment/logs/pip_opencv_4.10.log --report /data/project/tzh/papers/ActMask/audit/environment/pip_opencv_4.10_report.json opencv-python==4.10.0.84",
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "exit_code": 0,
+      "evidence": "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_opencv_4.10.log",
+      "note": "The dependency resolver first installed 5.0.0.93; this explicit transaction replaced it with the recorded 4.10.0.84 regular wheel."
+    },
+    {
+      "name": "route_existing_physx_gpu_asset_to_audit_home",
+      "command": [
+        "ln",
+        "-s",
+        "/data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+        "/data/project/tzh/papers/ActMask/audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so"
+      ],
+      "shell_command": "cd /data/project/tzh/papers/ActMask && mkdir -p audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0 && ln -s /data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so && ln -s /data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/linux-so.zip audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/linux-so.zip",
+      "cwd": "/data/project/tzh/papers/ActMask",
+      "exit_code": 0,
+      "evidence": "/data/project/tzh/papers/ActMask/audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+      "note": "No PhysX asset was downloaded. Both symlinks point to pre-existing project-local assets."
+    }
+  ]
+}

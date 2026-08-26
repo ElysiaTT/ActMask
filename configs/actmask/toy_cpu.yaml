@@ -1,0 +1,48 @@
+# Small, deterministic first-milestone experiment. All paths are resolved from
+# the ActMask project root, even when a module is launched from another cwd.
+seed: 2026
+device: cpu
+output_dir: outputs/actmask
+
+dataset:
+  num_points: 96
+  trajectory_steps: 16
+  train_samples: 64
+  val_samples: 24
+  test_samples: 32
+  train_seed: 2026
+  val_seed: 2027
+  test_seed: 2028
+
+model:
+  action_dim: 8
+  point_hidden_dim: 48
+  action_hidden_dim: 24
+  fusion_hidden_dim: 48
+
+training:
+  epochs: 5
+  batch_size: 8
+  learning_rate: 0.003
+  weight_decay: 0.0001
+  optimizer: adamw
+  compute_pos_weight: true
+  max_pos_weight: 20.0
+  threshold: 0.5
+  num_workers: 0
+  num_threads: 1
+  checkpoint_name: best_model.pt
+  metrics_name: training_metrics.json
+
+evaluation:
+  split: test
+  batch_size: 8
+  threshold: 0.5
+  num_workers: 0
+  metrics_name: evaluation_metrics.json
+
+visualization:
+  split: test
+  sample_index: 0
+  threshold: 0.5
+  filename: mask_comparison.png

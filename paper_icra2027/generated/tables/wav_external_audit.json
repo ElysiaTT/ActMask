@@ -1,0 +1,61 @@
+{
+  "metric": "official dynamic accuracy",
+  "rows": [
+    {
+      "complexity": 6,
+      "paired_mean": 0.8786056049213944,
+      "paired_std": 0.011706085864816234,
+      "sparse_idm_mean": 0.946684894053315,
+      "sparse_idm_std": 1.2412670766236366e-16,
+      "strongest_single_mean": 0.40956937799043064,
+      "strongest_single_std": 0.023506770771553286,
+      "test_count": 1000,
+      "transition_rule": 0.9466848940533151
+    },
+    {
+      "complexity": 8,
+      "paired_mean": 0.8526834327197303,
+      "paired_std": 0.020147542864757038,
+      "sparse_idm_mean": 0.9532797511018927,
+      "sparse_idm_std": 0.00021691989280117477,
+      "strongest_single_mean": 0.37811770806326167,
+      "strongest_single_std": 0.052019633620383005,
+      "test_count": 2500,
+      "transition_rule": 0.9577391755250194
+    },
+    {
+      "complexity": 10,
+      "paired_mean": 0.8050606220347918,
+      "paired_std": 0.04406285181123363,
+      "sparse_idm_mean": 0.9400632577754349,
+      "sparse_idm_std": 0.0006615656509231182,
+      "strongest_single_mean": 0.32920400632577757,
+      "strongest_single_std": 0.04683912099299835,
+      "test_count": 2500,
+      "transition_rule": 0.9515023721665788
+    },
+    {
+      "complexity": 12,
+      "paired_mean": 0.8107502799552071,
+      "paired_std": 0.04319845828328008,
+      "sparse_idm_mean": 0.9511758118701007,
+      "sparse_idm_std": 0.0006445052874144184,
+      "strongest_single_mean": 0.34260918253079503,
+      "strongest_single_std": 0.04231465307202412,
+      "test_count": 2500,
+      "transition_rule": 0.9624860022396416
+    },
+    {
+      "complexity": 14,
+      "paired_mean": 0.8004784688995216,
+      "paired_std": 0.040543963625475396,
+      "sparse_idm_mean": 0.9466241360978204,
+      "sparse_idm_std": 0.0015200402398187949,
+      "strongest_single_mean": 0.3412546517809676,
+      "strongest_single_std": 0.08322746960475763,
+      "test_count": 2500,
+      "transition_rule": 0.9691653375863902
+    }
+  ],
+  "schema": "actmask-icra2027-wav-external-audit-v1"
+}

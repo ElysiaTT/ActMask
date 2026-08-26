@@ -1,0 +1,258 @@
+{
+  "claims": [
+    {
+      "allowed_scope": "controlled state-observation benchmark",
+      "claim": "The final state benchmark uses execution-grounded, action-diverse matched pairs.",
+      "forbidden_scope": "visual, real-robot, safety, or policy claim",
+      "id": "ICRA-C1",
+      "selectors": [
+        "candidate_diversity",
+        "rankings.C20",
+        "full_gate_passed"
+      ],
+      "source": "outputs/actmask/milestone3r_nl_v2/full_evaluation/full_evaluation.json"
+    },
+    {
+      "allowed_scope": "base-world-clustered frozen state benchmark effect",
+      "claim": "GRU exceeds the validation-selected fair analytic baseline by 0.400 ID pair-order accuracy.",
+      "forbidden_scope": "open-world population or physical-system interval",
+      "id": "ICRA-C2",
+      "selectors": [
+        "pair_order",
+        "test_units",
+        "correction"
+      ],
+      "source": "outputs/actmask/milestone3r_nl_v2_statsfix/world_cluster_bootstrap.json",
+      "value": {
+        "base_worlds": 300,
+        "ci95": [
+          0.37666666666666665,
+          0.4216666666666667
+        ],
+        "delta": 0.4
+      }
+    },
+    {
+      "allowed_scope": "named procedural OOD cells",
+      "claim": "The state result has positive advantage on three frozen OOD axes.",
+      "forbidden_scope": "general OOD or sim-to-real claim",
+      "id": "ICRA-C3",
+      "selectors": [
+        "ood"
+      ],
+      "source": "outputs/actmask/milestone3r_nl_v2/full_evaluation/full_evaluation.json",
+      "value": [
+        {
+          "analytic": 0.5,
+          "axis": "physical_parameter_ood",
+          "best_analytic": "LastTwoFrameFiniteDifference",
+          "learned": 1.0
+        },
+        {
+          "analytic": 0.8571428571428571,
+          "axis": "temporal_delay_ood",
+          "best_analytic": "MultiFrameLinearVelocity",
+          "learned": 1.0
+        },
+        {
+          "analytic": 0.6666666666666666,
+          "axis": "held_mechanism_ood",
+          "best_analytic": "MultiFrameLinearVelocity",
+          "learned": 0.7866666666666666
+        }
+      ]
+    },
+    {
+      "allowed_scope": "negative visual benchmark-admission result",
+      "claim": "The RGB-D benchmark admission case is saturated by a fair centroid-velocity control.",
+      "forbidden_scope": "positive visual method or hard-benchmark claim",
+      "id": "ICRA-C4",
+      "selectors": [
+        "tasks.*.fair.*.combined_held_dropout"
+      ],
+      "source": "outputs/actmask/milestone4r_v3_all_family_candidate_diversity/full_probe/standard_baseline_report.json",
+      "value": [
+        {
+          "action_only": 0.5,
+          "centroid_top1": 0.6733333333333333,
+          "centroid_velocity": 1.0,
+          "current_rgbd": 0.5,
+          "family": "Moving cube",
+          "ordered_rgbd_gru": 0.6646666666666667,
+          "world_pointcloud_gru": 0.86
+        },
+        {
+          "action_only": 0.5,
+          "centroid_top1": 0.6533333333333333,
+          "centroid_velocity": 1.0,
+          "current_rgbd": 0.5,
+          "family": "Moving window",
+          "ordered_rgbd_gru": 0.5366666666666667,
+          "world_pointcloud_gru": 0.7266666666666667
+        },
+        {
+          "action_only": 0.5,
+          "centroid_top1": 0.7266666666666666,
+          "centroid_velocity": 1.0,
+          "current_rgbd": 0.5,
+          "family": "Rotating window",
+          "ordered_rgbd_gru": 0.5693333333333334,
+          "world_pointcloud_gru": 0.7666666666666666
+        }
+      ]
+    },
+    {
+      "allowed_scope": "three-seed point estimates only",
+      "claim": "Visual pair-order confidence intervals are suppressed because they target a different estimator.",
+      "forbidden_scope": "the frozen non-comparable visual intervals",
+      "id": "ICRA-C5",
+      "selectors": [
+        "pair_order_point_estimate",
+        "pair_order_ci95",
+        "ci_status"
+      ],
+      "source": "outputs/actmask/milestone5a_relational_probe/corrected_4r_v3_reporting_note.json",
+      "value": {
+        "all_other_metrics": "retain point estimates; no CI was stored in the frozen report",
+        "ci_status": "suppressed because frozen CI targets a score-ensemble bootstrap estimand rather than the displayed seed-average metric",
+        "pair_order_ci95": null,
+        "pair_order_point_estimate": "retain frozen three-seed mean",
+        "replacement_scope": "Derived 5A reporting only; it does not overwrite 4R-v3 raw outputs or decision.",
+        "schema": "milestone5a-corrected-derived-reporting-note-v1",
+        "source_is_frozen": true
+      }
+    },
+    {
+      "allowed_scope": "frozen protocol accounting",
+      "claim": "The frozen state protocol accounts for 92,000 candidate executions and aligned C5/C10/C20 views.",
+      "forbidden_scope": "claim that all 92,000 executions are independent worlds",
+      "id": "ICRA-C6",
+      "selectors": [
+        "candidate_execution_budget",
+        "candidate_counts",
+        "world_counts"
+      ],
+      "source": "outputs/actmask/milestone3r_nl_v2/full_run_config.json",
+      "value": {
+        "candidate_counts": [
+          5,
+          10,
+          20
+        ],
+        "candidate_execution_budget": 92000
+      }
+    },
+    {
+      "allowed_scope": "three procedural visual families",
+      "claim": "The visual pilot passes its declared matching, schema, and candidate-diversity audits before model admission is considered.",
+      "forbidden_scope": "real-camera or general visual benchmark validity",
+      "id": "ICRA-C7",
+      "selectors": [
+        "passed",
+        "tasks.*.pair_matching",
+        "tasks.*.candidate_diversity"
+      ],
+      "source": "outputs/actmask/milestone4r_v3_all_family_candidate_diversity/full_probe/robust_audit.json"
+    },
+    {
+      "allowed_scope": "corrected within-history candidate ranking",
+      "claim": "History-keyed C5/C10/C20 ranking uses 600 mixed-outcome test contexts and retains a 1.000 versus 0.500 Top-1 separation.",
+      "forbidden_scope": "the superseded branch-pooled ranking table",
+      "id": "ICRA-C8",
+      "selectors": [
+        "correction",
+        "rankings",
+        "raw_scores"
+      ],
+      "source": "outputs/actmask/milestone3r_nl_v2_rankfix/rankfix_report.json"
+    },
+    {
+      "allowed_scope": "negative admission result for logged continuation identification",
+      "claim": "The public UR5 logged-continuation task is rejected because alternate candidates lack matched physical re-execution and a standard baseline saturates validation.",
+      "forbidden_scope": "counterfactual real-robot success prediction or real-robot transfer",
+      "id": "ICRA-C9",
+      "selectors": [
+        "claim_scope",
+        "heldout_goal_object",
+        "decision"
+      ],
+      "source": "outputs/actmask/r_series_real_robot_verification/asu_attempts/asu_ur5_object_relation_heldout_goal_object_v1/r5_final_decision.json",
+      "value": {
+        "candidate_sets": 1151,
+        "episodes": 84,
+        "proprio_gru_test": 0.9504373177842566,
+        "proprio_gru_validation": 0.9719430485762145
+      }
+    },
+    {
+      "allowed_scope": "public WAV MiniGrid inverse-dynamics state-complexity benchmark under frozen evidence controls",
+      "claim": "On the pinned public WAV MiniGrid state-complexity split, paired observations beat the strongest single-state control by at least 0.459 dynamic accuracy at every tested complexity.",
+      "forbidden_scope": "WAV robot experiments, Action Following Score, real-robot verification, or general benchmark validity",
+      "id": "ICRA-C10",
+      "selectors": [
+        "upstream",
+        "summaries",
+        "decision"
+      ],
+      "source": "outputs/actmask/icra2027_wav_external_audit/audit.json",
+      "value": [
+        {
+          "complexity": 6,
+          "paired_mean": 0.8786056049213944,
+          "paired_std": 0.011706085864816234,
+          "sparse_idm_mean": 0.946684894053315,
+          "sparse_idm_std": 1.2412670766236366e-16,
+          "strongest_single_mean": 0.40956937799043064,
+          "strongest_single_std": 0.023506770771553286,
+          "test_count": 1000,
+          "transition_rule": 0.9466848940533151
+        },
+        {
+          "complexity": 8,
+          "paired_mean": 0.8526834327197303,
+          "paired_std": 0.020147542864757038,
+          "sparse_idm_mean": 0.9532797511018927,
+          "sparse_idm_std": 0.00021691989280117477,
+          "strongest_single_mean": 0.37811770806326167,
+          "strongest_single_std": 0.052019633620383005,
+          "test_count": 2500,
+          "transition_rule": 0.9577391755250194
+        },
+        {
+          "complexity": 10,
+          "paired_mean": 0.8050606220347918,
+          "paired_std": 0.04406285181123363,
+          "sparse_idm_mean": 0.9400632577754349,
+          "sparse_idm_std": 0.0006615656509231182,
+          "strongest_single_mean": 0.32920400632577757,
+          "strongest_single_std": 0.04683912099299835,
+          "test_count": 2500,
+          "transition_rule": 0.9515023721665788
+        },
+        {
+          "complexity": 12,
+          "paired_mean": 0.8107502799552071,
+          "paired_std": 0.04319845828328008,
+          "sparse_idm_mean": 0.9511758118701007,
+          "sparse_idm_std": 0.0006445052874144184,
+          "strongest_single_mean": 0.34260918253079503,
+          "strongest_single_std": 0.04231465307202412,
+          "test_count": 2500,
+          "transition_rule": 0.9624860022396416
+        },
+        {
+          "complexity": 14,
+          "paired_mean": 0.8004784688995216,
+          "paired_std": 0.040543963625475396,
+          "sparse_idm_mean": 0.9466241360978204,
+          "sparse_idm_std": 0.0015200402398187949,
+          "strongest_single_mean": 0.3412546517809676,
+          "strongest_single_std": 0.08322746960475763,
+          "test_count": 2500,
+          "transition_rule": 0.9691653375863902
+        }
+      ]
+    }
+  ],
+  "schema": "actmask-icra2027-claim-ledger-v1"
+}

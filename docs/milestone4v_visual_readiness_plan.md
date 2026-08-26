@@ -1,0 +1,11 @@
+# Milestone 4V visual-stage readiness plan (planning only)
+
+Passing 3R-NL-v2 authorizes this plan, **not** visual execution. Do not install Vulkan, use sudo, generate RGB-D data, download assets/models, or run renderer experiments without separate human authorization.
+
+A visual stage would need to show that an observation pipeline preserves the same counterfactual distinction without hidden simulator metadata, while separately measuring perception/tracking failures. First qualify a minimal SAPIEN renderer only with a human-approved Vulkan/driver smoke test, then specify RGB-D, depth, and optional point-cloud schemas (camera intrinsics/extrinsics, timestamp, visibility/confidence, segmentation policy). Map visual outputs to the current state-only inputs through documented tracking and correspondence assumptions; never pass object/branch/mechanism IDs or future state.
+
+Fair baselines should include image-static, action-only, unordered-frame, last-two-frame, classical tracking/velocity estimation, and lightweight temporal visual models under identical train/validation/test worlds. Audit hidden fields, camera identifiers, template/index rates, split contamination, OOD overlap, label balance, and pair-swap validity. New expected failure modes include occlusion, association swaps, depth noise, camera-motion confounds, synchronization error, texture/lighting shortcut, and renderer nondeterminism.
+
+Minimum authorized smoke tests would be: renderer determinism, RGB-D schema validation, no-hidden-field inspection, one paired world with valid correspondence, and a no-GPU-simulation paper-package regression. Stop if Vulkan qualification is incomplete, observations leak simulator IDs, pairs no longer map under the visual transform, labels are unavailable, or storage/GPU estimates exceed the approved budget.
+
+Before execution, a human must approve renderer installation/configuration, GPU-hours, storage, assets, camera protocol, new success/split definitions, and a preregistered visual gate. Estimate and approve storage per frame bundle and total world/candidate count before generation; reserve a separate GPU budget for rendering and model training rather than reusing frozen-state-only evidence.

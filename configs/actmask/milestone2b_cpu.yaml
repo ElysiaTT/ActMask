@@ -1,0 +1,59 @@
+# Milestone 2B canonical CPU-only experiment.  These gates are fixed before
+# evaluation and must not be relaxed after observing the results.
+experiment:
+  name: milestone2b_make_dynamics_necessary
+  output_dir: outputs/actmask/milestone2b
+  seeds: [1401, 2403, 3407, 4411, 5413]
+  device: cpu
+  deterministic: true
+
+dataset:
+  seed: 20260714
+  observation_frames: 4
+  future_steps: 32
+  num_points: 48
+  groups:
+    train: 72
+    val: 24
+    test: 24
+  ood_groups_per_axis: 8
+  observation_noise_std: 0.006
+  point_dropout_rate: 0.04
+  occlusion_rate: 0.08
+
+model:
+  history_hidden_dim: 32
+  action_hidden_dim: 20
+  fusion_hidden_dim: 56
+  contact_hidden_dim: 32
+  utility_hidden_dim: 32
+
+training:
+  epochs: 12
+  batch_size: 66
+  learning_rate: 0.003
+  weight_decay: 0.0001
+  max_pos_weight: 12.0
+  num_threads: 1
+  loss_coefficients:
+    mask_bce: 1.0
+    contact_time_bce: 0.20
+    success_bce: 0.45
+    pairwise_ranking: 0.30
+    velocity_counterfactual: 0.25
+    action_counterfactual: 0.25
+    irrelevant_stability: 0.10
+
+evaluation:
+  batch_size: 88
+  primary_model: TemporalActMask
+  previous_full_top1: 0.50
+  gates:
+    action_ap_drop: 0.05
+    history_removal_ap_drop: 0.05
+    history_shuffle_ap_drop: 0.05
+    velocity_counterfactual_accuracy: 0.80
+    action_counterfactual_accuracy: 0.80
+    irrelevant_stability: 0.85
+    top1_improvement: 0.15
+

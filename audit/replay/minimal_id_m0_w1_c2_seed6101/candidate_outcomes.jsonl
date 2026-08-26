@@ -1,0 +1,2 @@
+{"branch0_success": true, "branch1_success": false, "candidate_id": 0, "condition": "id", "family": "damped_moving_capture", "mechanism": "history_identifiable_damping_drive", "pair_flip": true, "world_id": 0}
+{"branch0_success": false, "branch1_success": true, "candidate_id": 1, "condition": "id", "family": "damped_moving_capture", "mechanism": "history_identifiable_damping_drive", "pair_flip": true, "world_id": 0}

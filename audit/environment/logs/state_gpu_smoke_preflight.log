@@ -1,0 +1,30 @@
+/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/_vulkan_tricks.py:42: UserWarning: Failed to find system libvulkan. Fallback to SAPIEN builtin libvulkan.
+  warn("Failed to find system libvulkan. Fallback to SAPIEN builtin libvulkan.")
+/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/_vulkan_tricks.py:78: UserWarning: Failed to find Vulkan ICD file. This is probably due to an incorrect or partial installation of the NVIDIA driver. SAPIEN will attempt to provide an ICD file anyway but it may not work.
+  warn(
+{
+  "cuda": "12.4",
+  "gpu": "NVIDIA A16",
+  "gpu_vector_smoke": {
+    "aggregate_steps_per_second": 1136.9798208800396,
+    "control_steps": 40,
+    "num_envs": 8,
+    "observation_shape": [
+      8,
+      20
+    ]
+  },
+  "peak_torch_gpu_memory_bytes": 24064,
+  "state_observation_smoke": {
+    "deterministic_reset": true,
+    "observation_shape": [
+      1,
+      20
+    ],
+    "success_field_present": true
+  },
+  "task_id": "ActMaskMovingCubeIntercept-v1",
+  "torch": "2.6.0+cu124",
+  "visual_rgbd_pointcloud_status": "blocked: vulkaninfo is unavailable and prior SAPIEN renderer probe failed to find a rendering device; no system package was installed",
+  "vulkaninfo_available": false
+}

@@ -1,0 +1,89 @@
+# Canonical Milestone 2 evaluation experiment.  The five entries below are
+# training-initialization seeds; every learned variant sees the same persisted
+# group split and the same minibatch order for a given seed.
+experiment:
+  name: milestone2_evaluation_cpu
+  output_dir: outputs/actmask/milestone2_evaluation
+  seeds: [1301, 2303, 3307, 4327, 5347]
+  device: cpu
+  deterministic: true
+  resume: true
+  stages: [prepare, train, evaluate, report]
+
+dataset:
+  seed: 20260713
+  num_points: 96
+  trajectory_steps: 32
+  groups:
+    train: 40
+    val: 16
+    test: 20
+  variants_per_group: 2
+  ood_groups_per_axis: 10
+  # These are the seven required held-out axes.  Their parameter supports are
+  # defined by the Milestone2DynamicDataset data API and never sampled by ID
+  # training, validation, or test collections.
+  ood_axes:
+    - unseen_velocity_magnitude
+    - unseen_acceleration
+    - unseen_action_duration
+    - unseen_gripper_radius
+    - unseen_trajectory_curvature
+    - increased_point_noise
+    - increased_distractor_count
+  # null samples strictly inside the declared ID range; OOD noise uses its
+  # separate held-out support.
+  position_noise_std: null
+  velocity_noise_std: 0.012
+  # Stale observed velocity is a sensor-timing perturbation only; labels still
+  # use the exact physical future trajectory.  This is distinct from the
+  # delayed-onset dynamics scenario.
+  temporal_velocity_delay: 0.04
+  point_dropout_rate: 0.05
+
+ranking:
+  candidate_types: [successful, failed, wrong_timing, wrong_direction, near_miss]
+  candidates_per_scene: 5
+
+model:
+  action_dim: 8
+  point_hidden_dim: 40
+  action_hidden_dim: 20
+  fusion_hidden_dim: 40
+
+training:
+  variants: [Full, NoVelocity, NoAction, PositionOnly]
+  epochs: 6
+  batch_size: 8
+  learning_rate: 0.003
+  weight_decay: 0.0001
+  optimizer: adamw
+  compute_pos_weight: true
+  max_pos_weight: 20.0
+  num_workers: 0
+  num_threads: 1
+
+evaluation:
+  batch_size: 16
+  num_workers: 0
+  threshold_grid_size: 201
+  shuffled_variants: [ShuffledVelocity, ShuffledAction, TimeShuffled]
+  # Baseline names are resolved by the evaluation API.  Baseline thresholds,
+  # like learned thresholds, are selected on ID validation AP/F1 records only.
+  baselines:
+    - NoMask
+    - MotionMagnitudeMask
+    - CurrentPositionProximity
+    - FuturePositionProximity
+    - TimeAlignedTrajectoryProximity
+    - GeometricOracle
+  # GeometricOracle consumes exact simulated trajectories only in evaluation;
+  # it is an upper bound and excluded from fair learned-baseline selection.
+  oracle_name: GeometricOracle
+  primary_metrics: [iou, precision, recall, f1, average_precision]
+  bootstrap_samples: 0
+
+reporting:
+  save_pr_plots: true
+  save_failure_visualizations: true
+  float_precision: 6

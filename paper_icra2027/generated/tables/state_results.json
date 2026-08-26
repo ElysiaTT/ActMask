@@ -1,0 +1,33 @@
+{
+  "rows": [
+    {
+      "analytic": 0.6,
+      "analytic_method": "MultiFrameLinearVelocity",
+      "delta": 0.4,
+      "learned": 1.0,
+      "split": "ID"
+    },
+    {
+      "analytic": 0.5,
+      "analytic_method": "LastTwoFrameFiniteDifference",
+      "delta": 0.5,
+      "learned": 1.0,
+      "split": "Physical OOD"
+    },
+    {
+      "analytic": 0.8571428571428571,
+      "analytic_method": "MultiFrameLinearVelocity",
+      "delta": 0.1428571428571429,
+      "learned": 1.0,
+      "split": "Delay OOD"
+    },
+    {
+      "analytic": 0.6666666666666666,
+      "analytic_method": "MultiFrameLinearVelocity",
+      "delta": 0.12,
+      "learned": 0.7866666666666666,
+      "split": "Held mechanism"
+    }
+  ],
+  "schema": "actmask-icra2027-state-results-v1"
+}

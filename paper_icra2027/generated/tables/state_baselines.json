@@ -1,0 +1,110 @@
+{
+  "rows": [
+    {
+      "category": "Analytic",
+      "method": "Last-two finite difference",
+      "source_method": "LastTwoFrameFiniteDifference",
+      "test": 0.5,
+      "validation": 0.5
+    },
+    {
+      "category": "Analytic",
+      "method": "Multi-frame linear velocity",
+      "source_method": "MultiFrameLinearVelocity",
+      "test": 0.6,
+      "validation": 0.6
+    },
+    {
+      "category": "Analytic",
+      "method": "Robust linear velocity",
+      "source_method": "RobustLinearVelocity",
+      "test": 0.6,
+      "validation": 0.6
+    },
+    {
+      "category": "Analytic",
+      "method": "Constant-acceleration fit",
+      "source_method": "ConstantAccelerationFit",
+      "test": 0.4,
+      "validation": 0.4
+    },
+    {
+      "category": "Analytic",
+      "method": "Alpha--beta filter",
+      "source_method": "AlphaBetaFilter",
+      "test": 0.6,
+      "validation": 0.6
+    },
+    {
+      "category": "Analytic",
+      "method": "Kalman constant velocity",
+      "source_method": "KalmanFilterConstantVelocity",
+      "test": 0.6,
+      "validation": 0.6
+    },
+    {
+      "category": "Analytic",
+      "method": "Kalman constant acceleration",
+      "source_method": "KalmanFilterConstantAcceleration",
+      "test": 0.6,
+      "validation": 0.6
+    },
+    {
+      "category": "Analytic",
+      "method": "Exponential smoothing",
+      "source_method": "ExponentialSmoothingVelocity",
+      "test": 0.4,
+      "validation": 0.4
+    },
+    {
+      "category": "Learned (3)",
+      "method": "Static MLP",
+      "source_method": "StaticMLP",
+      "test": 0.5,
+      "validation": 0.5
+    },
+    {
+      "category": "Learned (3)",
+      "method": "Action-only MLP",
+      "source_method": "ActionMLP",
+      "test": 0.5,
+      "validation": 0.5
+    },
+    {
+      "category": "Learned (3)",
+      "method": "Unordered-history MLP",
+      "source_method": "UnorderedHistoryMLP",
+      "test": 0.5,
+      "validation": 0.5
+    },
+    {
+      "category": "Learned (3)",
+      "method": "Temporal convolution",
+      "source_method": "TemporalConv1D",
+      "test": 0.5,
+      "validation": 0.5
+    },
+    {
+      "category": "Learned (3)",
+      "method": "Ordered temporal MLP",
+      "source_method": "OrderedTemporalMLP",
+      "test": 0.9,
+      "validation": 0.9
+    },
+    {
+      "category": "Learned (3)",
+      "method": "GRU selection run",
+      "source_method": "GRU",
+      "test": 0.9848333333333333,
+      "validation": 0.9866666666666667
+    },
+    {
+      "category": "Confirm. (5)",
+      "method": "GRU confirmation",
+      "source_method": "GRUFiveSeed",
+      "test": 1.0,
+      "validation": 1.0
+    }
+  ],
+  "schema": "actmask-icra2027-state-baselines-v1"
+}

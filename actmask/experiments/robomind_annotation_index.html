@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoboMIND 机器人前景标注</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">ACTMASK · HUMAN REFERENCE</p>
+      <h1>RoboMIND 机器人前景标注</h1>
+    </div>
+    <div class="top-actions">
+      <div class="progress-wrap" aria-label="标注进度">
+        <span id="progressText">载入中…</span>
+        <div class="progress-track"><div id="progressBar"></div></div>
+      </div>
+      <button id="nextPendingBtn" class="button subtle">下一个未标注 <kbd>N</kbd></button>
+      <button id="saveBtn" class="button primary">保存本帧 <kbd>Ctrl</kbd>+<kbd>S</kbd></button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar left-panel">
+      <section class="card compact">
+        <label for="annotatorInput">标注人（可选）</label>
+        <input id="annotatorInput" maxlength="80" placeholder="例如：tzh">
+      </section>
+      <section class="card compact">
+        <div class="section-title"><span>帧列表</span><span id="listCount" class="muted"></span></div>
+        <label for="filterSelect" class="visually-hidden">筛选帧</label>
+        <select id="filterSelect">
+          <option value="pending">仅未标注</option>
+          <option value="all">全部 200 帧</option>
+          <option value="completed">已标注</option>
+        </select>
+        <div id="frameList" class="frame-list" aria-label="标注帧列表"></div>
+      </section>
+    </aside>
+
+    <section class="workspace">
+      <div class="meta-row">
+        <div>
+          <p id="positionText" class="eyebrow">—</p>
+          <h2 id="taskTitle">正在载入图像…</h2>
+          <p id="frameMeta" class="muted"></p>
+        </div>
+        <div id="saveState" class="state-chip">未保存</div>
+      </div>
+
+      <div id="canvasViewport" class="canvas-viewport" aria-label="图像与机器人掩码画布">
+        <div id="canvasStage" class="canvas-stage">
+          <canvas id="imageCanvas" width="640" height="480"></canvas>
+          <canvas id="maskCanvas" width="640" height="480"></canvas>
+          <canvas id="maskDataCanvas" width="640" height="480" hidden></canvas>
+        </div>
+        <div id="loading" class="loading">正在载入图像…</div>
+      </div>
+
+      <div class="canvas-controls">
+        <button id="previousBtn" class="button subtle">← 上一帧 <kbd>A</kbd></button>
+        <button id="nextBtn" class="button subtle">下一帧 <kbd>D</kbd> →</button>
+        <span class="divider"></span>
+        <button id="zoomOutBtn" class="button icon" title="缩小">−</button>
+        <span id="zoomText" class="zoom-label">100%</span>
+        <button id="zoomInBtn" class="button icon" title="放大">＋</button>
+        <button id="resetViewBtn" class="button subtle">重置视图</button>
+      </div>
+    </section>
+
+    <aside class="sidebar right-panel">
+      <section class="card tools-card">
+        <div class="section-title"><span>标注工具</span><span id="toolText" class="tool-indicator">画笔</span></div>
+        <div class="tool-grid">
+          <button id="brushBtn" class="button tool active">画笔 <kbd>B</kbd></button>
+          <button id="eraserBtn" class="button tool">橡皮 <kbd>E</kbd></button>
+        </div>
+        <label for="brushSize">笔刷大小 <strong id="brushSizeValue">24 px</strong></label>
+        <input id="brushSize" type="range" min="2" max="100" value="24">
+        <div class="tool-grid">
+          <button id="undoBtn" class="button subtle">撤销 <kbd>Ctrl</kbd>+<kbd>Z</kbd></button>
+          <button id="clearBtn" class="button danger">清空本帧</button>
+        </div>
+        <label class="toggle-row"><input id="overlayToggle" type="checkbox" checked> 显示红色掩码叠加层 <kbd>H</kbd></label>
+      </section>
+
+      <section class="card note-card">
+        <label for="noteInput">本帧备注（可选）</label>
+        <textarea id="noteInput" rows="4" maxlength="1000" placeholder="例如：夹爪与杯子接触，边界已仔细处理"></textarea>
+      </section>
+
+      <section class="card guide-card">
+        <div class="section-title"><span>标注规则</span></div>
+        <ul>
+          <li>只涂可见的 Franka 机械臂、腕部和夹爪。</li>
+          <li>被抓取或接触的物体始终不属于机器人。</li>
+          <li>桌面、工具、阴影、反光和背景都不涂。</li>
+          <li>遮挡边界以可见的前景表面为准，不补全隐藏部分。</li>
+        </ul>
+      </section>
+
+      <section class="shortcut-grid" aria-label="快捷键">
+        <span><kbd>B</kbd> 画笔</span><span><kbd>E</kbd> 橡皮</span>
+        <span><kbd>A</kbd>/<kbd>D</kbd> 前后帧</span><span><kbd>[</kbd>/<kbd>]</kbd> 笔刷</span>
+      </section>
+    </aside>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

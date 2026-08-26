@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.idea/
+.vscode/
+outputs/actmask/
+
+# Local simulator/environment caches and generated bundles
+.maniskill_data/
+.tools/
+outputs/
+dist/
+
+# Generated model/data artifacts
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+*.tfrecord*

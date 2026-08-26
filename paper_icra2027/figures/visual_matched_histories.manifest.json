@@ -1,0 +1,108 @@
+{
+  "audits": [
+    {
+      "candidate_slot": 0,
+      "condition": "complete",
+      "early_rgb_differs": true,
+      "exact_final_two_depth": true,
+      "exact_final_two_rgb": true,
+      "history_refs": [
+        42,
+        43
+      ],
+      "outcomes": [
+        true,
+        false
+      ],
+      "same_candidate_action": true,
+      "split": "test",
+      "task": "MovingCubeIntercept",
+      "world_id": 21
+    },
+    {
+      "candidate_slot": 0,
+      "condition": "complete",
+      "early_rgb_differs": true,
+      "exact_final_two_depth": true,
+      "exact_final_two_rgb": true,
+      "history_refs": [
+        42,
+        43
+      ],
+      "outcomes": [
+        true,
+        false
+      ],
+      "same_candidate_action": true,
+      "split": "test",
+      "task": "SignedMovingWindowPlacement",
+      "world_id": 21
+    },
+    {
+      "candidate_slot": 0,
+      "condition": "complete",
+      "early_rgb_differs": true,
+      "exact_final_two_depth": true,
+      "exact_final_two_rgb": true,
+      "history_refs": [
+        42,
+        43
+      ],
+      "outcomes": [
+        true,
+        false
+      ],
+      "same_candidate_action": true,
+      "split": "test",
+      "task": "FixedPhaseRotatingCaptureWindow",
+      "world_id": 21
+    }
+  ],
+  "figure": {
+    "filename": "visual_matched_histories.png",
+    "height": 554,
+    "sha256": "77802a21f961469efb03762526dfaff6b0a18de64de9f21d278cbc741b8f598f",
+    "width": 1832
+  },
+  "pass": true,
+  "schema": "actmask-icra2027-visual-history-figure-v1",
+  "source_policy": "Nine frozen artifacts; exact byte hashes required.",
+  "sources": [
+    {
+      "path": "outputs/actmask/milestone4r_v3_all_family_candidate_diversity/full_probe/FixedPhaseRotatingCaptureWindow_bundles.npz",
+      "sha256": "128168803466ab705f44798f4b70acd14aa4f6a9a76ac3c0ea5dc4329e46343c"
+    },
+    {
+      "path": "outputs/actmask/milestone4r_v3_all_family_candidate_diversity/full_probe/FixedPhaseRotatingCaptureWindow_candidates.jsonl",
+      "sha256": "ee0d00fe35572bc8d5a961233f196c7dbbf57300dc55c7f172e6df74f8f6d05a"
+    },
+    {
+      "path": "outputs/actmask/milestone4r_v3_all_family_candidate_diversity/full_probe/FixedPhaseRotatingCaptureWindow_labels.npz",
+      "sha256": "1e45fd25ee14f3ddd30f8fcf2b6248dec53e689ffade95326c2d803014ebb566"
+    },
+    {
+      "path": "outputs/actmask/milestone4r_v3_all_family_candidate_diversity/full_probe/MovingCubeIntercept_bundles.npz",
+      "sha256": "b3524da17477a2c716f3d947dbde69415edca4f64843c78147aabbcccbe476dd"
+    },
+    {
+      "path": "outputs/actmask/milestone4r_v3_all_family_candidate_diversity/full_probe/MovingCubeIntercept_candidates.jsonl",
+      "sha256": "911bddb0c5ccad60e70a1bc831b3a68df5fa8719d4ae421195f45b1c6cb1334e"
+    },
+    {
+      "path": "outputs/actmask/milestone4r_v3_all_family_candidate_diversity/full_probe/MovingCubeIntercept_labels.npz",
+      "sha256": "13f3799b04b80d20272649a0d5ab0f0ad0a271469c18b700172ea9f5f9ad12c1"
+    },
+    {
+      "path": "outputs/actmask/milestone4r_v3_all_family_candidate_diversity/full_probe/SignedMovingWindowPlacement_bundles.npz",
+      "sha256": "9b13ecbc26c5484493c045d310c8a4f46b4c07a4e9367a10e8c3622f34cb03d9"
+    },
+    {
+      "path": "outputs/actmask/milestone4r_v3_all_family_candidate_diversity/full_probe/SignedMovingWindowPlacement_candidates.jsonl",
+      "sha256": "faf7efdadba69c905e59f991c672f7ef5c59c1934ac7c05ac6605ae6bd037f78"
+    },
+    {
+      "path": "outputs/actmask/milestone4r_v3_all_family_candidate_diversity/full_probe/SignedMovingWindowPlacement_labels.npz",
+      "sha256": "31d5a7e86c367343d32b64cf2f38963f8adedfea1d9ca7b4ae7cc7fb7793edcd"
+    }
+  ]
+}

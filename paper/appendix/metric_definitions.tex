@@ -1,0 +1,4 @@
+\section{Metric definitions}\label{app:metrics}
+For each matched pair $(i,j)$ with opposite labels, pair-order accuracy is the average of $\mathbb{1}[s_i>s_j]$ after the frozen tie policy. Top-1 success is $Y_w(\arg\max_a s(H,a))$. Top-3 recall is one if any of the three highest scores has positive utility. Corrected utility-gain NDCG applies standard DCG/IDCG to non-negative execution utilities with expected equal-score resolution. Normalized regret is the gap between oracle and selected utility normalized by oracle utility. All accuracy/ranking metrics are higher-is-better except regret, which is lower-is-better.
+
+Swap accuracy evaluates the valid $T$ mapping; score-swap consistency evaluates exchanged scores. Earlier-history advantage is correct-history minus final-two-only accuracy. Learned-over-analytic advantage is the selected learned minus selected analytic pair-order accuracy. No historical metric correction changes these final definitions.

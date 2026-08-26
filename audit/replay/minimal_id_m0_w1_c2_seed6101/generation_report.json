@@ -1,0 +1,20 @@
+{
+  "config_sha256": "9dc510bdec94e4715df96f6cc6f960f932d4dd37babea957e0f14325cf98e564",
+  "condition": "id",
+  "worlds": 1,
+  "candidates": 2,
+  "mechanisms": [
+    "history_identifiable_damping_drive"
+  ],
+  "candidate_executions": 4,
+  "accepted_pairs": 2,
+  "examples": 4,
+  "label_balance": 0.5,
+  "audit": {
+    "pairs": 2,
+    "max_matching_error": 0.0,
+    "pair_swap_max_error": 0.0,
+    "label_flip_rate": 1.0
+  },
+  "generation_seconds": 24.961406724527478
+}

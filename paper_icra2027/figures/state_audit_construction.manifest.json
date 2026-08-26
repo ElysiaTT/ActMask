@@ -1,0 +1,27 @@
+{
+  "figure": {
+    "filename": "state_audit_construction.png",
+    "height": 928,
+    "sha256": "5742d21f256634ba355919a57daee8ef139ebbf9d8a6aa6d34668c557907c634",
+    "width": 2240
+  },
+  "pass": true,
+  "schema": "actmask-icra2027-state-audit-figure-v1",
+  "sources": [
+    {
+      "bytes": 2340,
+      "path": "outputs/actmask/milestone3r_nl_v2/full_run_config.json",
+      "sha256": "12c692d032ba37bdb14761a1c63ff8ceccff72af5f037d936ebaed8748016a47"
+    },
+    {
+      "bytes": 13706,
+      "path": "actmask/experiments/milestone3r_nl_v2.py",
+      "sha256": "fcfc083a079b6d55b081f1fcd1bc46a67c123be28d798da60637f55f3ae0dcc2"
+    },
+    {
+      "bytes": 7761,
+      "path": "actmask/data/maniskill_3r_nl_tasks.py",
+      "sha256": "64f419586346e232e43b63abd2ea92ecbdde367d766758d552217059d6907a62"
+    }
+  ]
+}

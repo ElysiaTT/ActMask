@@ -1,0 +1,9 @@
+# Milestone 3S results
+
+The frozen v2 full configuration hash is `12c692d032ba37bdb14761a1c63ff8ceccff72af5f037d936ebaed8748016a47`. Independent source-report summation gives 92,000 GPU-PhysX candidate executions. The confirmation GRU has ID pair-order accuracy 1.000 versus the selected fair analytic `MultiFrameLinearVelocity` at 0.600, a +0.400 difference. The frozen grouped 95% CI is [0.3951, 0.4052] over 6,000 groups.
+
+All three frozen OOD axes are positive for GRU versus their strongest fair analytic comparator: physical parameter 1.000 versus 0.500; temporal delay 1.000 versus 0.857; held mechanism 0.787 versus 0.667. Swap accuracy and score-swap consistency are both 1.000; final-two-only accuracy is 0.500, giving a +0.500 earlier-history advantage. C5/C10/C20 dynamic Top-1 and NDCG are 1.000; static and action controls have C20 Top-1 0.500. C20 p95 inference is 0.816 ms.
+
+`artifact_manifest.json` and `independent_metric_audit.json` pass. `red_team_audit.json` has no blocking FAIL. Its single WARNING records a post-freeze C20 audit bookkeeping clarification (`>=10` candidates); model, simulator, score, and frozen configuration evidence were not changed. The package decision is **A. PAPER PACKAGE READY** for the bounded state-only benchmark paper.
+
+Non-visual regression evidence: 171 tests were collected; `pytest -q -k 'not tiny_two_seed_run_is_deterministic_and_writes_complete_schema'` completed with **170 passed, 1 deselected** in 26.03 s. The deselected test is an unrelated legacy Milestone-2 CPU-only two-seed training/rendering integration test. Its configuration asserts `device: cpu`, contradicting the current no-long-CPU-run constraint; it is recorded as a non-blocking exception and does not cover or gate 3S frozen-artifact logic. The new 3S package test itself passed (2 passed).

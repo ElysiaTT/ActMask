@@ -1,0 +1,8 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# CPU-only PyTorch wheel. Do not replace this with a CUDA build for milestone 1.
+torch==2.6.0+cpu
+numpy==2.2.6
+PyYAML==6.0.2
+matplotlib==3.10.3
+pytest==8.4.1

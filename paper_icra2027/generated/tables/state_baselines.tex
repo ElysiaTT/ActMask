@@ -1,0 +1,21 @@
+\begin{tabular}{lccc}
+\toprule
+Category & Method & Val. & Test \\
+\midrule
+Analytic & Last-two finite difference & 0.500 & 0.500 \\
+Analytic & Multi-frame linear velocity & 0.600 & 0.600 \\
+Analytic & Robust linear velocity & 0.600 & 0.600 \\
+Analytic & Constant-acceleration fit & 0.400 & 0.400 \\
+Analytic & Alpha--beta filter & 0.600 & 0.600 \\
+Analytic & Kalman constant velocity & 0.600 & 0.600 \\
+Analytic & Kalman constant acceleration & 0.600 & 0.600 \\
+Analytic & Exponential smoothing & 0.400 & 0.400 \\
+Learned (3) & Static MLP & 0.500 & 0.500 \\
+Learned (3) & Action-only MLP & 0.500 & 0.500 \\
+Learned (3) & Unordered-history MLP & 0.500 & 0.500 \\
+Learned (3) & Temporal convolution & 0.500 & 0.500 \\
+Learned (3) & Ordered temporal MLP & 0.900 & 0.900 \\
+Learned (3) & GRU selection run & 0.987 & 0.985 \\
+Confirm. (5) & GRU confirmation & 1.000 & 1.000 \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,20 @@
+{
+  "status": "completed_with_mismatch",
+  "matched_rows": 4,
+  "matched_outcomes": 2,
+  "metadata_all_exact": true,
+  "outcomes_all_exact": true,
+  "all_arrays_exact": false,
+  "max_array_abs_error": 2.47955322265625e-05,
+  "retention_filter": {
+    "attempted_pairs": 2,
+    "flip_pairs": 2,
+    "nonflip_pairs": 0,
+    "retained_pairs": 2,
+    "retained_exactly_equals_flip_pairs": true,
+    "fresh_and_frozen_flip_status_exact": true,
+    "outcome_flip_invariant": true,
+    "retained_pair_branches_exact": true,
+    "required_nonflip_present": true
+  }
+}

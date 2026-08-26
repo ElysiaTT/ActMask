@@ -1,0 +1,95 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{james2019rlbench}
+S.~James, Z.~Ma, D.~R. Arrojo, and A.~J. Davison, ``Rlbench: The robot learning
+  benchmark \& learning environment,'' \emph{IEEE Robotics and Automation
+  Letters}, vol.~5, no.~2, pp. 3019--3026, 2020.
+
+\bibitem{brohan2022rt1}
+A.~Brohan \emph{et~al.}, ``Rt-1: Robotics transformer for real-world control at
+  scale,'' \emph{arXiv preprint arXiv:2212.06817}, 2022.
+
+\bibitem{nasiriany2024robocasa}
+S.~Nasiriany, A.~Maddukuri, L.~Zhang, A.~Parikh, A.~Lo, A.~Joshi, A.~Mandlekar,
+  and Y.~Zhu, ``Robocasa: Large-scale simulation of everyday tasks for
+  generalist robots,'' in \emph{Robotics: Science and Systems}, 2024.
+
+\bibitem{ebert2018visualforesight}
+F.~Ebert, C.~Finn, S.~Dasari, A.~Xie, A.~Lee, and S.~Levine, ``Visual
+  foresight: Model-based deep reinforcement learning for vision-based robotic
+  control,'' in \emph{IEEE International Conference on Robotics and
+  Automation}, 2018.
+
+\bibitem{hafner2023dreamerv3}
+D.~Hafner, J.~Pasukonis, J.~Ba, and T.~Lillicrap, ``Mastering diverse domains
+  through world models,'' \emph{arXiv preprint arXiv:2301.04104}, 2023.
+
+\bibitem{geirhos2020shortcut}
+R.~Geirhos, J.-H. Jacobsen, C.~Michaelis, R.~Zemel, W.~Brendel, M.~Bethge, and
+  F.~A. Wichmann, ``Shortcut learning in deep neural networks,'' \emph{Nature
+  Machine Intelligence}, vol.~2, pp. 665--673, 2020.
+
+\bibitem{lapuschkin2019cleverhans}
+S.~Lapuschkin, S.~W{"a}ldchen, A.~Binder, G.~Montavon, W.~Samek, and K.-R.
+  M{"u}ller, ``Unmasking clever hans predictors and assessing what machines
+  really learn,'' \emph{Nature Communications}, vol.~10, no.~1, p. 1096, 2019.
+
+\bibitem{dehaan2019causal}
+P.~de~Haan, D.~Jayaraman, and S.~Levine, ``Causal confusion in imitation
+  learning,'' in \emph{Advances in Neural Information Processing Systems},
+  vol.~32, 2019.
+
+\bibitem{arjovsky2019irm}
+M.~Arjovsky, L.~Bottou, I.~Gulrajani, and D.~Lopez-Paz, ``Invariant risk
+  minimization,'' \emph{arXiv preprint arXiv:1907.02893}, 2019.
+
+\bibitem{wachter2017counterfactual}
+S.~Wachter, B.~Mittelstadt, and C.~Russell, ``Counterfactual explanations
+  without opening the black box: Automated decisions and the gdpr,''
+  \emph{Harvard Journal of Law \& Technology}, vol.~31, no.~2, 2017.
+
+\bibitem{misra2016shuffle}
+I.~Misra, C.~L. Zitnick, and M.~Hebert, ``Shuffle and learn: Unsupervised
+  learning using temporal order verification,'' in \emph{European Conference on
+  Computer Vision}, 2016, pp. 527--544.
+
+\bibitem{wei2018arrow}
+D.~Wei, J.~J. Lim, A.~Zisserman, and W.~T. Freeman, ``Learning and using the
+  arrow of time,'' in \emph{IEEE Conference on Computer Vision and Pattern
+  Recognition}, 2018, pp. 8052--8060.
+
+\bibitem{bakhtin2019phyre}
+A.~Bakhtin, L.~van~der Maaten, J.~Johnson, L.~Gustafson, and R.~Girshick,
+  ``{PHYRE}: A new benchmark for physical reasoning,'' in \emph{Advances in
+  Neural Information Processing Systems}, vol.~32, 2019.
+
+\bibitem{ahmed2020causalworld}
+O.~Ahmed, F.~Tr\"auble, A.~Goyal, A.~Neitz, Y.~Bengio, B.~Sch\"olkopf,
+  M.~W\"uthrich, and S.~Bauer, ``Causalworld: A robotic manipulation benchmark
+  for causal structure and transfer learning,'' in \emph{International
+  Conference on Learning Representations}, 2021.
+
+\bibitem{tao2024maniskill3}
+S.~Tao \emph{et~al.}, ``Maniskill3: Gpu parallelized robotics simulation and
+  rendering for generalizable embodied ai,'' \emph{arXiv preprint
+  arXiv:2410.00425}, 2024.
+
+\end{thebibliography}

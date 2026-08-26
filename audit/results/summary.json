@@ -1,0 +1,5785 @@
+{
+  "analytic_coordinate_audit": {
+    "code_issue": "Published _velocity_score slices estimator output v[:, -3:], which is goal_pos only.",
+    "corrected_rule_test_pair_order": 1.0,
+    "estimator": "MultiFrameLinearVelocity (ordinary least-squares slope over visible frames)",
+    "goal_only_cell_mean": 0.6,
+    "goal_only_estimator_over_cells": [
+      {
+        "family": "damped_moving_capture",
+        "goal_only_pair_order": 0.5,
+        "mechanism": "history_identifiable_damping_drive",
+        "payload_plus_goal_pair_order": 1.0
+      },
+      {
+        "family": "damped_moving_capture",
+        "goal_only_pair_order": 0.5,
+        "mechanism": "hysteretic_mode_memory",
+        "payload_plus_goal_pair_order": 1.0
+      },
+      {
+        "family": "damped_rotating_slot",
+        "goal_only_pair_order": 1.0,
+        "mechanism": "hysteretic_mode_memory",
+        "payload_plus_goal_pair_order": 1.0
+      },
+      {
+        "family": "hysteretic_moving_container",
+        "goal_only_pair_order": 0.5,
+        "mechanism": "history_identifiable_damping_drive",
+        "payload_plus_goal_pair_order": 1.0
+      },
+      {
+        "family": "hysteretic_moving_container",
+        "goal_only_pair_order": 0.5,
+        "mechanism": "hysteretic_mode_memory",
+        "payload_plus_goal_pair_order": 1.0
+      }
+    ],
+    "payload_plus_goal_cell_mean": 1.0,
+    "published_goal_only_test_pair_order": 0.6
+  },
+  "benchmark_status": "shortcut-saturated",
+  "canonical": {
+    "held_mechanism_ood": {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 12000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 12000,
+      "input_shapes": {
+        "candidate_actions": [
+          12000,
+          20,
+          3
+        ],
+        "history": [
+          12000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          12000,
+          20
+        ],
+        "observation_confidence": [
+          12000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          12000,
+          3
+        ],
+        "timestamps": [
+          12000,
+          6
+        ],
+        "visibility": [
+          12000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        12000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 12000,
+      "minimum_absolute_score": 0.018132533878087997,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 3000,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 3000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 3000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 3000,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 12000,
+        "attempted_pairs": 6000,
+        "attempted_parity_rule_accuracy": 1.0,
+        "attempted_parity_rule_correct": 12000,
+        "attempted_parity_rule_total": 12000,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 12000,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 12000,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 12000,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 12000,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 12000
+        },
+        "filtered_nonflip_pairs": 0,
+        "flip_pairs": 6000,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 12000,
+        "nonflip_pairs": 0,
+        "nonflip_parity_rule_accuracy": null,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 3000,
+          "10": 3000,
+          "11": 0
+        },
+        "outcome_unique_keys": 6000,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 6000,
+        "retention_rate": 1.0
+      },
+      "pair_integrity": {
+        "early_four_reverse_max_error": 0.0,
+        "label_flip_rate": 1.0,
+        "metadata_label_match_rate": 1.0,
+        "pair_size_exact": true,
+        "paired_equal_input_max_errors": {
+          "candidate_actions": 0.0,
+          "final_two_history": 0.0,
+          "nominal_action_timing": 0.0,
+          "observation_confidence": 0.0,
+          "static_features": 0.0,
+          "tcp_state": 0.0,
+          "timestamps": 0.0,
+          "visibility": 0.0
+        },
+        "pairs": 6000
+      },
+      "pairs": 6000,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/held_mechanism_ood",
+      "static_features_shape": [
+        12000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    "id": {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 60000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 60000,
+      "input_shapes": {
+        "candidate_actions": [
+          60000,
+          20,
+          3
+        ],
+        "history": [
+          60000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          60000,
+          20
+        ],
+        "observation_confidence": [
+          60000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          60000,
+          3
+        ],
+        "timestamps": [
+          60000,
+          6
+        ],
+        "visibility": [
+          60000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        60000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 60000,
+      "minimum_absolute_score": 0.01813310943543911,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 15000,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 15000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 15000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 15000,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 60000,
+        "attempted_pairs": 30000,
+        "attempted_parity_rule_accuracy": 1.0,
+        "attempted_parity_rule_correct": 60000,
+        "attempted_parity_rule_total": 60000,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 60000,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 60000,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 60000,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 60000,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 60000
+        },
+        "filtered_nonflip_pairs": 0,
+        "flip_pairs": 30000,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 60000,
+        "nonflip_pairs": 0,
+        "nonflip_parity_rule_accuracy": null,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 15000,
+          "10": 15000,
+          "11": 0
+        },
+        "outcome_unique_keys": 30000,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 30000,
+        "retention_rate": 1.0
+      },
+      "pair_integrity": {
+        "early_four_reverse_max_error": 0.0,
+        "label_flip_rate": 1.0,
+        "metadata_label_match_rate": 1.0,
+        "pair_size_exact": true,
+        "paired_equal_input_max_errors": {
+          "candidate_actions": 0.0,
+          "final_two_history": 0.0,
+          "nominal_action_timing": 0.0,
+          "observation_confidence": 0.0,
+          "static_features": 0.0,
+          "tcp_state": 0.0,
+          "timestamps": 0.0,
+          "visibility": 0.0
+        },
+        "pairs": 30000
+      },
+      "pairs": 30000,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/id",
+      "static_features_shape": [
+        60000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    "physical_parameter_ood": {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 8000,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 8000,
+      "input_shapes": {
+        "candidate_actions": [
+          8000,
+          20,
+          3
+        ],
+        "history": [
+          8000,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          8000,
+          20
+        ],
+        "observation_confidence": [
+          8000,
+          6,
+          1
+        ],
+        "tcp_state": [
+          8000,
+          3
+        ],
+        "timestamps": [
+          8000,
+          6
+        ],
+        "visibility": [
+          8000,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        8000
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 8000,
+      "minimum_absolute_score": 0.7449865341186523,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 2000,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 2000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 2000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 2000,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 8000,
+        "attempted_pairs": 4000,
+        "attempted_parity_rule_accuracy": 1.0,
+        "attempted_parity_rule_correct": 8000,
+        "attempted_parity_rule_total": 8000,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 8000,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 8000,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 8000,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 8000,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 8000
+        },
+        "filtered_nonflip_pairs": 0,
+        "flip_pairs": 4000,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 8000,
+        "nonflip_pairs": 0,
+        "nonflip_parity_rule_accuracy": null,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 2000,
+          "10": 2000,
+          "11": 0
+        },
+        "outcome_unique_keys": 4000,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 4000,
+        "retention_rate": 1.0
+      },
+      "pair_integrity": {
+        "early_four_reverse_max_error": 0.0,
+        "label_flip_rate": 1.0,
+        "metadata_label_match_rate": 1.0,
+        "pair_size_exact": true,
+        "paired_equal_input_max_errors": {
+          "candidate_actions": 0.0,
+          "final_two_history": 0.0,
+          "nominal_action_timing": 0.0,
+          "observation_confidence": 0.0,
+          "static_features": 0.0,
+          "tcp_state": 0.0,
+          "timestamps": 0.0,
+          "visibility": 0.0
+        },
+        "pairs": 4000
+      },
+      "pairs": 4000,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/physical_parameter_ood",
+      "static_features_shape": [
+        8000,
+        29
+      ],
+      "zero_score_count": 0
+    },
+    "temporal_delay_ood": {
+      "arrow_action_accuracy": 1.0,
+      "arrow_action_correct": 5600,
+      "branch_recovery_accuracy": 1.0,
+      "direction_matches_candidate_parity": 1.0,
+      "examples": 5600,
+      "input_shapes": {
+        "candidate_actions": [
+          5600,
+          20,
+          3
+        ],
+        "history": [
+          5600,
+          6,
+          20
+        ],
+        "nominal_action_timing": [
+          5600,
+          20
+        ],
+        "observation_confidence": [
+          5600,
+          6,
+          1
+        ],
+        "tcp_state": [
+          5600,
+          3
+        ],
+        "timestamps": [
+          5600,
+          6
+        ],
+        "visibility": [
+          5600,
+          6,
+          1
+        ]
+      },
+      "label_balance": 0.5,
+      "label_shape": [
+        5600
+      ],
+      "metadata_parity_accuracy": 1.0,
+      "metadata_parity_correct": 5600,
+      "minimum_absolute_score": 0.16963942348957062,
+      "observable_xor_accuracy": 1.0,
+      "observable_xor_table": {
+        "branch_hat_0_direction_hat_0": {
+          "examples": 1000,
+          "success_rate": 1.0
+        },
+        "branch_hat_0_direction_hat_1": {
+          "examples": 1800,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_0": {
+          "examples": 1000,
+          "success_rate": 0.0
+        },
+        "branch_hat_1_direction_hat_1": {
+          "examples": 1800,
+          "success_rate": 1.0
+        }
+      },
+      "outcomes": {
+        "attempted_branch_executions": 12000,
+        "attempted_pairs": 6000,
+        "attempted_parity_rule_accuracy": 0.7333333333333333,
+        "attempted_parity_rule_correct": 8800,
+        "attempted_parity_rule_total": 12000,
+        "direct_join": {
+          "all_exact": true,
+          "ambiguous_or_missing_rows": 0,
+          "coverage": 1.0,
+          "expected_metadata_rows": 5600,
+          "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+          "joined_rows": 5600,
+          "label_success_match_rate": 1.0,
+          "label_success_matches": 5600,
+          "metadata_label_match_rate": 1.0,
+          "metadata_label_matches": 5600,
+          "metadata_success_match_rate": 1.0,
+          "metadata_success_matches": 5600
+        },
+        "filtered_nonflip_pairs": 3200,
+        "flip_pairs": 2800,
+        "metadata_duplicate_pair_branch_rows": 0,
+        "metadata_pair_branch_unique": true,
+        "metadata_unique_pair_branch_keys": 5600,
+        "nonflip_pairs": 3200,
+        "nonflip_parity_rule_accuracy": 0.5,
+        "outcome_duplicate_key_rows": 0,
+        "outcome_key_unique": true,
+        "outcome_table_branch0_branch1": {
+          "00": 0,
+          "01": 1800,
+          "10": 1000,
+          "11": 3200
+        },
+        "outcome_unique_keys": 6000,
+        "pair_flip_field_all_exact": true,
+        "pair_flip_field_mismatches": 0,
+        "retained_keys_equal_flip_keys": true,
+        "retained_pairs": 2800,
+        "retention_rate": 0.4666666666666667
+      },
+      "pair_integrity": {
+        "early_four_reverse_max_error": 0.0,
+        "label_flip_rate": 1.0,
+        "metadata_label_match_rate": 1.0,
+        "pair_size_exact": true,
+        "paired_equal_input_max_errors": {
+          "candidate_actions": 0.0,
+          "final_two_history": 0.0,
+          "nominal_action_timing": 0.0,
+          "observation_confidence": 0.0,
+          "static_features": 0.0,
+          "tcp_state": 0.0,
+          "timestamps": 0.0,
+          "visibility": 0.0
+        },
+        "pairs": 2800
+      },
+      "pairs": 2800,
+      "path": "outputs/actmask/milestone3r_nl_v2/full/temporal_delay_ood",
+      "static_features_shape": [
+        5600,
+        29
+      ],
+      "zero_score_count": 0
+    }
+  },
+  "canonical_totals": {
+    "attempted_branch_executions": 92000,
+    "attempted_metadata_parity_accuracy": 0.9652173913043478,
+    "attempted_pairs": 46000,
+    "direct_outcome_join": {
+      "all_exact": true,
+      "all_metadata_pair_branch_keys_unique": true,
+      "all_outcome_keys_unique": true,
+      "coverage": 1.0,
+      "expected_metadata_rows": 85600,
+      "joined_rows": 85600,
+      "label_success_match_rate": 1.0,
+      "label_success_matches": 85600,
+      "metadata_success_match_rate": 1.0,
+      "metadata_success_matches": 85600
+    },
+    "filtered_nonflip_pairs": 3200,
+    "retained_arrow_action_accuracy": 1.0,
+    "retained_examples": 85600,
+    "retained_metadata_parity_accuracy": 1.0,
+    "retained_pairs": 42800
+  },
+  "conclusion": "No direct fabrication evidence was found. A legal-input, zero-training rule perfectly solves every retained TimeArrow-v2 dataset; the benchmark is shortcut-saturated.",
+  "dataset_inventory": {
+    "all_directories_arrow_action_accuracy": 1.0,
+    "all_directories_metadata_parity_accuracy": 0.9806585160747785,
+    "directories": 30,
+    "items": [
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 12000,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 12000,
+        "input_shapes": {
+          "candidate_actions": [
+            12000,
+            20,
+            3
+          ],
+          "history": [
+            12000,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            12000,
+            20
+          ],
+          "observation_confidence": [
+            12000,
+            6,
+            1
+          ],
+          "tcp_state": [
+            12000,
+            3
+          ],
+          "timestamps": [
+            12000,
+            6
+          ],
+          "visibility": [
+            12000,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          12000
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 12000,
+        "minimum_absolute_score": 0.018132533878087997,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 3000,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 3000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 3000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 3000,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 12000,
+          "attempted_pairs": 6000,
+          "attempted_parity_rule_accuracy": 1.0,
+          "attempted_parity_rule_correct": 12000,
+          "attempted_parity_rule_total": 12000,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 12000,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 12000,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 12000,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 12000,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 12000
+          },
+          "filtered_nonflip_pairs": 0,
+          "flip_pairs": 6000,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 12000,
+          "nonflip_pairs": 0,
+          "nonflip_parity_rule_accuracy": null,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 3000,
+            "10": 3000,
+            "11": 0
+          },
+          "outcome_unique_keys": 6000,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 6000,
+          "retention_rate": 1.0
+        },
+        "pairs": 6000,
+        "path": "outputs/actmask/milestone3r_nl_v2/full/held_mechanism_ood",
+        "static_features_shape": [
+          12000,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 6000,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 6000,
+        "input_shapes": {
+          "candidate_actions": [
+            6000,
+            20,
+            3
+          ],
+          "history": [
+            6000,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            6000,
+            20
+          ],
+          "observation_confidence": [
+            6000,
+            6,
+            1
+          ],
+          "tcp_state": [
+            6000,
+            3
+          ],
+          "timestamps": [
+            6000,
+            6
+          ],
+          "visibility": [
+            6000,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          6000
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 6000,
+        "minimum_absolute_score": 0.018132533878087997,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 1500,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 1500,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 1500,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 1500,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 3000,
+        "path": "outputs/actmask/milestone3r_nl_v2/full/held_mechanism_ood_c10",
+        "static_features_shape": [
+          6000,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 3000,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 3000,
+        "input_shapes": {
+          "candidate_actions": [
+            3000,
+            20,
+            3
+          ],
+          "history": [
+            3000,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            3000,
+            20
+          ],
+          "observation_confidence": [
+            3000,
+            6,
+            1
+          ],
+          "tcp_state": [
+            3000,
+            3
+          ],
+          "timestamps": [
+            3000,
+            6
+          ],
+          "visibility": [
+            3000,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          3000
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 3000,
+        "minimum_absolute_score": 0.018132533878087997,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 900,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 600,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 900,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 600,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 1500,
+        "path": "outputs/actmask/milestone3r_nl_v2/full/held_mechanism_ood_c5",
+        "static_features_shape": [
+          3000,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 60000,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 60000,
+        "input_shapes": {
+          "candidate_actions": [
+            60000,
+            20,
+            3
+          ],
+          "history": [
+            60000,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            60000,
+            20
+          ],
+          "observation_confidence": [
+            60000,
+            6,
+            1
+          ],
+          "tcp_state": [
+            60000,
+            3
+          ],
+          "timestamps": [
+            60000,
+            6
+          ],
+          "visibility": [
+            60000,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          60000
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 60000,
+        "minimum_absolute_score": 0.01813310943543911,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 15000,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 15000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 15000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 15000,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 60000,
+          "attempted_pairs": 30000,
+          "attempted_parity_rule_accuracy": 1.0,
+          "attempted_parity_rule_correct": 60000,
+          "attempted_parity_rule_total": 60000,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 60000,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 60000,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 60000,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 60000,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 60000
+          },
+          "filtered_nonflip_pairs": 0,
+          "flip_pairs": 30000,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 60000,
+          "nonflip_pairs": 0,
+          "nonflip_parity_rule_accuracy": null,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 15000,
+            "10": 15000,
+            "11": 0
+          },
+          "outcome_unique_keys": 30000,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 30000,
+          "retention_rate": 1.0
+        },
+        "pairs": 30000,
+        "path": "outputs/actmask/milestone3r_nl_v2/full/id",
+        "static_features_shape": [
+          60000,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 30000,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 30000,
+        "input_shapes": {
+          "candidate_actions": [
+            30000,
+            20,
+            3
+          ],
+          "history": [
+            30000,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            30000,
+            20
+          ],
+          "observation_confidence": [
+            30000,
+            6,
+            1
+          ],
+          "tcp_state": [
+            30000,
+            3
+          ],
+          "timestamps": [
+            30000,
+            6
+          ],
+          "visibility": [
+            30000,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          30000
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 30000,
+        "minimum_absolute_score": 0.01813310943543911,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 7500,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 7500,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 7500,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 7500,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 15000,
+        "path": "outputs/actmask/milestone3r_nl_v2/full/id_c10",
+        "static_features_shape": [
+          30000,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 15000,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 15000,
+        "input_shapes": {
+          "candidate_actions": [
+            15000,
+            20,
+            3
+          ],
+          "history": [
+            15000,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            15000,
+            20
+          ],
+          "observation_confidence": [
+            15000,
+            6,
+            1
+          ],
+          "tcp_state": [
+            15000,
+            3
+          ],
+          "timestamps": [
+            15000,
+            6
+          ],
+          "visibility": [
+            15000,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          15000
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 15000,
+        "minimum_absolute_score": 0.01813310943543911,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 4500,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 3000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 4500,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 3000,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 7500,
+        "path": "outputs/actmask/milestone3r_nl_v2/full/id_c5",
+        "static_features_shape": [
+          15000,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 8000,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 8000,
+        "input_shapes": {
+          "candidate_actions": [
+            8000,
+            20,
+            3
+          ],
+          "history": [
+            8000,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            8000,
+            20
+          ],
+          "observation_confidence": [
+            8000,
+            6,
+            1
+          ],
+          "tcp_state": [
+            8000,
+            3
+          ],
+          "timestamps": [
+            8000,
+            6
+          ],
+          "visibility": [
+            8000,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          8000
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 8000,
+        "minimum_absolute_score": 0.7449865341186523,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 2000,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 2000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 2000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 2000,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 8000,
+          "attempted_pairs": 4000,
+          "attempted_parity_rule_accuracy": 1.0,
+          "attempted_parity_rule_correct": 8000,
+          "attempted_parity_rule_total": 8000,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 8000,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 8000,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 8000,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 8000,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 8000
+          },
+          "filtered_nonflip_pairs": 0,
+          "flip_pairs": 4000,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 8000,
+          "nonflip_pairs": 0,
+          "nonflip_parity_rule_accuracy": null,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 2000,
+            "10": 2000,
+            "11": 0
+          },
+          "outcome_unique_keys": 4000,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 4000,
+          "retention_rate": 1.0
+        },
+        "pairs": 4000,
+        "path": "outputs/actmask/milestone3r_nl_v2/full/physical_parameter_ood",
+        "static_features_shape": [
+          8000,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 4000,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 4000,
+        "input_shapes": {
+          "candidate_actions": [
+            4000,
+            20,
+            3
+          ],
+          "history": [
+            4000,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            4000,
+            20
+          ],
+          "observation_confidence": [
+            4000,
+            6,
+            1
+          ],
+          "tcp_state": [
+            4000,
+            3
+          ],
+          "timestamps": [
+            4000,
+            6
+          ],
+          "visibility": [
+            4000,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          4000
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 4000,
+        "minimum_absolute_score": 0.7449865341186523,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 1000,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 1000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 1000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 1000,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 2000,
+        "path": "outputs/actmask/milestone3r_nl_v2/full/physical_parameter_ood_c10",
+        "static_features_shape": [
+          4000,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 2000,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 2000,
+        "input_shapes": {
+          "candidate_actions": [
+            2000,
+            20,
+            3
+          ],
+          "history": [
+            2000,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            2000,
+            20
+          ],
+          "observation_confidence": [
+            2000,
+            6,
+            1
+          ],
+          "tcp_state": [
+            2000,
+            3
+          ],
+          "timestamps": [
+            2000,
+            6
+          ],
+          "visibility": [
+            2000,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          2000
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 2000,
+        "minimum_absolute_score": 0.7499865293502808,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 600,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 400,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 600,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 400,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 1000,
+        "path": "outputs/actmask/milestone3r_nl_v2/full/physical_parameter_ood_c5",
+        "static_features_shape": [
+          2000,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 5600,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 5600,
+        "input_shapes": {
+          "candidate_actions": [
+            5600,
+            20,
+            3
+          ],
+          "history": [
+            5600,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            5600,
+            20
+          ],
+          "observation_confidence": [
+            5600,
+            6,
+            1
+          ],
+          "tcp_state": [
+            5600,
+            3
+          ],
+          "timestamps": [
+            5600,
+            6
+          ],
+          "visibility": [
+            5600,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          5600
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 5600,
+        "minimum_absolute_score": 0.16963942348957062,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 1000,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 1800,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 1000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 1800,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 12000,
+          "attempted_pairs": 6000,
+          "attempted_parity_rule_accuracy": 0.7333333333333333,
+          "attempted_parity_rule_correct": 8800,
+          "attempted_parity_rule_total": 12000,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 5600,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 5600,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 5600,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 5600,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 5600
+          },
+          "filtered_nonflip_pairs": 3200,
+          "flip_pairs": 2800,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 5600,
+          "nonflip_pairs": 3200,
+          "nonflip_parity_rule_accuracy": 0.5,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 1800,
+            "10": 1000,
+            "11": 3200
+          },
+          "outcome_unique_keys": 6000,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 2800,
+          "retention_rate": 0.4666666666666667
+        },
+        "pairs": 2800,
+        "path": "outputs/actmask/milestone3r_nl_v2/full/temporal_delay_ood",
+        "static_features_shape": [
+          5600,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 2800,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 2800,
+        "input_shapes": {
+          "candidate_actions": [
+            2800,
+            20,
+            3
+          ],
+          "history": [
+            2800,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            2800,
+            20
+          ],
+          "observation_confidence": [
+            2800,
+            6,
+            1
+          ],
+          "tcp_state": [
+            2800,
+            3
+          ],
+          "timestamps": [
+            2800,
+            6
+          ],
+          "visibility": [
+            2800,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          2800
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 2800,
+        "minimum_absolute_score": 0.16963942348957062,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 500,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 900,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 500,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 900,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 1400,
+        "path": "outputs/actmask/milestone3r_nl_v2/full/temporal_delay_ood_c10",
+        "static_features_shape": [
+          2800,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 1400,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 1400,
+        "input_shapes": {
+          "candidate_actions": [
+            1400,
+            20,
+            3
+          ],
+          "history": [
+            1400,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            1400,
+            20
+          ],
+          "observation_confidence": [
+            1400,
+            6,
+            1
+          ],
+          "tcp_state": [
+            1400,
+            3
+          ],
+          "timestamps": [
+            1400,
+            6
+          ],
+          "visibility": [
+            1400,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          1400
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 1400,
+        "minimum_absolute_score": 0.16963942348957062,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 300,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 400,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 300,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 400,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 700,
+        "path": "outputs/actmask/milestone3r_nl_v2/full/temporal_delay_ood_c5",
+        "static_features_shape": [
+          1400,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 12000,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 12000,
+        "input_shapes": {
+          "candidate_actions": [
+            12000,
+            20,
+            3
+          ],
+          "history": [
+            12000,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            12000,
+            20
+          ],
+          "observation_confidence": [
+            12000,
+            6,
+            1
+          ],
+          "tcp_state": [
+            12000,
+            3
+          ],
+          "timestamps": [
+            12000,
+            6
+          ],
+          "visibility": [
+            12000,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          12000
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 12000,
+        "minimum_absolute_score": 0.018132533878087997,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 3000,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 3000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 3000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 3000,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 12000,
+          "attempted_pairs": 6000,
+          "attempted_parity_rule_accuracy": 1.0,
+          "attempted_parity_rule_correct": 12000,
+          "attempted_parity_rule_total": 12000,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 12000,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 12000,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 12000,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 12000,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 12000
+          },
+          "filtered_nonflip_pairs": 0,
+          "flip_pairs": 6000,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 12000,
+          "nonflip_pairs": 0,
+          "nonflip_parity_rule_accuracy": null,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 3000,
+            "10": 3000,
+            "11": 0
+          },
+          "outcome_unique_keys": 6000,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 6000,
+          "retention_rate": 1.0
+        },
+        "pairs": 6000,
+        "path": "outputs/actmask/milestone3r_nl_v2/full_raw/held_mechanism_ood",
+        "static_features_shape": [
+          12000,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 48000,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 48000,
+        "input_shapes": {
+          "candidate_actions": [
+            48000,
+            20,
+            3
+          ],
+          "history": [
+            48000,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            48000,
+            20
+          ],
+          "observation_confidence": [
+            48000,
+            6,
+            1
+          ],
+          "tcp_state": [
+            48000,
+            3
+          ],
+          "timestamps": [
+            48000,
+            6
+          ],
+          "visibility": [
+            48000,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          48000
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 48000,
+        "minimum_absolute_score": 0.43560197949409485,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 12000,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 12000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 12000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 12000,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 48000,
+          "attempted_pairs": 24000,
+          "attempted_parity_rule_accuracy": 1.0,
+          "attempted_parity_rule_correct": 48000,
+          "attempted_parity_rule_total": 48000,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 48000,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 48000,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 48000,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 48000,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 48000
+          },
+          "filtered_nonflip_pairs": 0,
+          "flip_pairs": 24000,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 48000,
+          "nonflip_pairs": 0,
+          "nonflip_parity_rule_accuracy": null,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 12000,
+            "10": 12000,
+            "11": 0
+          },
+          "outcome_unique_keys": 24000,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 24000,
+          "retention_rate": 1.0
+        },
+        "pairs": 24000,
+        "path": "outputs/actmask/milestone3r_nl_v2/full_raw/id_core",
+        "static_features_shape": [
+          48000,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 12000,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 12000,
+        "input_shapes": {
+          "candidate_actions": [
+            12000,
+            20,
+            3
+          ],
+          "history": [
+            12000,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            12000,
+            20
+          ],
+          "observation_confidence": [
+            12000,
+            6,
+            1
+          ],
+          "tcp_state": [
+            12000,
+            3
+          ],
+          "timestamps": [
+            12000,
+            6
+          ],
+          "visibility": [
+            12000,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          12000
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 12000,
+        "minimum_absolute_score": 0.01813310943543911,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 3000,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 3000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 3000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 3000,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 12000,
+          "attempted_pairs": 6000,
+          "attempted_parity_rule_accuracy": 1.0,
+          "attempted_parity_rule_correct": 12000,
+          "attempted_parity_rule_total": 12000,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 12000,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 12000,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 12000,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 12000,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 12000
+          },
+          "filtered_nonflip_pairs": 0,
+          "flip_pairs": 6000,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 12000,
+          "nonflip_pairs": 0,
+          "nonflip_parity_rule_accuracy": null,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 3000,
+            "10": 3000,
+            "11": 0
+          },
+          "outcome_unique_keys": 6000,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 6000,
+          "retention_rate": 1.0
+        },
+        "pairs": 6000,
+        "path": "outputs/actmask/milestone3r_nl_v2/full_raw/id_rotation",
+        "static_features_shape": [
+          12000,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 8000,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 8000,
+        "input_shapes": {
+          "candidate_actions": [
+            8000,
+            20,
+            3
+          ],
+          "history": [
+            8000,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            8000,
+            20
+          ],
+          "observation_confidence": [
+            8000,
+            6,
+            1
+          ],
+          "tcp_state": [
+            8000,
+            3
+          ],
+          "timestamps": [
+            8000,
+            6
+          ],
+          "visibility": [
+            8000,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          8000
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 8000,
+        "minimum_absolute_score": 0.7449865341186523,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 2000,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 2000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 2000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 2000,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 8000,
+          "attempted_pairs": 4000,
+          "attempted_parity_rule_accuracy": 1.0,
+          "attempted_parity_rule_correct": 8000,
+          "attempted_parity_rule_total": 8000,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 8000,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 8000,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 8000,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 8000,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 8000
+          },
+          "filtered_nonflip_pairs": 0,
+          "flip_pairs": 4000,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 8000,
+          "nonflip_pairs": 0,
+          "nonflip_parity_rule_accuracy": null,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 2000,
+            "10": 2000,
+            "11": 0
+          },
+          "outcome_unique_keys": 4000,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 4000,
+          "retention_rate": 1.0
+        },
+        "pairs": 4000,
+        "path": "outputs/actmask/milestone3r_nl_v2/full_raw/physical_parameter_ood",
+        "static_features_shape": [
+          8000,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 5600,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 5600,
+        "input_shapes": {
+          "candidate_actions": [
+            5600,
+            20,
+            3
+          ],
+          "history": [
+            5600,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            5600,
+            20
+          ],
+          "observation_confidence": [
+            5600,
+            6,
+            1
+          ],
+          "tcp_state": [
+            5600,
+            3
+          ],
+          "timestamps": [
+            5600,
+            6
+          ],
+          "visibility": [
+            5600,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          5600
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 5600,
+        "minimum_absolute_score": 0.16963942348957062,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 1000,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 1800,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 1000,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 1800,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 12000,
+          "attempted_pairs": 6000,
+          "attempted_parity_rule_accuracy": 0.7333333333333333,
+          "attempted_parity_rule_correct": 8800,
+          "attempted_parity_rule_total": 12000,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 5600,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 5600,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 5600,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 5600,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 5600
+          },
+          "filtered_nonflip_pairs": 3200,
+          "flip_pairs": 2800,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 5600,
+          "nonflip_pairs": 3200,
+          "nonflip_parity_rule_accuracy": 0.5,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 1800,
+            "10": 1000,
+            "11": 3200
+          },
+          "outcome_unique_keys": 6000,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 2800,
+          "retention_rate": 0.4666666666666667
+        },
+        "pairs": 2800,
+        "path": "outputs/actmask/milestone3r_nl_v2/full_raw/temporal_delay_ood",
+        "static_features_shape": [
+          5600,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 480,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 0.5,
+        "examples": 480,
+        "input_shapes": {
+          "candidate_actions": [
+            480,
+            20,
+            3
+          ],
+          "history": [
+            480,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            480,
+            20
+          ],
+          "observation_confidence": [
+            480,
+            6,
+            1
+          ],
+          "tcp_state": [
+            480,
+            3
+          ],
+          "timestamps": [
+            480,
+            6
+          ],
+          "visibility": [
+            480,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          480
+        ],
+        "metadata_parity_accuracy": 0.5,
+        "metadata_parity_correct": 240,
+        "minimum_absolute_score": 0.018131298944354057,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 120,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 120,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 120,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 120,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 480,
+          "attempted_pairs": 240,
+          "attempted_parity_rule_accuracy": 0.5,
+          "attempted_parity_rule_correct": 240,
+          "attempted_parity_rule_total": 480,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 480,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 480,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 480,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 480,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 480
+          },
+          "filtered_nonflip_pairs": 0,
+          "flip_pairs": 240,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 480,
+          "nonflip_pairs": 0,
+          "nonflip_parity_rule_accuracy": null,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 120,
+            "10": 120,
+            "11": 0
+          },
+          "outcome_unique_keys": 240,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 240,
+          "retention_rate": 1.0
+        },
+        "pairs": 240,
+        "path": "outputs/actmask/milestone3r_nl_v2/full_smoke_c20",
+        "static_features_shape": [
+          480,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 160,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 1.0,
+        "examples": 160,
+        "input_shapes": {
+          "candidate_actions": [
+            160,
+            20,
+            3
+          ],
+          "history": [
+            160,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            160,
+            20
+          ],
+          "observation_confidence": [
+            160,
+            6,
+            1
+          ],
+          "tcp_state": [
+            160,
+            3
+          ],
+          "timestamps": [
+            160,
+            6
+          ],
+          "visibility": [
+            160,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          160
+        ],
+        "metadata_parity_accuracy": 1.0,
+        "metadata_parity_correct": 160,
+        "minimum_absolute_score": 0.8755980134010315,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 40,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 40,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 40,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 40,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 160,
+          "attempted_pairs": 80,
+          "attempted_parity_rule_accuracy": 1.0,
+          "attempted_parity_rule_correct": 160,
+          "attempted_parity_rule_total": 160,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 160,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 160,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 160,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 160,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 160
+          },
+          "filtered_nonflip_pairs": 0,
+          "flip_pairs": 80,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 160,
+          "nonflip_pairs": 0,
+          "nonflip_parity_rule_accuracy": null,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 40,
+            "10": 40,
+            "11": 0
+          },
+          "outcome_unique_keys": 80,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 80,
+          "retention_rate": 1.0
+        },
+        "pairs": 80,
+        "path": "outputs/actmask/milestone3r_nl_v2/full_smoke_interleaved",
+        "static_features_shape": [
+          160,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 960,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 0.6,
+        "examples": 960,
+        "input_shapes": {
+          "candidate_actions": [
+            960,
+            20,
+            3
+          ],
+          "history": [
+            960,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            960,
+            20
+          ],
+          "observation_confidence": [
+            960,
+            6,
+            1
+          ],
+          "tcp_state": [
+            960,
+            3
+          ],
+          "timestamps": [
+            960,
+            6
+          ],
+          "visibility": [
+            960,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          960
+        ],
+        "metadata_parity_accuracy": 0.6,
+        "metadata_parity_correct": 576,
+        "minimum_absolute_score": 0.018132492899894714,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 240,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 240,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 240,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 240,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 480,
+        "path": "outputs/actmask/milestone3r_nl_v2/probe/held_mechanism_ood",
+        "static_features_shape": [
+          960,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 3200,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 0.6,
+        "examples": 3200,
+        "input_shapes": {
+          "candidate_actions": [
+            3200,
+            20,
+            3
+          ],
+          "history": [
+            3200,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            3200,
+            20
+          ],
+          "observation_confidence": [
+            3200,
+            6,
+            1
+          ],
+          "tcp_state": [
+            3200,
+            3
+          ],
+          "timestamps": [
+            3200,
+            6
+          ],
+          "visibility": [
+            3200,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          3200
+        ],
+        "metadata_parity_accuracy": 0.6,
+        "metadata_parity_correct": 1920,
+        "minimum_absolute_score": 0.018132438883185387,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 800,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 800,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 800,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 800,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 1600,
+        "path": "outputs/actmask/milestone3r_nl_v2/probe/id",
+        "static_features_shape": [
+          3200,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 640,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 0.6,
+        "examples": 640,
+        "input_shapes": {
+          "candidate_actions": [
+            640,
+            20,
+            3
+          ],
+          "history": [
+            640,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            640,
+            20
+          ],
+          "observation_confidence": [
+            640,
+            6,
+            1
+          ],
+          "tcp_state": [
+            640,
+            3
+          ],
+          "timestamps": [
+            640,
+            6
+          ],
+          "visibility": [
+            640,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          640
+        ],
+        "metadata_parity_accuracy": 0.6,
+        "metadata_parity_correct": 384,
+        "minimum_absolute_score": 0.7449951767921448,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 160,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 160,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 160,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 160,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 320,
+        "path": "outputs/actmask/milestone3r_nl_v2/probe/physical_parameter_ood",
+        "static_features_shape": [
+          640,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 448,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 0.5714285714285714,
+        "examples": 448,
+        "input_shapes": {
+          "candidate_actions": [
+            448,
+            20,
+            3
+          ],
+          "history": [
+            448,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            448,
+            20
+          ],
+          "observation_confidence": [
+            448,
+            6,
+            1
+          ],
+          "tcp_state": [
+            448,
+            3
+          ],
+          "timestamps": [
+            448,
+            6
+          ],
+          "visibility": [
+            448,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          448
+        ],
+        "metadata_parity_accuracy": 0.5714285714285714,
+        "metadata_parity_correct": 256,
+        "minimum_absolute_score": 0.16963712871074677,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 80,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 144,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 80,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 144,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 224,
+        "path": "outputs/actmask/milestone3r_nl_v2/probe/temporal_delay_ood",
+        "static_features_shape": [
+          448,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 960,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 0.6,
+        "examples": 960,
+        "input_shapes": {
+          "candidate_actions": [
+            960,
+            20,
+            3
+          ],
+          "history": [
+            960,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            960,
+            20
+          ],
+          "observation_confidence": [
+            960,
+            6,
+            1
+          ],
+          "tcp_state": [
+            960,
+            3
+          ],
+          "timestamps": [
+            960,
+            6
+          ],
+          "visibility": [
+            960,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          960
+        ],
+        "metadata_parity_accuracy": 0.6,
+        "metadata_parity_correct": 576,
+        "minimum_absolute_score": 0.018132492899894714,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 240,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 240,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 240,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 240,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 960,
+          "attempted_pairs": 480,
+          "attempted_parity_rule_accuracy": 0.6,
+          "attempted_parity_rule_correct": 576,
+          "attempted_parity_rule_total": 960,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 960,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 960,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 960,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 960,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 960
+          },
+          "filtered_nonflip_pairs": 0,
+          "flip_pairs": 480,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 960,
+          "nonflip_pairs": 0,
+          "nonflip_parity_rule_accuracy": null,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 240,
+            "10": 240,
+            "11": 0
+          },
+          "outcome_unique_keys": 480,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 480,
+          "retention_rate": 1.0
+        },
+        "pairs": 480,
+        "path": "outputs/actmask/milestone3r_nl_v2/probe_final/held_mechanism_ood",
+        "static_features_shape": [
+          960,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 3200,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 0.6,
+        "examples": 3200,
+        "input_shapes": {
+          "candidate_actions": [
+            3200,
+            20,
+            3
+          ],
+          "history": [
+            3200,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            3200,
+            20
+          ],
+          "observation_confidence": [
+            3200,
+            6,
+            1
+          ],
+          "tcp_state": [
+            3200,
+            3
+          ],
+          "timestamps": [
+            3200,
+            6
+          ],
+          "visibility": [
+            3200,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          3200
+        ],
+        "metadata_parity_accuracy": 0.6,
+        "metadata_parity_correct": 1920,
+        "minimum_absolute_score": 0.018132438883185387,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 800,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 800,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 800,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 800,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 3840,
+          "attempted_pairs": 1920,
+          "attempted_parity_rule_accuracy": 0.5833333333333334,
+          "attempted_parity_rule_correct": 2240,
+          "attempted_parity_rule_total": 3840,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 3200,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 3200,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 3200,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 3200,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 3200
+          },
+          "filtered_nonflip_pairs": 320,
+          "flip_pairs": 1600,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 3200,
+          "nonflip_pairs": 320,
+          "nonflip_parity_rule_accuracy": 0.5,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 800,
+            "10": 800,
+            "11": 320
+          },
+          "outcome_unique_keys": 1920,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 1600,
+          "retention_rate": 0.8333333333333334
+        },
+        "pairs": 1600,
+        "path": "outputs/actmask/milestone3r_nl_v2/probe_final/id",
+        "static_features_shape": [
+          3200,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 640,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 0.6,
+        "examples": 640,
+        "input_shapes": {
+          "candidate_actions": [
+            640,
+            20,
+            3
+          ],
+          "history": [
+            640,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            640,
+            20
+          ],
+          "observation_confidence": [
+            640,
+            6,
+            1
+          ],
+          "tcp_state": [
+            640,
+            3
+          ],
+          "timestamps": [
+            640,
+            6
+          ],
+          "visibility": [
+            640,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          640
+        ],
+        "metadata_parity_accuracy": 0.6,
+        "metadata_parity_correct": 384,
+        "minimum_absolute_score": 0.7449951767921448,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 160,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 160,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 160,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 160,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 960,
+          "attempted_pairs": 480,
+          "attempted_parity_rule_accuracy": 0.5666666666666667,
+          "attempted_parity_rule_correct": 544,
+          "attempted_parity_rule_total": 960,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 640,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 640,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 640,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 640,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 640
+          },
+          "filtered_nonflip_pairs": 160,
+          "flip_pairs": 320,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 640,
+          "nonflip_pairs": 160,
+          "nonflip_parity_rule_accuracy": 0.5,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 160,
+            "10": 160,
+            "11": 160
+          },
+          "outcome_unique_keys": 480,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 320,
+          "retention_rate": 0.6666666666666666
+        },
+        "pairs": 320,
+        "path": "outputs/actmask/milestone3r_nl_v2/probe_final/physical_parameter_ood",
+        "static_features_shape": [
+          640,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 448,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 0.5714285714285714,
+        "examples": 448,
+        "input_shapes": {
+          "candidate_actions": [
+            448,
+            20,
+            3
+          ],
+          "history": [
+            448,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            448,
+            20
+          ],
+          "observation_confidence": [
+            448,
+            6,
+            1
+          ],
+          "tcp_state": [
+            448,
+            3
+          ],
+          "timestamps": [
+            448,
+            6
+          ],
+          "visibility": [
+            448,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          448
+        ],
+        "metadata_parity_accuracy": 0.5714285714285714,
+        "metadata_parity_correct": 256,
+        "minimum_absolute_score": 0.16963712871074677,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 80,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 144,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 80,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 144,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": {
+          "attempted_branch_executions": 960,
+          "attempted_pairs": 480,
+          "attempted_parity_rule_accuracy": 0.5333333333333333,
+          "attempted_parity_rule_correct": 512,
+          "attempted_parity_rule_total": 960,
+          "direct_join": {
+            "all_exact": true,
+            "ambiguous_or_missing_rows": 0,
+            "coverage": 1.0,
+            "expected_metadata_rows": 448,
+            "join_key": "(condition, family, mechanism, world_id, candidate_id), then branch{branch}_success",
+            "joined_rows": 448,
+            "label_success_match_rate": 1.0,
+            "label_success_matches": 448,
+            "metadata_label_match_rate": 1.0,
+            "metadata_label_matches": 448,
+            "metadata_success_match_rate": 1.0,
+            "metadata_success_matches": 448
+          },
+          "filtered_nonflip_pairs": 256,
+          "flip_pairs": 224,
+          "metadata_duplicate_pair_branch_rows": 0,
+          "metadata_pair_branch_unique": true,
+          "metadata_unique_pair_branch_keys": 448,
+          "nonflip_pairs": 256,
+          "nonflip_parity_rule_accuracy": 0.5,
+          "outcome_duplicate_key_rows": 0,
+          "outcome_key_unique": true,
+          "outcome_table_branch0_branch1": {
+            "00": 0,
+            "01": 144,
+            "10": 80,
+            "11": 256
+          },
+          "outcome_unique_keys": 480,
+          "pair_flip_field_all_exact": true,
+          "pair_flip_field_mismatches": 0,
+          "retained_keys_equal_flip_keys": true,
+          "retained_pairs": 224,
+          "retention_rate": 0.4666666666666667
+        },
+        "pairs": 224,
+        "path": "outputs/actmask/milestone3r_nl_v2/probe_final/temporal_delay_ood",
+        "static_features_shape": [
+          448,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 328,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 0.6097560975609756,
+        "examples": 328,
+        "input_shapes": {
+          "candidate_actions": [
+            328,
+            20,
+            3
+          ],
+          "history": [
+            328,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            328,
+            20
+          ],
+          "observation_confidence": [
+            328,
+            6,
+            1
+          ],
+          "tcp_state": [
+            328,
+            3
+          ],
+          "timestamps": [
+            328,
+            6
+          ],
+          "visibility": [
+            328,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          328
+        ],
+        "metadata_parity_accuracy": 0.6097560975609756,
+        "metadata_parity_correct": 200,
+        "minimum_absolute_score": 0.10807900875806808,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 76,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 88,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 76,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 88,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 164,
+        "path": "outputs/actmask/milestone3r_nl_v2/smoke",
+        "static_features_shape": [
+          328,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 320,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 0.6,
+        "examples": 320,
+        "input_shapes": {
+          "candidate_actions": [
+            320,
+            20,
+            3
+          ],
+          "history": [
+            320,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            320,
+            20
+          ],
+          "observation_confidence": [
+            320,
+            6,
+            1
+          ],
+          "tcp_state": [
+            320,
+            3
+          ],
+          "timestamps": [
+            320,
+            6
+          ],
+          "visibility": [
+            320,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          320
+        ],
+        "metadata_parity_accuracy": 0.6,
+        "metadata_parity_correct": 192,
+        "minimum_absolute_score": 0.43560174107551575,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 80,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 80,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 80,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 80,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 160,
+        "path": "outputs/actmask/milestone3r_nl_v2/smoke_fix1",
+        "static_features_shape": [
+          320,
+          29
+        ],
+        "zero_score_count": 0
+      },
+      {
+        "arrow_action_accuracy": 1.0,
+        "arrow_action_correct": 160,
+        "branch_recovery_accuracy": 1.0,
+        "direction_matches_candidate_parity": 0.6,
+        "examples": 160,
+        "input_shapes": {
+          "candidate_actions": [
+            160,
+            20,
+            3
+          ],
+          "history": [
+            160,
+            6,
+            20
+          ],
+          "nominal_action_timing": [
+            160,
+            20
+          ],
+          "observation_confidence": [
+            160,
+            6,
+            1
+          ],
+          "tcp_state": [
+            160,
+            3
+          ],
+          "timestamps": [
+            160,
+            6
+          ],
+          "visibility": [
+            160,
+            6,
+            1
+          ]
+        },
+        "label_balance": 0.5,
+        "label_shape": [
+          160
+        ],
+        "metadata_parity_accuracy": 0.6,
+        "metadata_parity_correct": 96,
+        "minimum_absolute_score": 0.43560174107551575,
+        "observable_xor_accuracy": 1.0,
+        "observable_xor_table": {
+          "branch_hat_0_direction_hat_0": {
+            "examples": 40,
+            "success_rate": 1.0
+          },
+          "branch_hat_0_direction_hat_1": {
+            "examples": 40,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_0": {
+            "examples": 40,
+            "success_rate": 0.0
+          },
+          "branch_hat_1_direction_hat_1": {
+            "examples": 40,
+            "success_rate": 1.0
+          }
+        },
+        "outcomes": null,
+        "pairs": 80,
+        "path": "outputs/actmask/milestone3r_nl_v2/smoke_fix2_rot",
+        "static_features_shape": [
+          160,
+          29
+        ],
+        "zero_score_count": 0
+      }
+    ],
+    "stored_examples_including_derived_duplicates": 247344
+  },
+  "direct_fabrication_evidence_found": false,
+  "environment": {
+    "artifacts": {
+      "audit_home_physx_symlink": {
+        "bytes": 236705440,
+        "exists": true,
+        "is_symlink": true,
+        "path": "/data/project/tzh/papers/ActMask/audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+        "resolved_path": "/data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+        "sha256": "4c582a16509a71faf5592fe9708586dfcc7ab61ae932eabc1ddd81f290818706"
+      },
+      "local_maniskill_wheel": {
+        "bytes": 101729066,
+        "exists": true,
+        "path": "/data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/mani_skill-3.0.1-py3-none-any.whl",
+        "sha256": "685de2f03c300b1ede49881a1bf6306ad062082d39c8d3be8b8e85603f32e33a"
+      },
+      "local_sapien_wheel": {
+        "bytes": 51304469,
+        "exists": true,
+        "path": "/data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/sapien-3.0.3-cp311-cp311-manylinux_2_28_x86_64.whl",
+        "sha256": "9a5eb4dc2efdf9b451cdd77a955d45578a5d81474d4e98089bbc36eeb4a07e45"
+      },
+      "physx_archive": {
+        "bytes": 77938378,
+        "exists": true,
+        "path": "/data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/linux-so.zip",
+        "sha256": "167a01aad7381afef963b89169968c289e7b653880a7a823c116d87ee5c00fc6"
+      },
+      "physx_gpu_library": {
+        "bytes": 236705440,
+        "exists": true,
+        "path": "/data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+        "sha256": "4c582a16509a71faf5592fe9708586dfcc7ab61ae932eabc1ddd81f290818706"
+      }
+    },
+    "auxiliary_version_checks": {
+      "opencv_python_recorded_version": true
+    },
+    "blockers": [],
+    "command_results": {
+      "conda_explicit_lock": {
+        "command": [
+          "/root/miniconda3/bin/conda",
+          "list",
+          "--explicit",
+          "-p",
+          "/data/envs/actmask-audit"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "# This file may be used to create an environment using:\n# $ conda create --name <env> --file <this file>\n# platform: linux-64\n# created-by: conda 25.1.1\n@EXPLICIT\nhttps://repo.anaconda.com/pkgs/main/linux-64/_libgcc_mutex-0.1-main.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/_openmp_mutex-5.1-52_gnu.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/ca-certificates-2026.7.16-h06a4308_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/ld_impl_linux-64-2.44-h9e0c5a2_3.conda\nhttps://repo.anaconda.com/pkgs/main/noarch/tzdata-2026c-he532380_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libgcc-15.2.0-h69a1729_8.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libgcc-ng-15.2.0-h166f726_8.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libstdcxx-15.2.0-h39759b7_8.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libzlib-1.3.2-h47b2149_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/openssl-3.5.7-h1b28b03_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/pthread-stubs-0.3-h47b2149_2.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/xorg-xorgproto-2024.1-h47b2149_2.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/xz-5.8.2-h448239c_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/bzip2-1.0.8-h5eee18b_6.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libexpat-2.8.2-h7354ed3_1.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libffi-3.4.8-h06d3fd0_3.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libnsl-2.0.0-h5eee18b_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libuuid-1.41.5-h5eee18b_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/ncurses-6.5-h7934f7d_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/xorg-libxau-1.0.12-h9b100fa_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/xorg-libxdmcp-1.1.5-h9b100fa_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/zlib-1.3.2-h47b2149_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/libxcb-1.17.0-h9b100fa_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/readline-8.3-hc2a1206_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/sqlite-3.53.2-h795bf6d_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/xorg-libx11-1.8.12-h9b100fa_1.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/tk-8.6.15-h54e0aa7_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/python-3.11.15-h17756b0_1.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/packaging-26.2-py311h06a4308_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/setuptools-83.0.0-py311h06a4308_0.conda\nhttps://repo.anaconda.com/pkgs/main/linux-64/wheel-0.47.0-py311h06a4308_0.conda\nhttps://repo.anaconda.com/pkgs/main/noarch/pip-26.1.2-pyhc872135_0.conda\n"
+      },
+      "native_import_probe": {
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "/data/project/tzh/papers/ActMask/audit/environment/import_probe_worker.py"
+        ],
+        "exit_code": 0,
+        "stderr": "/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/_vulkan_tricks.py:42: UserWarning: Failed to find system libvulkan. Fallback to SAPIEN builtin libvulkan.\n  warn(\"Failed to find system libvulkan. Fallback to SAPIEN builtin libvulkan.\")\n/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/_vulkan_tricks.py:78: UserWarning: Failed to find Vulkan ICD file. This is probably due to an incorrect or partial installation of the NVIDIA driver. SAPIEN will attempt to provide an ICD file anyway but it may not work.\n  warn(\n",
+        "stdout": "{\n  \"errors\": [],\n  \"imports\": {\n    \"mani_skill\": {\n      \"module_file\": \"/data/envs/actmask-audit/lib/python3.11/site-packages/mani_skill/__init__.py\",\n      \"ok\": true\n    },\n    \"numpy\": {\n      \"module_file\": \"/data/envs/actmask-audit/lib/python3.11/site-packages/numpy/__init__.py\",\n      \"ok\": true\n    },\n    \"sapien\": {\n      \"module_file\": \"/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/__init__.py\",\n      \"ok\": true\n    },\n    \"torch\": {\n      \"module_file\": \"/data/envs/actmask-audit/lib/python3.11/site-packages/torch/__init__.py\",\n      \"ok\": true\n    }\n  },\n  \"observed_versions\": {\n    \"mani_skill\": \"3.0.1\",\n    \"numpy\": \"2.2.6\",\n    \"opencv_python\": \"4.10.0.84\",\n    \"sapien\": \"3.0.3\",\n    \"torch\": \"2.6.0+cu124\"\n  },\n  \"torch_cuda\": {\n    \"available\": true,\n    \"compiled_cuda\": \"12.4\",\n    \"device_0\": \"NVIDIA A16\",\n    \"device_count\": 1\n  }\n}\n"
+      },
+      "nvidia_smi": {
+        "command": [
+          "nvidia-smi",
+          "--query-gpu=index,name,driver_version,memory.total",
+          "--format=csv,noheader,nounits"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "0, NVIDIA A16, 580.65.06, 15356\n"
+      },
+      "pip_check": {
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "-m",
+          "pip",
+          "check"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "No broken requirements found.\n"
+      },
+      "pip_freeze_all": {
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "-m",
+          "pip",
+          "freeze",
+          "--all"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "absl-py==2.5.0\nanyio==4.14.2\narm_pytorch_utilities==0.5.0\nasttokens==3.0.2\ncertifi==2026.7.22\ncharset-normalizer==3.4.9\nclick==8.4.2\ncloudpickle==3.1.2\ncontourpy==1.3.3\ncycler==0.12.1\ndacite==1.9.2\ndefusedxml==0.7.1\ndocstring_parser==0.18.0\nexecuting==2.2.1\nFarama-Notifications==0.0.6\nfilelock==3.32.2\nfonttools==4.63.0\nfsspec==2026.7.0\ngitdb==4.0.12\nGitPython==3.1.59\ngymnasium==1.3.0\nh11==0.16.0\nh5py==3.16.0\nhf-xet==1.6.0\nhttpcore==1.0.9\nhttpx==0.28.1\nhuggingface_hub==1.27.0\nidna==3.18\nImageIO==2.37.4\nimageio-ffmpeg==0.6.0\nimportlib_resources==7.1.0\niniconfig==2.3.0\nipython==9.16.1\nipython_pygments_lexers==1.1.1\njedi==0.20.0\nJinja2==3.1.6\nkiwisolver==1.5.0\nlxml==6.1.1\nmani_skill @ file:///data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/mani_skill-3.0.1-py3-none-any.whl#sha256=685de2f03c300b1ede49881a1bf6306ad062082d39c8d3be8b8e85603f32e33a\nMarkupSafe==3.0.3\nmatplotlib==3.10.3\nmatplotlib-inline==0.2.2\nmplib==0.1.1\nmpmath==1.3.0\nnetworkx==3.6.1\nnumpy==2.2.6\nnvidia-cublas-cu12==12.4.5.8\nnvidia-cuda-cupti-cu12==12.4.127\nnvidia-cuda-nvrtc-cu12==12.4.127\nnvidia-cuda-runtime-cu12==12.4.127\nnvidia-cudnn-cu12==9.1.0.70\nnvidia-cufft-cu12==11.2.1.3\nnvidia-curand-cu12==10.3.5.147\nnvidia-cusolver-cu12==11.6.1.9\nnvidia-cusparse-cu12==12.3.1.170\nnvidia-cusparselt-cu12==0.6.2\nnvidia-ml-py==13.610.43\nnvidia-nccl-cu12==2.21.5\nnvidia-nvjitlink-cu12==12.4.127\nnvidia-nvtx-cu12==12.4.127\nopencv-python==4.10.0.84\npackaging==26.2\nparso==0.8.7\npexpect==4.9.0\npillow==12.3.0\npip @ file:///home/task_178229373358736/croot/pip_1782293756958/work\npluggy==1.6.0\nprompt_toolkit==3.0.53\npsutil==7.2.2\nptyprocess==0.7.0\npure_eval==0.2.3\nPygments==2.20.0\npyparsing==3.3.2\npyperclip==1.11.0\npytest==8.4.1\npython-dateutil==2.9.0.post0\npytorch-kinematics==0.7.6\npytorch-seed==0.2.0\nPyYAML==6.0.2\nrequests==2.34.2\nsapien @ file:///data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/sapien-3.0.3-cp311-cp311-manylinux_2_28_x86_64.whl#sha256=9a5eb4dc2efdf9b451cdd77a955d45578a5d81474d4e98089bbc36eeb4a07e45\nscipy==1.17.1\nsetuptools==83.0.0\nsix==1.17.0\nsmmap==5.0.3\nstack-data==0.6.3\nsympy==1.13.1\ntabulate==0.10.0\ntoppra==0.6.9\ntorch==2.6.0+cu124\ntqdm==4.70.0\ntraitlets==5.16.1\ntransforms3d==0.4.2\ntrimesh==5.0.0\ntriton==3.2.0\ntypeguard==4.6.0\ntyping_extensions==4.16.0\ntyro==1.0.15\nurllib3==2.7.0\nwcwidth==0.8.2\nwheel==0.47.0\n"
+      },
+      "state_gpu_smoke_subprocess": {
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "/data/project/tzh/papers/ActMask/audit/environment/state_smoke_worker.py"
+        ],
+        "exit_code": 0,
+        "stderr": "/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/_vulkan_tricks.py:42: UserWarning: Failed to find system libvulkan. Fallback to SAPIEN builtin libvulkan.\n  warn(\"Failed to find system libvulkan. Fallback to SAPIEN builtin libvulkan.\")\n/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/_vulkan_tricks.py:78: UserWarning: Failed to find Vulkan ICD file. This is probably due to an incorrect or partial installation of the NVIDIA driver. SAPIEN will attempt to provide an ICD file anyway but it may not work.\n  warn(\n",
+        "stdout": "{\n  \"cuda\": \"12.4\",\n  \"gpu\": \"NVIDIA A16\",\n  \"gpu_vector_smoke\": {\n    \"aggregate_steps_per_second\": 1167.660251995575,\n    \"control_steps\": 40,\n    \"num_envs\": 8,\n    \"observation_shape\": [\n      8,\n      20\n    ]\n  },\n  \"peak_torch_gpu_memory_bytes\": 24064,\n  \"state_observation_smoke\": {\n    \"deterministic_reset\": true,\n    \"observation_shape\": [\n      1,\n      20\n    ],\n    \"success_field_present\": true\n  },\n  \"task_id\": \"ActMaskMovingCubeIntercept-v1\",\n  \"torch\": \"2.6.0+cu124\",\n  \"visual_rgbd_pointcloud_status\": \"blocked: vulkaninfo is unavailable and prior SAPIEN renderer probe failed to find a rendering device; no system package was installed\",\n  \"vulkaninfo_available\": false\n}\n"
+      }
+    },
+    "commands": [
+      {
+        "command": [
+          "/root/miniconda3/bin/conda",
+          "create",
+          "-p",
+          "/data/envs/actmask-audit",
+          "python=3.11.15",
+          "pip",
+          "-y"
+        ],
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "evidence": "/data/envs/actmask-audit/conda-meta/history",
+        "exit_code": 0,
+        "name": "create_isolated_conda_environment",
+        "shell_command": "cd /data/project/tzh/papers/ActMask && /root/miniconda3/bin/conda create -p /data/envs/actmask-audit python=3.11.15 pip -y"
+      },
+      {
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "-m",
+          "pip",
+          "install",
+          "--retries",
+          "20",
+          "--resume-retries",
+          "20",
+          "--timeout",
+          "120",
+          "--report",
+          "/data/project/tzh/papers/ActMask/audit/environment/pip_base_install_report.json",
+          "numpy==2.2.6",
+          "PyYAML==6.0.2",
+          "matplotlib==3.10.3",
+          "pytest==8.4.1"
+        ],
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "evidence": "/data/project/tzh/papers/ActMask/audit/environment/pip_base_install_report.json",
+        "exit_code": 0,
+        "name": "install_base_audit_dependencies",
+        "note": "Two earlier downloads failed with IncompleteRead; the successful transaction is the one recorded here.",
+        "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip install --retries 20 --resume-retries 20 --timeout 120 --report /data/project/tzh/papers/ActMask/audit/environment/pip_base_install_report.json numpy==2.2.6 PyYAML==6.0.2 matplotlib==3.10.3 pytest==8.4.1"
+      },
+      {
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "-m",
+          "pip",
+          "install",
+          "--index-url",
+          "https://download.pytorch.org/whl/cu124",
+          "--extra-index-url",
+          "https://pypi.org/simple",
+          "--timeout",
+          "120",
+          "--retries",
+          "20",
+          "--resume-retries",
+          "20",
+          "--log",
+          "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_torch_2.6.0_cu124.log",
+          "--report",
+          "/data/project/tzh/papers/ActMask/audit/environment/pip_torch_2.6.0_cu124_report.json",
+          "torch==2.6.0+cu124"
+        ],
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "evidence": "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_torch_2.6.0_cu124.log",
+        "exit_code": 0,
+        "name": "install_exact_torch_cuda124",
+        "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip install --index-url https://download.pytorch.org/whl/cu124 --extra-index-url https://pypi.org/simple --timeout 120 --retries 20 --resume-retries 20 --log /data/project/tzh/papers/ActMask/audit/environment/logs/pip_torch_2.6.0_cu124.log --report /data/project/tzh/papers/ActMask/audit/environment/pip_torch_2.6.0_cu124_report.json 'torch==2.6.0+cu124'"
+      },
+      {
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "-m",
+          "pip",
+          "install",
+          "--timeout",
+          "120",
+          "--retries",
+          "20",
+          "--resume-retries",
+          "20",
+          "--constraint",
+          "/data/project/tzh/papers/ActMask/audit/environment/core_constraints.txt",
+          "--log",
+          "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_maniskill_sapien.log",
+          "--report",
+          "/data/project/tzh/papers/ActMask/audit/environment/pip_maniskill_sapien_report.json",
+          "/data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/sapien-3.0.3-cp311-cp311-manylinux_2_28_x86_64.whl",
+          "/data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/mani_skill-3.0.1-py3-none-any.whl"
+        ],
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "evidence": "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_maniskill_sapien.log",
+        "exit_code": 0,
+        "name": "install_local_sapien_maniskill_and_dependencies",
+        "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip install --timeout 120 --retries 20 --resume-retries 20 --constraint /data/project/tzh/papers/ActMask/audit/environment/core_constraints.txt --log /data/project/tzh/papers/ActMask/audit/environment/logs/pip_maniskill_sapien.log --report /data/project/tzh/papers/ActMask/audit/environment/pip_maniskill_sapien_report.json /data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/sapien-3.0.3-cp311-cp311-manylinux_2_28_x86_64.whl /data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/wheelhouse/mani_skill-3.0.1-py3-none-any.whl"
+      },
+      {
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "-m",
+          "pip",
+          "install",
+          "--constraint",
+          "/data/project/tzh/papers/ActMask/audit/environment/core_constraints.txt",
+          "--log",
+          "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_opencv_4.10.log",
+          "--report",
+          "/data/project/tzh/papers/ActMask/audit/environment/pip_opencv_4.10_report.json",
+          "opencv-python==4.10.0.84"
+        ],
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "evidence": "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_opencv_4.10.log",
+        "exit_code": 0,
+        "name": "pin_recorded_opencv_auxiliary_version",
+        "note": "The dependency resolver first installed 5.0.0.93; this explicit transaction replaced it with the recorded 4.10.0.84 regular wheel.",
+        "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip install --constraint /data/project/tzh/papers/ActMask/audit/environment/core_constraints.txt --log /data/project/tzh/papers/ActMask/audit/environment/logs/pip_opencv_4.10.log --report /data/project/tzh/papers/ActMask/audit/environment/pip_opencv_4.10_report.json opencv-python==4.10.0.84"
+      },
+      {
+        "command": [
+          "ln",
+          "-s",
+          "/data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+          "/data/project/tzh/papers/ActMask/audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so"
+        ],
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "evidence": "/data/project/tzh/papers/ActMask/audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+        "exit_code": 0,
+        "name": "route_existing_physx_gpu_asset_to_audit_home",
+        "note": "No PhysX asset was downloaded. Both symlinks point to pre-existing project-local assets.",
+        "shell_command": "cd /data/project/tzh/papers/ActMask && mkdir -p audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0 && ln -s /data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so && ln -s /data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/linux-so.zip audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/linux-so.zip"
+      },
+      {
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "-m",
+          "pip",
+          "check"
+        ],
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "exit_code": 0,
+        "name": "pip_check",
+        "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip check"
+      },
+      {
+        "command": [
+          "nvidia-smi",
+          "--query-gpu=index,name,driver_version,memory.total",
+          "--format=csv,noheader,nounits"
+        ],
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "exit_code": 0,
+        "name": "nvidia_smi",
+        "shell_command": "cd /data/project/tzh/papers/ActMask && nvidia-smi --query-gpu=index,name,driver_version,memory.total --format=csv,noheader,nounits"
+      },
+      {
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "-m",
+          "pip",
+          "freeze",
+          "--all"
+        ],
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "exit_code": 0,
+        "name": "pip_freeze_all",
+        "shell_command": "cd /data/project/tzh/papers/ActMask && /data/envs/actmask-audit/bin/python -m pip freeze --all"
+      },
+      {
+        "command": [
+          "/root/miniconda3/bin/conda",
+          "list",
+          "--explicit",
+          "-p",
+          "/data/envs/actmask-audit"
+        ],
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "exit_code": 0,
+        "name": "conda_explicit_lock",
+        "shell_command": "cd /data/project/tzh/papers/ActMask && /root/miniconda3/bin/conda list --explicit -p /data/envs/actmask-audit"
+      },
+      {
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "/data/project/tzh/papers/ActMask/audit/environment/import_probe_worker.py"
+        ],
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "exit_code": 0,
+        "name": "native_import_probe",
+        "shell_command": "cd /data/project/tzh/papers/ActMask && HOME=/data/project/tzh/papers/ActMask/audit/environment/home PYTHONPATH=/data/project/tzh/papers/ActMask /data/envs/actmask-audit/bin/python /data/project/tzh/papers/ActMask/audit/environment/import_probe_worker.py"
+      },
+      {
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "/data/project/tzh/papers/ActMask/audit/environment/state_smoke_worker.py"
+        ],
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "exit_code": 0,
+        "name": "state_gpu_smoke_subprocess",
+        "shell_command": "cd /data/project/tzh/papers/ActMask && HOME=/data/project/tzh/papers/ActMask/audit/environment/home PYTHONPATH=/data/project/tzh/papers/ActMask /data/envs/actmask-audit/bin/python /data/project/tzh/papers/ActMask/audit/environment/state_smoke_worker.py"
+      },
+      {
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "/data/project/tzh/papers/ActMask/audit/environment/collect_and_run_smoke.py"
+        ],
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "exit_code": 0,
+        "name": "collect_environment_evidence",
+        "shell_command": "cd /data/project/tzh/papers/ActMask && HOME=/data/project/tzh/papers/ActMask/audit/environment/home PYTHONPATH=/data/project/tzh/papers/ActMask /data/envs/actmask-audit/bin/python /data/project/tzh/papers/ActMask/audit/environment/collect_and_run_smoke.py"
+      }
+    ],
+    "core_environment_smoke_passed": true,
+    "core_versions_exact": true,
+    "current_hardware": {
+      "driver": "580.65.06",
+      "gpu": "NVIDIA A16",
+      "libc": [
+        "glibc",
+        "2.35"
+      ],
+      "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35"
+    },
+    "differences": [
+      {
+        "current": "NVIDIA A16",
+        "kind": "historical_hardware_records_differ_by_stage",
+        "milestone3p": "NVIDIA GeForce RTX 4090 D",
+        "milestone3s": "NVIDIA A16"
+      },
+      {
+        "current": "580.65.06",
+        "kind": "driver_mismatch_vs_milestone3p",
+        "milestone3p": "580.76.05"
+      },
+      {
+        "current": "glibc2.35",
+        "historical": "glibc2.39",
+        "kind": "libc_mismatch_vs_historical_platform_records"
+      },
+      {
+        "current": "isolated conda prefix plus pip packages; only the pre-existing PhysX GPU asset is symlinked under audit HOME",
+        "historical": "milestone3s records repaired cross-environment package symlinks",
+        "kind": "environment_construction_differs"
+      }
+    ],
+    "environment_root": "/data/envs/actmask-audit",
+    "errors": [],
+    "finished_at_utc": "2026-08-12T09:25:54.184437+00:00",
+    "gpu_import_smoke_ok": true,
+    "imports": {
+      "mani_skill": {
+        "module_file": "/data/envs/actmask-audit/lib/python3.11/site-packages/mani_skill/__init__.py",
+        "ok": true
+      },
+      "numpy": {
+        "module_file": "/data/envs/actmask-audit/lib/python3.11/site-packages/numpy/__init__.py",
+        "ok": true
+      },
+      "sapien": {
+        "module_file": "/data/envs/actmask-audit/lib/python3.11/site-packages/sapien/__init__.py",
+        "ok": true
+      },
+      "torch": {
+        "module_file": "/data/envs/actmask-audit/lib/python3.11/site-packages/torch/__init__.py",
+        "ok": true
+      }
+    },
+    "legacy_exact_reproduction": false,
+    "legacy_provenance_gaps": [
+      "No historical full dependency lock is present.",
+      "No Git/source commit identifies the historical generator code.",
+      "No simulator snapshot or per-step execution trace is present."
+    ],
+    "locks": {
+      "conda_explicit_lock": {
+        "bytes": 2644,
+        "exists": true,
+        "path": "/data/project/tzh/papers/ActMask/audit/environment/conda-explicit.lock.txt",
+        "sha256": "e574f00c7f3db71b2c5a803814619354be0cd24065e985e97637fd9402f85d5b"
+      },
+      "pip_freeze_all": {
+        "bytes": 2382,
+        "exists": true,
+        "path": "/data/project/tzh/papers/ActMask/audit/environment/requirements.lock.txt",
+        "sha256": "570d4904d09cecbda33d4ab5d4c78a47663b966c88577674819261dc78753887"
+      }
+    },
+    "logs": {
+      "base_install_report": {
+        "bytes": 259844,
+        "exists": true,
+        "path": "/data/project/tzh/papers/ActMask/audit/environment/pip_base_install_report.json",
+        "sha256": "e777f81789c76c5dbe57fb20fe295137e0ed9d426f463fcf80182504e26c8cd7"
+      },
+      "native_import_probe": {
+        "bytes": 1418,
+        "exists": true,
+        "path": "/data/project/tzh/papers/ActMask/audit/environment/logs/native_import_probe.log",
+        "sha256": "eaa3c10d9416f79d500a5c9ca634baf51030ee2205146ba8458e331b1fa208c5"
+      },
+      "simulator_install": {
+        "bytes": 6837875,
+        "exists": true,
+        "path": "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_maniskill_sapien.log",
+        "sha256": "bab95efd986c5679e8863376fc18cc3c3b03e3a19ce2790880f03bad60db2744"
+      },
+      "simulator_install_report": {
+        "bytes": 743576,
+        "exists": true,
+        "path": "/data/project/tzh/papers/ActMask/audit/environment/pip_maniskill_sapien_report.json",
+        "sha256": "0f8f8f16fbda7247925040dc25670f62e86f7d03ae7fe814deff3274f177e386"
+      },
+      "state_gpu_smoke_json": {
+        "bytes": 693,
+        "exists": true,
+        "path": "/data/project/tzh/papers/ActMask/audit/environment/smoke/maniskill_state_gpu_smoke.json",
+        "sha256": "4f3aca85a52159c2276013418c3ece6617bfb7eec597be39dac17e0c2838c06b"
+      },
+      "state_gpu_smoke_subprocess": {
+        "bytes": 1231,
+        "exists": true,
+        "path": "/data/project/tzh/papers/ActMask/audit/environment/logs/state_gpu_smoke_subprocess.log",
+        "sha256": "0331a345b9ea1bef8cb669961c6bd5f0fd8d39fd4ab0ccc376014e9b30e292a1"
+      },
+      "torch_install": {
+        "bytes": 1857148,
+        "exists": true,
+        "path": "/data/project/tzh/papers/ActMask/audit/environment/logs/pip_torch_2.6.0_cu124.log",
+        "sha256": "874478239bb507b33d5587b33f6e71a74785823a8bf498693bf6367ffbf48229"
+      },
+      "torch_install_report": {
+        "bytes": 127494,
+        "exists": true,
+        "path": "/data/project/tzh/papers/ActMask/audit/environment/pip_torch_2.6.0_cu124_report.json",
+        "sha256": "5a403a63892027d57e71de0ca45862e9f61d7aab56c86acbae639e21e0792834"
+      }
+    },
+    "observed_versions": {
+      "mani_skill": "3.0.1",
+      "numpy": "2.2.6",
+      "opencv_python": "4.10.0.84",
+      "python": "3.11.15",
+      "sapien": "3.0.3",
+      "torch": "2.6.0+cu124",
+      "torch_cuda": "12.4"
+    },
+    "physx_gpu_asset": {
+      "bytes": 236705440,
+      "exists": true,
+      "path": "/data/project/tzh/papers/ActMask/audit/environment/home/.sapien/physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+      "resolved_path": "/data/project/tzh/papers/ActMask/.maniskill_data/sapien_physx/105.1-physx-5.3.1.patch0/libPhysXGpu_64.so",
+      "sha256": "4c582a16509a71faf5592fe9708586dfcc7ab61ae932eabc1ddd81f290818706"
+    },
+    "pip_check": true,
+    "pip_check_ok": true,
+    "prior_environment_references": {
+      "interpretation": "These records describe different stages: milestone3p names an RTX 4090 D, while the later milestone3s packaging manifest names an A16. They are retained together rather than silently reconciled.",
+      "milestone3p_gpu_qualification_runtime": {
+        "bytes": 2364,
+        "driver": "580.76.05",
+        "exists": true,
+        "gpu": "NVIDIA GeForce RTX 4090 D",
+        "path": "/data/project/tzh/papers/ActMask/outputs/actmask/milestone3p_gpu_benchmark/gpu_qualification_runtime.json",
+        "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.39",
+        "sha256": "e06821fed1201c9c0ff31a1a4ba63071809508b5f13b99f28c856f693f41d329",
+        "torch": "2.6.0+cu124"
+      },
+      "milestone3s_artifact_manifest": {
+        "bytes": 18536,
+        "driver": null,
+        "environment_path": "/home/tzh/conda_envs/actmask",
+        "exists": true,
+        "gpu": "NVIDIA A16",
+        "package_symlink_repairs": 24,
+        "path": "/data/project/tzh/papers/ActMask/outputs/actmask/milestone3s_paper_package/artifact_manifest.json",
+        "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.39",
+        "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:45:40) [GCC 14.3.0]",
+        "sha256": "b96ffea1d7b3c0fafdf83f88880d4e2f67ec594403a8d4c6fb749ff2e841f665"
+      }
+    },
+    "process_environment": {
+      "HOME": "/data/project/tzh/papers/ActMask/audit/environment/home",
+      "PYTHONPATH": "/data/project/tzh/papers/ActMask",
+      "cwd": "/data/project/tzh/papers/ActMask"
+    },
+    "python": {
+      "executable": "/data/envs/actmask-audit/bin/python",
+      "implementation": "CPython",
+      "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35",
+      "version": "3.11.15"
+    },
+    "requested_versions": {
+      "mani_skill": "3.0.1",
+      "opencv_python_auxiliary": "4.10.0.84",
+      "python": "3.11.15",
+      "sapien": "3.0.3",
+      "torch": "2.6.0+cu124",
+      "torch_cuda": "12.4"
+    },
+    "schema_version": 1,
+    "smoke_gpu": true,
+    "smoke_import": true,
+    "started_at_utc": "2026-08-12T09:25:02.459532+00:00",
+    "state_gpu_smoke": {
+      "ok": true,
+      "result": {
+        "cuda": "12.4",
+        "gpu": "NVIDIA A16",
+        "gpu_vector_smoke": {
+          "aggregate_steps_per_second": 1167.660251995575,
+          "control_steps": 40,
+          "num_envs": 8,
+          "observation_shape": [
+            8,
+            20
+          ]
+        },
+        "peak_torch_gpu_memory_bytes": 24064,
+        "state_observation_smoke": {
+          "deterministic_reset": true,
+          "observation_shape": [
+            1,
+            20
+          ],
+          "success_field_present": true
+        },
+        "task_id": "ActMaskMovingCubeIntercept-v1",
+        "torch": "2.6.0+cu124",
+        "visual_rgbd_pointcloud_status": "blocked: vulkaninfo is unavailable and prior SAPIEN renderer probe failed to find a rendering device; no system package was installed",
+        "vulkaninfo_available": false
+      },
+      "subprocess_exit_code": 0
+    },
+    "status": "passed",
+    "torch_cuda": {
+      "available": true,
+      "compiled_cuda": "12.4",
+      "device_0": "NVIDIA A16",
+      "device_count": 1
+    },
+    "version_checks": {
+      "mani_skill_exact": true,
+      "python_exact": true,
+      "sapien_exact": true,
+      "torch_cuda_exact": true,
+      "torch_exact": true
+    }
+  },
+  "generated_utc": "2026-08-12T09:28:44.885715+00:00",
+  "limitations": [
+    "No per-step execution traces or simulator snapshots exist in the frozen artifacts.",
+    "Discarded non-flip pairs have outcome booleans but no saved model inputs.",
+    "The legacy environment is not fully locked and the directory is not a Git repository.",
+    "Action-only reassignment is diagnostic because labels were not regenerated."
+  ],
+  "perturbations": {
+    "candidate": {
+      "baseline_ranking": {
+        "C10": {
+          "contexts": 600,
+          "corrected_utility_gain_ndcg": 1.0,
+          "mixed_contexts": 600,
+          "normalized_regret": 0.0,
+          "top1_success": 1.0,
+          "top3_success_recall": 1.0
+        },
+        "C20": {
+          "contexts": 600,
+          "corrected_utility_gain_ndcg": 1.0,
+          "mixed_contexts": 600,
+          "normalized_regret": 0.0,
+          "top1_success": 1.0,
+          "top3_success_recall": 1.0
+        },
+        "C5": {
+          "contexts": 600,
+          "corrected_utility_gain_ndcg": 1.0,
+          "mixed_contexts": 600,
+          "normalized_regret": 0.0,
+          "top1_success": 1.0,
+          "top3_success_recall": 1.0
+        }
+      },
+      "deterministic_adjacent_action_reassignment_c_xor_1": {
+        "accuracy": 0.0,
+        "examples": 12000,
+        "minimum_absolute_score": 0.018148984760046005,
+        "pair_order_accuracy": 0.0,
+        "ranking": {
+          "C10": {
+            "contexts": 600,
+            "corrected_utility_gain_ndcg": 0.5409945177788987,
+            "mixed_contexts": 600,
+            "normalized_regret": 1.0,
+            "top1_success": 0.0,
+            "top3_success_recall": 0.0
+          },
+          "C20": {
+            "contexts": 600,
+            "corrected_utility_gain_ndcg": 0.5495051033900726,
+            "mixed_contexts": 600,
+            "normalized_regret": 1.0,
+            "top1_success": 0.0,
+            "top3_success_recall": 0.0
+          },
+          "C5": {
+            "contexts": 600,
+            "corrected_utility_gain_ndcg": 0.5597771686955827,
+            "mixed_contexts": 600,
+            "normalized_regret": 1.0,
+            "top1_success": 0.0,
+            "top3_success_recall": 0.5
+          }
+        },
+        "warning": "Diagnostic only: labels were not regenerated by the simulator.",
+        "zero_score_count": 0
+      },
+      "joint_candidate_record_order_shuffle_and_action_reassignment": {
+        "101": {
+          "action_only_reassignment": {
+            "accuracy": 0.5026666666666667,
+            "examples": 12000,
+            "minimum_absolute_score": 0.018148984760046005,
+            "pair_order_accuracy": 0.5026666666666667,
+            "ranking": {
+              "C10": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.7650625427721844,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.5105575396825397,
+                "top1_success": 0.4894424603174603,
+                "top3_success_recall": 0.9033333333333333
+              },
+              "C20": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.7734761681694626,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.5085000000000001,
+                "top1_success": 0.49149999999999994,
+                "top3_success_recall": 0.91
+              },
+              "C5": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.764909907487679,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.5270833333333333,
+                "top1_success": 0.47291666666666665,
+                "top3_success_recall": 0.9416666666666667
+              }
+            },
+            "warning": "Diagnostic only: labels were not regenerated by the simulator.",
+            "zero_score_count": 0
+          },
+          "joint_record_order_shuffle": {
+            "invariant": true,
+            "ranking": {
+              "C10": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              },
+              "C20": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              },
+              "C5": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              }
+            }
+          }
+        },
+        "211": {
+          "action_only_reassignment": {
+            "accuracy": 0.4876666666666667,
+            "examples": 12000,
+            "minimum_absolute_score": 0.018148984760046005,
+            "pair_order_accuracy": 0.4876666666666667,
+            "ranking": {
+              "C10": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.7689100259396896,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.5123015873015874,
+                "top1_success": 0.48769841269841263,
+                "top3_success_recall": 0.9183333333333333
+              },
+              "C20": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.772382258203023,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.5131666666666667,
+                "top1_success": 0.4868333333333334,
+                "top3_success_recall": 0.9116666666666666
+              },
+              "C5": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.7667758396387243,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.5190277777777778,
+                "top1_success": 0.4809722222222222,
+                "top3_success_recall": 0.9433333333333334
+              }
+            },
+            "warning": "Diagnostic only: labels were not regenerated by the simulator.",
+            "zero_score_count": 0
+          },
+          "joint_record_order_shuffle": {
+            "invariant": true,
+            "ranking": {
+              "C10": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              },
+              "C20": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              },
+              "C5": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              }
+            }
+          }
+        },
+        "307": {
+          "action_only_reassignment": {
+            "accuracy": 0.5086666666666667,
+            "examples": 12000,
+            "minimum_absolute_score": 0.018148984760046005,
+            "pair_order_accuracy": 0.5086666666666667,
+            "ranking": {
+              "C10": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.785982520568773,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.456702380952381,
+                "top1_success": 0.543297619047619,
+                "top3_success_recall": 0.9316666666666666
+              },
+              "C20": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.7845765756442955,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.484388888888889,
+                "top1_success": 0.515611111111111,
+                "top3_success_recall": 0.9166666666666666
+              },
+              "C5": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.7921505277398865,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.45805555555555555,
+                "top1_success": 0.5419444444444445,
+                "top3_success_recall": 0.955
+              }
+            },
+            "warning": "Diagnostic only: labels were not regenerated by the simulator.",
+            "zero_score_count": 0
+          },
+          "joint_record_order_shuffle": {
+            "invariant": true,
+            "ranking": {
+              "C10": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              },
+              "C20": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              },
+              "C5": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              }
+            }
+          }
+        },
+        "401": {
+          "action_only_reassignment": {
+            "accuracy": 0.499,
+            "examples": 12000,
+            "minimum_absolute_score": 0.018148984760046005,
+            "pair_order_accuracy": 0.499,
+            "ranking": {
+              "C10": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.7653770016532697,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.49973015873015886,
+                "top1_success": 0.5002698412698413,
+                "top3_success_recall": 0.9066666666666666
+              },
+              "C20": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.7723899413141756,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.4961388888888889,
+                "top1_success": 0.5038611111111111,
+                "top3_success_recall": 0.9033333333333333
+              },
+              "C5": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.7776425833969739,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.48902777777777773,
+                "top1_success": 0.5109722222222223,
+                "top3_success_recall": 0.9683333333333334
+              }
+            },
+            "warning": "Diagnostic only: labels were not regenerated by the simulator.",
+            "zero_score_count": 0
+          },
+          "joint_record_order_shuffle": {
+            "invariant": true,
+            "ranking": {
+              "C10": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              },
+              "C20": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              },
+              "C5": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              }
+            }
+          }
+        },
+        "503": {
+          "action_only_reassignment": {
+            "accuracy": 0.502,
+            "examples": 12000,
+            "minimum_absolute_score": 0.018148984760046005,
+            "pair_order_accuracy": 0.502,
+            "ranking": {
+              "C10": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.7654962076873593,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.5115555555555557,
+                "top1_success": 0.4884444444444445,
+                "top3_success_recall": 0.9166666666666666
+              },
+              "C20": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.773990046332658,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.4951666666666667,
+                "top1_success": 0.5048333333333332,
+                "top3_success_recall": 0.9133333333333333
+              },
+              "C5": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 0.7675597640562478,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.51375,
+                "top1_success": 0.48625,
+                "top3_success_recall": 0.9633333333333334
+              }
+            },
+            "warning": "Diagnostic only: labels were not regenerated by the simulator.",
+            "zero_score_count": 0
+          },
+          "joint_record_order_shuffle": {
+            "invariant": true,
+            "ranking": {
+              "C10": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              },
+              "C20": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              },
+              "C5": {
+                "contexts": 600,
+                "corrected_utility_gain_ndcg": 1.0,
+                "mixed_contexts": 600,
+                "normalized_regret": 0.0,
+                "top1_success": 1.0,
+                "top3_success_recall": 1.0
+              }
+            }
+          }
+        }
+      },
+      "metadata_candidate_parity_remap_xor_one": {
+        "accuracy": 0.0,
+        "arrow_action_accuracy_unchanged": 1.0,
+        "interpretation": "candidate_id is metadata, not a model input; parity is only an action-direction proxy."
+      }
+    },
+    "temporal": {
+      "exact_early_partner_reverse": {
+        "accuracy": 0.0,
+        "accuracy_against_partner_labels": 1.0,
+        "examples": 12000,
+        "minimum_absolute_score": 0.018148984760046005,
+        "pair_order_accuracy_original_labels": 0.0,
+        "zero_score_count": 0
+      },
+      "genuine_pair_shared_random_early_shuffle": {
+        "101": {
+          "accuracy": 0.4990833333333333,
+          "examples": 12000,
+          "minimum_absolute_score": 7.800757884979248e-06,
+          "pair_order_accuracy": 0.4985,
+          "zero_score_count": 0
+        },
+        "211": {
+          "accuracy": 0.5035,
+          "examples": 12000,
+          "minimum_absolute_score": 7.800757884979248e-06,
+          "pair_order_accuracy": 0.5036666666666667,
+          "zero_score_count": 0
+        },
+        "307": {
+          "accuracy": 0.49883333333333335,
+          "examples": 12000,
+          "minimum_absolute_score": 7.800757884979248e-06,
+          "pair_order_accuracy": 0.49666666666666665,
+          "zero_score_count": 0
+        },
+        "401": {
+          "accuracy": 0.5048333333333334,
+          "examples": 12000,
+          "minimum_absolute_score": 7.800757884979248e-06,
+          "pair_order_accuracy": 0.5073333333333333,
+          "zero_score_count": 0
+        },
+        "503": {
+          "accuracy": 0.49766666666666665,
+          "examples": 12000,
+          "minimum_absolute_score": 7.800757884979248e-06,
+          "pair_order_accuracy": 0.49566666666666664,
+          "zero_score_count": 0
+        }
+      },
+      "last_two_only": {
+        "accuracy": 0.5,
+        "examples": 12000,
+        "minimum_absolute_score": 0.0,
+        "pair_order_accuracy": 0.5,
+        "zero_score_count": 12000
+      },
+      "original": {
+        "accuracy": 1.0,
+        "examples": 12000,
+        "minimum_absolute_score": 0.018148984760046005,
+        "pair_order_accuracy": 1.0,
+        "zero_score_count": 0
+      }
+    }
+  },
+  "python": {
+    "executable": "/root/miniconda3/bin/python3",
+    "version": "3.10.16"
+  },
+  "replay": {
+    "attempted": 8,
+    "blockers": [
+      "Replay mismatch/limitation: the reduced-batch current-runtime subset preserves exact schemas, metadata, outcomes, labels, and filtering, but retained float arrays are not bit-exact; inspect mismatch_details and per_case_array_comparisons."
+    ],
+    "cases": [
+      {
+        "all_arrays_exact": false,
+        "argument_data_binding": {
+          "config_sha256_matches_frozen_parent": true,
+          "expected_metadata_seed": 6101,
+          "expected_outcome_keys_exact": true,
+          "generation_count_binding": {
+            "accepted_pairs_matches_retained_pairs": true,
+            "audit_pairs_matches_retained_pairs": true,
+            "candidate_executions_matches_outcome_branches": true,
+            "examples_matches_metadata_rows": true
+          },
+          "generation_counts_exact": true,
+          "metadata_argument_consistency": true
+        },
+        "array_comparisons": {
+          "labels.static_features": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 2.47955322265625e-05,
+            "shape": [
+              4,
+              29
+            ]
+          },
+          "labels.success": {
+            "dtype_exact": true,
+            "dtype_fresh": "bool",
+            "dtype_frozen": "bool",
+            "exact": true,
+            "max_abs_error": null,
+            "shape": [
+              4
+            ]
+          },
+          "model_inputs.candidate_actions": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 2.4616718292236328e-05,
+            "shape": [
+              4,
+              20,
+              3
+            ]
+          },
+          "model_inputs.history": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 1.7434358596801758e-06,
+            "shape": [
+              4,
+              6,
+              20
+            ]
+          },
+          "model_inputs.nominal_action_timing": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              4,
+              20
+            ]
+          },
+          "model_inputs.observation_confidence": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              4,
+              6,
+              1
+            ]
+          },
+          "model_inputs.tcp_state": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 9.834766387939453e-07,
+            "shape": [
+              4,
+              3
+            ]
+          },
+          "model_inputs.timestamps": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              4,
+              6
+            ]
+          },
+          "model_inputs.visibility": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              4,
+              6,
+              1
+            ]
+          }
+        },
+        "attempted": 4,
+        "case_name": "id_m0_seed6101",
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "-c",
+          "from actmask.experiments.milestone3r_nl_v2 import generate; generate('audit/replay/minimal_id_m0_w1_c2_seed6101', worlds=1, seed=6101, condition='id', mechanisms=(0,), candidates=2, families=('damped_moving_capture',))"
+        ],
+        "configuration": {
+          "candidates": 2,
+          "condition": "id",
+          "expected_branch_executions": 4,
+          "families": [
+            "damped_moving_capture"
+          ],
+          "generate_seed": 6101,
+          "mechanisms": [
+            0
+          ],
+          "worlds": 1
+        },
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "environment": {
+          "HOME": "/data/project/tzh/papers/ActMask/audit/environment/home",
+          "PYTHONPATH": "/data/project/tzh/papers/ActMask"
+        },
+        "examples": 4,
+        "files": {
+          "fresh": {
+            "candidate_outcomes.jsonl": {
+              "bytes": 420,
+              "sha256": "c286cc8dde862ec15bd2508d2a57bf139448987eadd4a0202215d45d93f709ae"
+            },
+            "generation_report.json": {
+              "bytes": 469,
+              "sha256": "453bd89274a9926efafc812bd7eaa450f9ed63ffa62a331d5b4d417923464100"
+            },
+            "labels.npz": {
+              "bytes": 494,
+              "sha256": "4c5b45f3ea3ae3e9a10a93148dd3ef62611909afe97c708fe410fcb2e2bdd543"
+            },
+            "metadata.jsonl": {
+              "bytes": 1522,
+              "sha256": "ab97e2e012de4dbe9d4a7fea6451a7047b107646f0f32fd1c96be4d017a368d7"
+            },
+            "model_inputs.npz": {
+              "bytes": 1796,
+              "sha256": "6f5f4ed27246954a4a8deb94126a98bc969fcb252589a3a30b31f264970505b0"
+            }
+          },
+          "frozen": {
+            "candidate_outcomes.jsonl": {
+              "bytes": 5019200,
+              "sha256": "36d24c452cee797de020bfc9ca9a069f986d16a0f8f635462482cd02f852fd1c"
+            },
+            "generation_report.json": {
+              "bytes": 518,
+              "sha256": "9d47b656b47eafc48020654d8e2cfe7a0950ffb7df71ac97a323ae44673765c4"
+            },
+            "labels.npz": {
+              "bytes": 839250,
+              "sha256": "026222d41acffcb52f664085eb4a9cb6982273165508d16f9d40128c3b4b57a6"
+            },
+            "metadata.jsonl": {
+              "bytes": 18952080,
+              "sha256": "23c17c8e3a9e3ed1379edcee8eb3f1bcb73a1ff3f428307758a47ba5f443f2b6"
+            },
+            "model_inputs.npz": {
+              "bytes": 1757036,
+              "sha256": "0c534b8d810568963ef30e8bd01ce180ab9d742fec7af3974ec9714c919c5d32"
+            }
+          }
+        },
+        "filter_consistency": true,
+        "fresh_generation_report": {
+          "accepted_pairs": 2,
+          "audit": {
+            "label_flip_rate": 1.0,
+            "max_matching_error": 0.0,
+            "pair_swap_max_error": 0.0,
+            "pairs": 2
+          },
+          "candidate_executions": 4,
+          "candidates": 2,
+          "condition": "id",
+          "config_sha256": "9dc510bdec94e4715df96f6cc6f960f932d4dd37babea957e0f14325cf98e564",
+          "examples": 4,
+          "generation_seconds": 24.961406724527478,
+          "label_balance": 0.5,
+          "mechanisms": [
+            "history_identifiable_damping_drive"
+          ],
+          "worlds": 1
+        },
+        "frozen_parent_generation_report": {
+          "accepted_pairs": 24000,
+          "audit": {
+            "label_flip_rate": 1.0,
+            "max_matching_error": 0.0,
+            "pair_swap_max_error": 0.0,
+            "pairs": 24000
+          },
+          "candidate_executions": 48000,
+          "candidates": 20,
+          "condition": "id",
+          "config_sha256": "9dc510bdec94e4715df96f6cc6f960f932d4dd37babea957e0f14325cf98e564",
+          "examples": 48000,
+          "generation_seconds": 37.816022330895066,
+          "label_balance": 0.5,
+          "mechanisms": [
+            "history_identifiable_damping_drive",
+            "hysteretic_mode_memory"
+          ],
+          "worlds": 300
+        },
+        "join_key": "metadata: (pair_id, branch); outcomes: (condition, family, mechanism, world_id, candidate_id)",
+        "limitations": [
+          "Fresh worlds/candidates are reduced versus the frozen parent generation; this is a seed/world/candidate subset re-execution, not the same parent batch configuration.",
+          "No historical simulator snapshot or per-step trace exists.",
+          "A match supports repeatability under the reconstructed environment, not independent proof of how every frozen result was produced.",
+          "Only one world, one family, one mechanism, and two candidates were re-executed; no full dataset or training run was attempted.",
+          "Filtered nonflip observations/actions are absent from both fresh and frozen NPZ files, so nonflip comparison is limited to exact outcome booleans and absence from retained metadata/arrays."
+        ],
+        "matched_outcomes": 2,
+        "matched_rows": 4,
+        "max_array_abs_error": 2.47955322265625e-05,
+        "metadata_all_exact": true,
+        "metadata_exact_by_row": {
+          "id:damped_moving_capture:0:0:0|branch=0": true,
+          "id:damped_moving_capture:0:0:0|branch=1": true,
+          "id:damped_moving_capture:0:0:1|branch=0": true,
+          "id:damped_moving_capture:0:0:1|branch=1": true
+        },
+        "not_numerically_comparable_fields": [
+          "labels.success"
+        ],
+        "numeric_array_max_abs_error_by_field": {
+          "labels.static_features": 2.47955322265625e-05,
+          "model_inputs.candidate_actions": 2.4616718292236328e-05,
+          "model_inputs.history": 1.7434358596801758e-06,
+          "model_inputs.nominal_action_timing": 0.0,
+          "model_inputs.observation_confidence": 0.0,
+          "model_inputs.tcp_state": 9.834766387939453e-07,
+          "model_inputs.timestamps": 0.0,
+          "model_inputs.visibility": 0.0
+        },
+        "outcomes_all_exact": true,
+        "outcomes_exact_by_pair": {
+          "id|damped_moving_capture|history_identifiable_damping_drive|0|0": true,
+          "id|damped_moving_capture|history_identifiable_damping_drive|0|1": true
+        },
+        "pairs": 2,
+        "retention_filter": {
+          "attempted_pairs": 2,
+          "flip_pairs": 2,
+          "fresh_and_frozen_flip_status_exact": true,
+          "nonflip_pairs": 0,
+          "outcome_flip_invariant": true,
+          "required_nonflip_present": true,
+          "retained_exactly_equals_flip_pairs": true,
+          "retained_pair_branches_exact": true,
+          "retained_pairs": 2
+        },
+        "schema_detail": {
+          "labels.npz": {
+            "expected_keys": [
+              "static_features",
+              "success"
+            ],
+            "fields": {
+              "static_features": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  4,
+                  29
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  48000,
+                  29
+                ],
+                "non_batch_shape_exact": true
+              },
+              "success": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "bool",
+                "fresh_shape": [
+                  4
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "bool",
+                "frozen_shape": [
+                  48000
+                ],
+                "non_batch_shape_exact": true
+              }
+            },
+            "fresh_keys": [
+              "static_features",
+              "success"
+            ],
+            "frozen_keys": [
+              "static_features",
+              "success"
+            ],
+            "key_sets_exact": true
+          },
+          "model_inputs.npz": {
+            "expected_keys": [
+              "candidate_actions",
+              "history",
+              "nominal_action_timing",
+              "observation_confidence",
+              "tcp_state",
+              "timestamps",
+              "visibility"
+            ],
+            "fields": {
+              "candidate_actions": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  4,
+                  20,
+                  3
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  48000,
+                  20,
+                  3
+                ],
+                "non_batch_shape_exact": true
+              },
+              "history": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  4,
+                  6,
+                  20
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  48000,
+                  6,
+                  20
+                ],
+                "non_batch_shape_exact": true
+              },
+              "nominal_action_timing": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  4,
+                  20
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  48000,
+                  20
+                ],
+                "non_batch_shape_exact": true
+              },
+              "observation_confidence": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  4,
+                  6,
+                  1
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  48000,
+                  6,
+                  1
+                ],
+                "non_batch_shape_exact": true
+              },
+              "tcp_state": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  4,
+                  3
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  48000,
+                  3
+                ],
+                "non_batch_shape_exact": true
+              },
+              "timestamps": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  4,
+                  6
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  48000,
+                  6
+                ],
+                "non_batch_shape_exact": true
+              },
+              "visibility": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  4,
+                  6,
+                  1
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  48000,
+                  6,
+                  1
+                ],
+                "non_batch_shape_exact": true
+              }
+            },
+            "fresh_keys": [
+              "candidate_actions",
+              "history",
+              "nominal_action_timing",
+              "observation_confidence",
+              "tcp_state",
+              "timestamps",
+              "visibility"
+            ],
+            "frozen_keys": [
+              "candidate_actions",
+              "history",
+              "nominal_action_timing",
+              "observation_confidence",
+              "tcp_state",
+              "timestamps",
+              "visibility"
+            ],
+            "key_sets_exact": true
+          }
+        },
+        "schema_matches": true,
+        "schema_version": 1,
+        "scope": "bounded_frozen_subset_reexecution_under_reduced_batch_not_same_parent_configuration_or_snapshot_replay",
+        "scope_limitations": [
+          "Fresh worlds/candidates are reduced versus the frozen parent generation; this is a seed/world/candidate subset re-execution, not the same parent batch configuration.",
+          "No historical simulator snapshot or per-step trace exists.",
+          "A match supports repeatability under the reconstructed environment, not independent proof of how every frozen result was produced.",
+          "Only one world, one family, one mechanism, and two candidates were re-executed; no full dataset or training run was attempted.",
+          "Filtered nonflip observations/actions are absent from both fresh and frozen NPZ files, so nonflip comparison is limited to exact outcome booleans and absence from retained metadata/arrays."
+        ],
+        "shell_command": "cd /data/project/tzh/papers/ActMask && HOME=/data/project/tzh/papers/ActMask/audit/environment/home PYTHONPATH=/data/project/tzh/papers/ActMask /data/envs/actmask-audit/bin/python -c 'from actmask.experiments.milestone3r_nl_v2 import generate; generate('\"'\"'audit/replay/minimal_id_m0_w1_c2_seed6101'\"'\"', worlds=1, seed=6101, condition='\"'\"'id'\"'\"', mechanisms=(0,), candidates=2, families=('\"'\"'damped_moving_capture'\"'\"',))'",
+        "status": "completed_with_mismatch",
+        "success_consistency": true,
+        "verification_passed": false
+      },
+      {
+        "all_arrays_exact": false,
+        "argument_data_binding": {
+          "config_sha256_matches_frozen_parent": true,
+          "expected_metadata_seed": 7401,
+          "expected_outcome_keys_exact": true,
+          "generation_count_binding": {
+            "accepted_pairs_matches_retained_pairs": true,
+            "audit_pairs_matches_retained_pairs": true,
+            "candidate_executions_matches_outcome_branches": true,
+            "examples_matches_metadata_rows": true
+          },
+          "generation_counts_exact": true,
+          "metadata_argument_consistency": true
+        },
+        "array_comparisons": {
+          "labels.static_features": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 1.7642974853515625e-05,
+            "shape": [
+              2,
+              29
+            ]
+          },
+          "labels.success": {
+            "dtype_exact": true,
+            "dtype_fresh": "bool",
+            "dtype_frozen": "bool",
+            "exact": true,
+            "max_abs_error": null,
+            "shape": [
+              2
+            ]
+          },
+          "model_inputs.candidate_actions": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 1.6808509826660156e-05,
+            "shape": [
+              2,
+              20,
+              3
+            ]
+          },
+          "model_inputs.history": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 7.413327693939209e-07,
+            "shape": [
+              2,
+              6,
+              20
+            ]
+          },
+          "model_inputs.nominal_action_timing": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              2,
+              20
+            ]
+          },
+          "model_inputs.observation_confidence": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              2,
+              6,
+              1
+            ]
+          },
+          "model_inputs.tcp_state": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 7.152557373046875e-07,
+            "shape": [
+              2,
+              3
+            ]
+          },
+          "model_inputs.timestamps": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              2,
+              6
+            ]
+          },
+          "model_inputs.visibility": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              2,
+              6,
+              1
+            ]
+          }
+        },
+        "attempted": 4,
+        "case_name": "temporal_m1_seed6401",
+        "command": [
+          "/data/envs/actmask-audit/bin/python",
+          "-c",
+          "from actmask.experiments.milestone3r_nl_v2 import generate; generate('audit/replay/minimal_temporal_m1_w1_c2_seed6401', worlds=1, seed=6401, condition='temporal_ood', mechanisms=(1,), candidates=2, families=('damped_moving_capture',))"
+        ],
+        "configuration": {
+          "candidates": 2,
+          "condition": "temporal_ood",
+          "expected_branch_executions": 4,
+          "families": [
+            "damped_moving_capture"
+          ],
+          "generate_seed": 6401,
+          "mechanisms": [
+            1
+          ],
+          "worlds": 1
+        },
+        "cwd": "/data/project/tzh/papers/ActMask",
+        "environment": {
+          "HOME": "/data/project/tzh/papers/ActMask/audit/environment/home",
+          "PYTHONPATH": "/data/project/tzh/papers/ActMask"
+        },
+        "examples": 2,
+        "files": {
+          "fresh": {
+            "candidate_outcomes.jsonl": {
+              "bytes": 416,
+              "sha256": "cd22799083195441fcc7ddce9cd46873f1675f4ae61dc89ed786ab26d2bdaa91"
+            },
+            "generation_report.json": {
+              "bytes": 467,
+              "sha256": "018d0929f1a220b243e66d7957d20e92919716b9657d001dd5d430c782ab9130"
+            },
+            "labels.npz": {
+              "bytes": 479,
+              "sha256": "57edc3699dbe4e73a64ced8633f565010b5a5bb8186a085023fbf1c43f4825f0"
+            },
+            "metadata.jsonl": {
+              "bytes": 811,
+              "sha256": "b1a62ba63178c77030411f6870b7ef33ea75705f5879cadc744ad173f2616cfd"
+            },
+            "model_inputs.npz": {
+              "bytes": 1772,
+              "sha256": "cc21739b79467b03dab3347c52efb28bcd451213e34bea3549bb3cdfbdf10e30"
+            }
+          },
+          "frozen": {
+            "candidate_outcomes.jsonl": {
+              "bytes": 1266400,
+              "sha256": "79fd34c03f1a6f60ea2245382ba34ec078cc51119292f5b69960c2d1184bffac"
+            },
+            "generation_report.json": {
+              "bytes": 483,
+              "sha256": "4e7d13f5cf214f0ae46f88581ba87bd48464936f575af324761d04d4b4e75a2c"
+            },
+            "labels.npz": {
+              "bytes": 45518,
+              "sha256": "ee10c74d40fbac6982dfc5a71833eefa528e8d93c5c9ba8e8cc3cfb3dfa75539"
+            },
+            "metadata.jsonl": {
+              "bytes": 2297528,
+              "sha256": "83e610a15c8cd48fb4480b2aa239b4e177a0c3d4e8f6610ad2f9cd3108c7da88"
+            },
+            "model_inputs.npz": {
+              "bytes": 232920,
+              "sha256": "4d89f1edc7d94b69538d8269602af6d623ceddcad5e22179299d860d22fc81d3"
+            }
+          }
+        },
+        "filter_consistency": true,
+        "fresh_generation_report": {
+          "accepted_pairs": 1,
+          "audit": {
+            "label_flip_rate": 1.0,
+            "max_matching_error": 0.0,
+            "pair_swap_max_error": 0.0,
+            "pairs": 1
+          },
+          "candidate_executions": 4,
+          "candidates": 2,
+          "condition": "temporal_ood",
+          "config_sha256": "9dc510bdec94e4715df96f6cc6f960f932d4dd37babea957e0f14325cf98e564",
+          "examples": 2,
+          "generation_seconds": 15.275697346776724,
+          "label_balance": 0.5,
+          "mechanisms": [
+            "hysteretic_mode_memory"
+          ],
+          "worlds": 1
+        },
+        "frozen_parent_generation_report": {
+          "accepted_pairs": 2800,
+          "audit": {
+            "label_flip_rate": 1.0,
+            "max_matching_error": 0.0,
+            "pair_swap_max_error": 0.0,
+            "pairs": 2800
+          },
+          "candidate_executions": 12000,
+          "candidates": 20,
+          "condition": "temporal_ood",
+          "config_sha256": "9dc510bdec94e4715df96f6cc6f960f932d4dd37babea957e0f14325cf98e564",
+          "examples": 5600,
+          "generation_seconds": 23.009780558757484,
+          "label_balance": 0.5,
+          "mechanisms": [
+            "hysteretic_mode_memory"
+          ],
+          "worlds": 100
+        },
+        "join_key": "metadata: (pair_id, branch); outcomes: (condition, family, mechanism, world_id, candidate_id)",
+        "limitations": [
+          "Fresh worlds/candidates are reduced versus the frozen parent generation; this is a seed/world/candidate subset re-execution, not the same parent batch configuration.",
+          "No historical simulator snapshot or per-step trace exists.",
+          "A match supports repeatability under the reconstructed environment, not independent proof of how every frozen result was produced.",
+          "Only one world, one family, one mechanism, and two candidates were re-executed; no full dataset or training run was attempted.",
+          "Filtered nonflip observations/actions are absent from both fresh and frozen NPZ files, so nonflip comparison is limited to exact outcome booleans and absence from retained metadata/arrays."
+        ],
+        "matched_outcomes": 2,
+        "matched_rows": 2,
+        "max_array_abs_error": 1.7642974853515625e-05,
+        "metadata_all_exact": true,
+        "metadata_exact_by_row": {
+          "temporal_ood:damped_moving_capture:1:0:1|branch=0": true,
+          "temporal_ood:damped_moving_capture:1:0:1|branch=1": true
+        },
+        "not_numerically_comparable_fields": [
+          "labels.success"
+        ],
+        "numeric_array_max_abs_error_by_field": {
+          "labels.static_features": 1.7642974853515625e-05,
+          "model_inputs.candidate_actions": 1.6808509826660156e-05,
+          "model_inputs.history": 7.413327693939209e-07,
+          "model_inputs.nominal_action_timing": 0.0,
+          "model_inputs.observation_confidence": 0.0,
+          "model_inputs.tcp_state": 7.152557373046875e-07,
+          "model_inputs.timestamps": 0.0,
+          "model_inputs.visibility": 0.0
+        },
+        "outcomes_all_exact": true,
+        "outcomes_exact_by_pair": {
+          "temporal_ood|damped_moving_capture|hysteretic_mode_memory|0|0": true,
+          "temporal_ood|damped_moving_capture|hysteretic_mode_memory|0|1": true
+        },
+        "pairs": 1,
+        "retention_filter": {
+          "attempted_pairs": 2,
+          "flip_pairs": 1,
+          "fresh_and_frozen_flip_status_exact": true,
+          "nonflip_pairs": 1,
+          "outcome_flip_invariant": true,
+          "required_nonflip_present": true,
+          "retained_exactly_equals_flip_pairs": true,
+          "retained_pair_branches_exact": true,
+          "retained_pairs": 1
+        },
+        "schema_detail": {
+          "labels.npz": {
+            "expected_keys": [
+              "static_features",
+              "success"
+            ],
+            "fields": {
+              "static_features": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  2,
+                  29
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  5600,
+                  29
+                ],
+                "non_batch_shape_exact": true
+              },
+              "success": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "bool",
+                "fresh_shape": [
+                  2
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "bool",
+                "frozen_shape": [
+                  5600
+                ],
+                "non_batch_shape_exact": true
+              }
+            },
+            "fresh_keys": [
+              "static_features",
+              "success"
+            ],
+            "frozen_keys": [
+              "static_features",
+              "success"
+            ],
+            "key_sets_exact": true
+          },
+          "model_inputs.npz": {
+            "expected_keys": [
+              "candidate_actions",
+              "history",
+              "nominal_action_timing",
+              "observation_confidence",
+              "tcp_state",
+              "timestamps",
+              "visibility"
+            ],
+            "fields": {
+              "candidate_actions": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  2,
+                  20,
+                  3
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  5600,
+                  20,
+                  3
+                ],
+                "non_batch_shape_exact": true
+              },
+              "history": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  2,
+                  6,
+                  20
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  5600,
+                  6,
+                  20
+                ],
+                "non_batch_shape_exact": true
+              },
+              "nominal_action_timing": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  2,
+                  20
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  5600,
+                  20
+                ],
+                "non_batch_shape_exact": true
+              },
+              "observation_confidence": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  2,
+                  6,
+                  1
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  5600,
+                  6,
+                  1
+                ],
+                "non_batch_shape_exact": true
+              },
+              "tcp_state": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  2,
+                  3
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  5600,
+                  3
+                ],
+                "non_batch_shape_exact": true
+              },
+              "timestamps": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  2,
+                  6
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  5600,
+                  6
+                ],
+                "non_batch_shape_exact": true
+              },
+              "visibility": {
+                "dtype_exact": true,
+                "fresh_batch_matches_metadata": true,
+                "fresh_dtype": "float32",
+                "fresh_shape": [
+                  2,
+                  6,
+                  1
+                ],
+                "frozen_batch_matches_metadata": true,
+                "frozen_dtype": "float32",
+                "frozen_shape": [
+                  5600,
+                  6,
+                  1
+                ],
+                "non_batch_shape_exact": true
+              }
+            },
+            "fresh_keys": [
+              "candidate_actions",
+              "history",
+              "nominal_action_timing",
+              "observation_confidence",
+              "tcp_state",
+              "timestamps",
+              "visibility"
+            ],
+            "frozen_keys": [
+              "candidate_actions",
+              "history",
+              "nominal_action_timing",
+              "observation_confidence",
+              "tcp_state",
+              "timestamps",
+              "visibility"
+            ],
+            "key_sets_exact": true
+          }
+        },
+        "schema_matches": true,
+        "schema_version": 1,
+        "scope": "bounded_frozen_subset_reexecution_under_reduced_batch_not_same_parent_configuration_or_snapshot_replay",
+        "scope_limitations": [
+          "Fresh worlds/candidates are reduced versus the frozen parent generation; this is a seed/world/candidate subset re-execution, not the same parent batch configuration.",
+          "No historical simulator snapshot or per-step trace exists.",
+          "A match supports repeatability under the reconstructed environment, not independent proof of how every frozen result was produced.",
+          "Only one world, one family, one mechanism, and two candidates were re-executed; no full dataset or training run was attempted.",
+          "Filtered nonflip observations/actions are absent from both fresh and frozen NPZ files, so nonflip comparison is limited to exact outcome booleans and absence from retained metadata/arrays."
+        ],
+        "shell_command": "cd /data/project/tzh/papers/ActMask && HOME=/data/project/tzh/papers/ActMask/audit/environment/home PYTHONPATH=/data/project/tzh/papers/ActMask /data/envs/actmask-audit/bin/python -c 'from actmask.experiments.milestone3r_nl_v2 import generate; generate('\"'\"'audit/replay/minimal_temporal_m1_w1_c2_seed6401'\"'\"', worlds=1, seed=6401, condition='\"'\"'temporal_ood'\"'\"', mechanisms=(1,), candidates=2, families=('\"'\"'damped_moving_capture'\"'\"',))'",
+        "status": "completed_with_mismatch",
+        "success_consistency": true,
+        "verification_passed": false
+      }
+    ],
+    "command": [
+      [
+        "/data/envs/actmask-audit/bin/python",
+        "-c",
+        "from actmask.experiments.milestone3r_nl_v2 import generate; generate('audit/replay/minimal_id_m0_w1_c2_seed6101', worlds=1, seed=6101, condition='id', mechanisms=(0,), candidates=2, families=('damped_moving_capture',))"
+      ],
+      [
+        "/data/envs/actmask-audit/bin/python",
+        "-c",
+        "from actmask.experiments.milestone3r_nl_v2 import generate; generate('audit/replay/minimal_temporal_m1_w1_c2_seed6401', worlds=1, seed=6401, condition='temporal_ood', mechanisms=(1,), candidates=2, families=('damped_moving_capture',))"
+      ]
+    ],
+    "cwd": "/data/project/tzh/papers/ActMask",
+    "direct_frozen_comparison": {
+      "all_retained_arrays_exact": false,
+      "join_key": "metadata: (pair_id, branch); outcomes: (condition, family, mechanism, world_id, candidate_id)",
+      "max_retained_array_abs_error": 2.47955322265625e-05,
+      "metadata_all_exact": true,
+      "outcomes_all_exact": true,
+      "per_case_array_comparisons": {
+        "id_m0_seed6101": {
+          "labels.static_features": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 2.47955322265625e-05,
+            "shape": [
+              4,
+              29
+            ]
+          },
+          "labels.success": {
+            "dtype_exact": true,
+            "dtype_fresh": "bool",
+            "dtype_frozen": "bool",
+            "exact": true,
+            "max_abs_error": null,
+            "shape": [
+              4
+            ]
+          },
+          "model_inputs.candidate_actions": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 2.4616718292236328e-05,
+            "shape": [
+              4,
+              20,
+              3
+            ]
+          },
+          "model_inputs.history": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 1.7434358596801758e-06,
+            "shape": [
+              4,
+              6,
+              20
+            ]
+          },
+          "model_inputs.nominal_action_timing": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              4,
+              20
+            ]
+          },
+          "model_inputs.observation_confidence": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              4,
+              6,
+              1
+            ]
+          },
+          "model_inputs.tcp_state": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 9.834766387939453e-07,
+            "shape": [
+              4,
+              3
+            ]
+          },
+          "model_inputs.timestamps": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              4,
+              6
+            ]
+          },
+          "model_inputs.visibility": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              4,
+              6,
+              1
+            ]
+          }
+        },
+        "temporal_m1_seed6401": {
+          "labels.static_features": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 1.7642974853515625e-05,
+            "shape": [
+              2,
+              29
+            ]
+          },
+          "labels.success": {
+            "dtype_exact": true,
+            "dtype_fresh": "bool",
+            "dtype_frozen": "bool",
+            "exact": true,
+            "max_abs_error": null,
+            "shape": [
+              2
+            ]
+          },
+          "model_inputs.candidate_actions": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 1.6808509826660156e-05,
+            "shape": [
+              2,
+              20,
+              3
+            ]
+          },
+          "model_inputs.history": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 7.413327693939209e-07,
+            "shape": [
+              2,
+              6,
+              20
+            ]
+          },
+          "model_inputs.nominal_action_timing": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              2,
+              20
+            ]
+          },
+          "model_inputs.observation_confidence": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              2,
+              6,
+              1
+            ]
+          },
+          "model_inputs.tcp_state": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": false,
+            "max_abs_error": 7.152557373046875e-07,
+            "shape": [
+              2,
+              3
+            ]
+          },
+          "model_inputs.timestamps": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              2,
+              6
+            ]
+          },
+          "model_inputs.visibility": {
+            "dtype_exact": true,
+            "dtype_fresh": "float32",
+            "dtype_frozen": "float32",
+            "exact": true,
+            "max_abs_error": 0.0,
+            "shape": [
+              2,
+              6,
+              1
+            ]
+          }
+        }
+      }
+    },
+    "environment": {
+      "HOME": "/data/project/tzh/papers/ActMask/audit/environment/home",
+      "PYTHONPATH": "/data/project/tzh/papers/ActMask"
+    },
+    "examples": 6,
+    "filter_consistency": true,
+    "filter_summary": {
+      "attempted_pairs": 4,
+      "flip_pairs": 3,
+      "fresh_and_frozen_flip_status_exact": true,
+      "nonflip_pairs": 1,
+      "retained_exactly_equals_flip_pairs": true,
+      "retained_pairs": 3
+    },
+    "mismatch_details": [
+      {
+        "all_arrays_exact": false,
+        "case_name": "id_m0_seed6101",
+        "filter_consistency": true,
+        "max_array_abs_error": 2.47955322265625e-05,
+        "metadata_all_exact": true,
+        "outcomes_all_exact": true,
+        "schema_matches": true,
+        "status": "completed_with_mismatch",
+        "success_consistency": true
+      },
+      {
+        "all_arrays_exact": false,
+        "case_name": "temporal_m1_seed6401",
+        "filter_consistency": true,
+        "max_array_abs_error": 1.7642974853515625e-05,
+        "metadata_all_exact": true,
+        "outcomes_all_exact": true,
+        "schema_matches": true,
+        "status": "completed_with_mismatch",
+        "success_consistency": true
+      }
+    ],
+    "pairs": 3,
+    "schema_matches": true,
+    "schema_version": 1,
+    "scope_limitations": [
+      "Fresh worlds/candidates are reduced versus each frozen parent; these are subset re-executions, not the same parent configurations or historical simulator snapshot replays.",
+      "The comparison covers two worlds/configurations, one family, two mechanisms, and four candidates (eight branch executions).",
+      "Arrays can only be compared for retained flip pairs because neither frozen nor fresh model-input files contain filtered nonflip observations/actions.",
+      "Nonflip validation is limited to exact candidate_outcomes booleans plus absence from retained metadata/NPZ data.",
+      "No training or full dataset generation was run."
+    ],
+    "shell_command": [
+      "cd /data/project/tzh/papers/ActMask && HOME=/data/project/tzh/papers/ActMask/audit/environment/home PYTHONPATH=/data/project/tzh/papers/ActMask /data/envs/actmask-audit/bin/python -c 'from actmask.experiments.milestone3r_nl_v2 import generate; generate('\"'\"'audit/replay/minimal_id_m0_w1_c2_seed6101'\"'\"', worlds=1, seed=6101, condition='\"'\"'id'\"'\"', mechanisms=(0,), candidates=2, families=('\"'\"'damped_moving_capture'\"'\"',))'",
+      "cd /data/project/tzh/papers/ActMask && HOME=/data/project/tzh/papers/ActMask/audit/environment/home PYTHONPATH=/data/project/tzh/papers/ActMask /data/envs/actmask-audit/bin/python -c 'from actmask.experiments.milestone3r_nl_v2 import generate; generate('\"'\"'audit/replay/minimal_temporal_m1_w1_c2_seed6401'\"'\"', worlds=1, seed=6401, condition='\"'\"'temporal_ood'\"'\"', mechanisms=(1,), candidates=2, families=('\"'\"'damped_moving_capture'\"'\"',))'"
+    ],
+    "status": "completed_with_mismatch",
+    "success_consistency": true,
+    "verification_passed": false
+  },
+  "schema": "timearrow-shortcut-audit-v1",
+  "zero_training_baseline": {
+    "name": "ArrowActionCompatibility",
+    "requires_training": false
+  }
+}

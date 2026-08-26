@@ -1,0 +1,8 @@
+# Core versions for the isolated ActMask reproducibility audit.
+# Python 3.11.15 is fixed by /data/envs/actmask-audit itself.
+numpy==2.2.6
+torch==2.6.0+cu124
+sapien==3.0.3
+mani-skill==3.0.1
+# Auxiliary runtime version recorded by the historical environment evidence.
+opencv-python==4.10.0.84
