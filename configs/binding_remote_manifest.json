@@ -1,0 +1,106 @@
+{
+  "schema_version": "actmask-binding-remote-manifest-v1",
+  "active_code": [
+    ".gitattributes",
+    ".gitignore",
+    "binding_bench/__init__.py",
+    "binding_bench/schema.py",
+    "binding_bench/interventions.py",
+    "binding_bench/adapters.py",
+    "binding_bench/metrics.py",
+    "binding_bench/evaluator.py",
+    "binding_bench/benchmark.py",
+    "binding_bench/example.py",
+    "tests/test_binding_bench.py"
+  ],
+  "active_scripts": [
+    "scripts/run_binding_bench_example.py",
+    "scripts/evaluate_binding_bench.py",
+    "scripts/evaluate_binding_benchmark.py",
+    "scripts/probe_binding_datasets.py",
+    "scripts/check_binding_gpu_readiness.py",
+    "scripts/audit_binding_readiness.py",
+    "scripts/check_remote_migration.py",
+    "scripts/remote/g0_probe.sh",
+    "scripts/remote/bootstrap_binding_env.sh"
+  ],
+  "active_configs": [
+    "configs/binding_gpu_readiness.json",
+    "configs/binding_remote_manifest.json",
+    "docs/binding_gpu_preregister.json",
+    "requirements/README.md",
+    "requirements/binding-cpu.txt",
+    "requirements/binding-gpu.txt"
+  ],
+  "active_docs": [
+    "README.md",
+    "HANDOFF.md",
+    "docs/experiment_status.md",
+    "docs/remote_gpu_handoff.md",
+    "docs/counterfactual_binding_benchmark_v1.md",
+    "docs/binding_dataset_selection_2026-09.md",
+    "docs/binding_gpu_preregister.md",
+    "docs/binding_gpu_environment_checklist.md",
+    "audit/binding_benchmark_readiness_report.md",
+    "audit/binding_goal_completion_audit.md"
+  ],
+  "historical_provenance": [
+    "scripts/cpu_validate_timearrow_direction.py",
+    "scripts/cpu_timearrow_v3.py",
+    "scripts/cpu_binding_pre_admission.py",
+    "scripts/cpu_binding_learned_v1.py",
+    "scripts/cpu_binding_v2_antisaturation.py",
+    "scripts/cpu_binding_v3_sysid_residual.py",
+    "docs/timearrow_v3_cpu_preregister.md",
+    "docs/binding_cpu_v1_preregister.md",
+    "docs/binding_cpu_learned_v1_preregister.md",
+    "docs/binding_cpu_v2_antisaturation_preregister.md",
+    "docs/binding_cpu_v3_sysid_residual_preregister.md",
+    "docs/codex_goal_cpu_first_binding.md",
+    "docs/codex_goal_cpu_v3_sysid_residual.md",
+    "docs/cpu_first_direction_literature_2026-09.md",
+    "audit/timearrow_v3_cpu_report.md",
+    "audit/cpu_direction_pilot_report.md",
+    "audit/binding_cpu_v1_pre_admission_report.md",
+    "audit/binding_cpu_learned_v1_report.md",
+    "audit/binding_cpu_learned_v1_saturation_diagnosis.md",
+    "audit/binding_cpu_v2_antisaturation_report.md",
+    "audit/binding_cpu_v3_sysid_residual_report.md",
+    "audit/results/timearrow_v3_cpu_smoke.json",
+    "audit/results/timearrow_v3_cpu_full.json",
+    "audit/results/cpu_direction_pilot.json",
+    "audit/results/binding_cpu_v1_pre_admission.json"
+  ],
+  "curated_evidence": [
+    "audit/results/binding_bench_example/evaluation.json",
+    "audit/results/binding_cpu_learned_v1.json",
+    "audit/results/binding_cpu_v2_antisaturation.json",
+    "audit/results/binding_cpu_v3_sysid_residual.json",
+    "audit/results/binding_dataset_probe.json",
+    "audit/results/binding_gpu_readiness_local.json",
+    "audit/results/binding_project_readiness.json"
+  ],
+  "generated_paths_must_be_ignored": [
+    ".venv-binding-gpu/placeholder",
+    "data/placeholder",
+    "datasets/placeholder",
+    "artifacts/placeholder",
+    "configs/local/binding_gpu_readiness.json",
+    "audit/results/binding_gpu/placeholder",
+    "audit/results/binding_bench_example/suite/placeholder.npz",
+    "audit/results/binding_bench_example/predictions/placeholder.npz"
+  ],
+  "maximum_unignored_file_mib": 25,
+  "focused_test": [
+    "-m",
+    "pytest",
+    "tests/test_binding_bench.py",
+    "-q"
+  ],
+  "planned_not_implemented": [
+    "actmask/experiments/binding_gpu/snapshot_smoke.py",
+    "actmask/experiments/binding_gpu/generate.py",
+    "actmask/experiments/binding_gpu/audit_dataset.py",
+    "actmask/experiments/binding_gpu/run_state_methods.py"
+  ]
+}

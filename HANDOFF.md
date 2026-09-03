@@ -1,49 +1,57 @@
 # ActMask handoff
 
-## Snapshot
+## Current focus
 
-- Working copy: `/data/project/tzh/papers/ActMask`
-- This directory did not contain a Git repository before handoff.
-- A new repository has been prepared locally; no GitHub remote or push has
-  been configured yet.
-- The project is a CPU-only synthetic milestone. It is not a validated robot,
-  simulator, camera, CUDA, or real-world result.
+The active direction is the model-agnostic Counterfactual Action-Effect Binding
+Audit. The reusable CPU benchmark is ready, but the existing learned verifier
+is not a positive result: v1 is a saturation diagnostic and v2/v3 are NO-GO.
 
-## Reproduce the current milestone
+The public-source decision is ManiSkill 3 as the primary counterfactual
+simulator and RoboMimic/robosuite as the backup. Bounded format probes passed;
+simulator replay on the target host has not yet been run.
 
-From the repository root, use Python 3.11 and the pinned dependencies in
-`requirements.txt`:
+## Start here
+
+1. Read `docs/experiment_status.md` for active versus historical paths.
+2. Read `docs/counterfactual_binding_benchmark_v1.md` for the evaluator.
+3. Read `docs/remote_gpu_handoff.md` before moving to another machine.
+4. Inspect `audit/binding_benchmark_readiness_report.md` for the current
+   evidence-backed GO/NO-GO breakdown.
+
+## Reproduce the active CPU layer
+
+Use Python 3.11 from the repository root:
 
 ```bash
-python -m pip install -r requirements.txt
-python -m actmask.training.train --config configs/actmask/toy_cpu.yaml
-python -m actmask.eval.evaluate --config configs/actmask/toy_cpu.yaml
-python -m actmask.visualization.visualize_masks --config configs/actmask/toy_cpu.yaml
-pytest tests/test_actmask_shapes.py
+python -m pip install -r requirements/binding-cpu.txt
+python scripts/run_binding_bench_example.py \
+  --output-dir audit/results/binding_bench_example
+python -m pytest tests/test_binding_bench.py -q
+python scripts/audit_binding_readiness.py \
+  --output audit/results/binding_project_readiness.json \
+  --markdown-output audit/binding_benchmark_readiness_report.md
 ```
 
-The training checkpoint, metrics, plots, simulator cache, and submission
-bundles are generated material. They remain in the container for reference but
-are excluded from the source repository by `.gitignore`.
+The example's `METHOD_GO` is a benchmark self-test against a deliberately weak
+baseline. It is not an ActMask method claim.
 
-## Repository layout
+## Repository boundaries
 
-- `actmask/`: implementation and synthetic data generation.
-- `configs/`: experiment configuration.
-- `tests/`: shape, training, evaluation, and milestone checks.
-- `docs/`: design, validation, and limitation notes.
-- `paper/` and `paper_icra2027/`: draft paper/materials; do not treat drafts as
-  accepted claims.
-- `audit/`, `scripts/`, and `release_candidate/`: audit and packaging tools.
+- `binding_bench/`: active, dependency-light benchmark package.
+- `scripts/cpu_binding_*` and `scripts/cpu_timearrow_*`: retained historical
+  experiments and negative-result provenance.
+- `actmask/`: original model code and older experimental generations.
+- `docs/`, `audit/`: frozen protocols, reports, and curated evidence.
+- `paper*`, `submission/`, `release_candidate/`: historical manuscript and
+  packaging material; drafts are not accepted claims.
 
-## Next owner checklist
+## GPU boundary
 
-1. Review the initial source-only commit and confirm licensing for every
-   vendored or copied component.
-2. Run the CPU smoke commands above and record Python/PyTorch versions.
-3. Decide whether paper drafts and release packaging belong in the public
-   repository or a separate private archive.
-4. Create the GitHub repository, add its remote, and push the reviewed initial
-   commit.
-5. Keep the synthetic-only limitation visible until real/simulator evidence is
-   independently validated.
+Current status is `GPU_START_NO_GO`. Do not use the root CPU-only
+`requirements.txt` on the GPU host. Follow `docs/remote_gpu_handoff.md` and the
+frozen preregistration. A named native-Linux/NVIDIA host, explicit cost ceiling,
+passing G0 report, and implemented G1/G2 modules are required before data
+generation. Visual training remains disabled.
+
+No private SSH configuration, credentials, local environments, HDF5 datasets,
+or caches belong in Git.

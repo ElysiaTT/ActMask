@@ -4,6 +4,12 @@ __pycache__/
 .coverage
 .idea/
 .vscode/
+.venv/
+.venv-*/
+venv/
+.env
+.env.*
+!.env.example
 outputs/actmask/
 
 # Local simulator/environment caches and generated bundles
@@ -11,6 +17,31 @@ outputs/actmask/
 .tools/
 outputs/
 dist/
+data/
+datasets/
+artifacts/
+cache/
+configs/local/
+audit/results/binding_gpu/
+audit/results/binding_bench_example/suite/
+audit/results/binding_bench_example/predictions/
+audit/results/remote_migration_audit.json
+audit/remote_migration_report.md
+
+# Local credentials and remote-machine material
+.ssh/
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# Simulator and robot datasets must be acquired on the named work volume.
+*.h5
+*.hdf5
+*.rlds
+*.bag
+*.mp4
+*.svo
 
 # Generated model/data artifacts
 *.pt

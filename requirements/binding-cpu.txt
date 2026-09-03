@@ -1,0 +1,4 @@
+# Reproduces the dependency-light benchmark and bounded HDF5 probes on Python 3.11.
+numpy==1.26.4
+h5py==3.11.0
+pytest==7.4.0

@@ -1,0 +1,114 @@
+{
+  "all_checks_pass": true,
+  "checks": {
+    "candidate_id_remap_breaks_parity_not_arrow": true,
+    "legacy_endpoint_shortcut_is_saturated": true,
+    "order_only_removes_endpoint_shortcut": true,
+    "order_only_requires_ordered_features": true,
+    "order_only_still_has_posthoc_analytic_ceiling": true,
+    "tracked_arrow_rule_is_saturated": true,
+    "tracked_rows_are_complete": true
+  },
+  "legacy_construction": {
+    "models": {
+      "action_only": {
+        "accuracy": 0.5006944444444444,
+        "pair_order": 0.4930555555555556
+      },
+      "current_action": {
+        "accuracy": 0.5013888888888889,
+        "pair_order": 0.4930555555555556
+      },
+      "final_two_action": {
+        "accuracy": 0.5013888888888889,
+        "pair_order": 0.4930555555555556
+      },
+      "ordered_mlp": {
+        "accuracy": 1.0,
+        "pair_order": 1.0
+      },
+      "unordered_action": {
+        "accuracy": 0.49930555555555556,
+        "pair_order": 0.4930555555555556
+      }
+    },
+    "test_rows": 1440,
+    "test_worlds": 360,
+    "zero_training_controls": {
+      "candidate_id_parity_accuracy": 0.48333333333333334,
+      "endpoint_arrow_x_action_accuracy": 1.0,
+      "endpoint_arrow_x_action_pair_order": 1.0,
+      "posthoc_order_x_action_accuracy": 0.0,
+      "posthoc_order_x_action_pair_order": 0.0
+    }
+  },
+  "n_worlds_per_construction": 1200,
+  "order_only_redesign": {
+    "models": {
+      "action_only": {
+        "accuracy": 0.5222222222222223,
+        "pair_order": 0.5305555555555556
+      },
+      "current_action": {
+        "accuracy": 0.5236111111111111,
+        "pair_order": 0.5305555555555556
+      },
+      "final_two_action": {
+        "accuracy": 0.5236111111111111,
+        "pair_order": 0.5305555555555556
+      },
+      "ordered_mlp": {
+        "accuracy": 1.0,
+        "pair_order": 1.0
+      },
+      "unordered_action": {
+        "accuracy": 0.5236111111111111,
+        "pair_order": 0.5305555555555556
+      }
+    },
+    "test_rows": 1440,
+    "test_worlds": 360,
+    "zero_training_controls": {
+      "candidate_id_parity_accuracy": 0.5166666666666667,
+      "endpoint_arrow_x_action_accuracy": 0.5,
+      "endpoint_arrow_x_action_pair_order": 0.5,
+      "posthoc_order_x_action_accuracy": 1.0,
+      "posthoc_order_x_action_pair_order": 1.0
+    }
+  },
+  "schema": "actmask-timearrow-cpu-direction-pilot-v1",
+  "scope": "CPU sensitivity check only; it validates audit behavior and temporal learnability, not real-robot performance or learned-method headroom.",
+  "seed": 7301,
+  "tracked_audit_recomputation": {
+    "arrow_action_accuracy": 1.0,
+    "by_dataset": {
+      "held_mechanism_ood": {
+        "arrow_action_accuracy": 1.0,
+        "candidate_parity_accuracy": 1.0,
+        "remapped_candidate_parity_accuracy": 0.0,
+        "rows": 12000
+      },
+      "id": {
+        "arrow_action_accuracy": 1.0,
+        "candidate_parity_accuracy": 1.0,
+        "remapped_candidate_parity_accuracy": 0.0,
+        "rows": 60000
+      },
+      "physical_parameter_ood": {
+        "arrow_action_accuracy": 1.0,
+        "candidate_parity_accuracy": 1.0,
+        "remapped_candidate_parity_accuracy": 0.0,
+        "rows": 8000
+      },
+      "temporal_delay_ood": {
+        "arrow_action_accuracy": 1.0,
+        "candidate_parity_accuracy": 1.0,
+        "remapped_candidate_parity_accuracy": 0.0,
+        "rows": 5600
+      }
+    },
+    "candidate_parity_accuracy": 1.0,
+    "remapped_candidate_parity_accuracy": 0.0,
+    "rows": 85600
+  }
+}

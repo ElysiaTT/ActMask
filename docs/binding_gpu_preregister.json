@@ -1,0 +1,148 @@
+{
+  "schema_version": "actmask-binding-gpu-preregister-v1",
+  "frozen_date": "2026-09-03",
+  "status": "FROZEN_BEFORE_GPU_ACCESS",
+  "claim": "A model-agnostic counterfactual audit separates action-effect binding use from candidate-selection utility under matched physical twins.",
+  "primary_platform": {
+    "simulator": "ManiSkill",
+    "version": "3.0.1",
+    "os": "Linux",
+    "accelerator": "NVIDIA CUDA",
+    "observation_first_stage": "state_dict",
+    "render_backend_first_stage": "none",
+    "public_demo_revision": "d674485bbffdd533914e52d272fdda34c0515608",
+    "public_demo_file": "demos/PickCube-v1/teleop/trajectory.h5",
+    "public_demo_sha256": "0e6285c5e7a9293fbb1c10590a1be4fc115792cb816e00b37e9914369a0c3c94"
+  },
+  "backup_platform": {
+    "simulator": "robosuite",
+    "dataset_interface": "robomimic",
+    "dataset_revision": "74fa018461f479cd9fd15b924a16103012096203",
+    "dataset_file": "v1.5/lift/ph/demo_v15.hdf5",
+    "dataset_sha256": "68f2a8cfe2502de1224f0708fb82e46da07abce108c63e721d72fc1618272f37"
+  },
+  "task_families": [
+    {
+      "id": "procedural_rod_com",
+      "public_geometry": "identical procedural rod",
+      "hidden_mechanism": "mirrored center-of-mass offset",
+      "utility": "stable lift height minus tilt penalty"
+    },
+    {
+      "id": "procedural_latch_response",
+      "public_geometry": "identical procedural articulated panel",
+      "hidden_mechanism": "directional latch/restoring response",
+      "utility": "target joint progress minus contact/effort penalty"
+    },
+    {
+      "id": "procedural_anisotropic_slip",
+      "public_geometry": "identical procedural block and support",
+      "hidden_mechanism": "mirrored anisotropic friction orientation",
+      "utility": "target displacement minus lateral slip"
+    }
+  ],
+  "sampling": {
+    "official_seeds": [17001, 17002, 17003, 17004, 17005],
+    "train_twins_per_seed": 384,
+    "validation_twins_per_seed": 128,
+    "evaluation_twins_per_split_seed": 128,
+    "branches_per_twin": 2,
+    "history_length_range": [8, 20],
+    "candidates_per_branch": 12,
+    "candidate_chunk_steps": 8,
+    "restore_anchor_before_every_probe_and_candidate": true,
+    "retain_all_attempts_in_manifest": true
+  },
+  "splits": {
+    "id_test": "training mechanism families and disjoint scene/object/seed groups",
+    "parameter_ood": "disjoint mass/friction/latch parameter intervals",
+    "sparse_history": "4 to 7 visible probes without padding leakage",
+    "observation_noise_ood": "frozen sensor/action timing perturbations, simulator truth unchanged",
+    "held_mechanism": "one preregistered response family absent from training"
+  },
+  "integrity_gates": {
+    "repeated_rollout_state_max_abs_error": 0.00001,
+    "public_current_state_max_abs_difference_between_twins": 0.00001,
+    "candidate_action_max_abs_difference_between_twins": 0.0,
+    "minimum_candidate_utility_span": 0.05,
+    "minimum_informative_candidate_fraction": 0.7,
+    "minimum_crossed_preference_fraction": 0.7,
+    "maximum_branch_count_imbalance": 1,
+    "exact_action_marginal_match": true,
+    "effect_marginal_match_tolerance": 0.0001,
+    "split_twin_episode_group_overlap": 0,
+    "minimum_retention_rate": 0.2
+  },
+  "dataset_admission_gates": {
+    "maximum_marginal_control_tpa": 0.6,
+    "maximum_nonbinding_shortcut_tpa": 0.9,
+    "binding_witness_tpa_range": [0.7, 0.95],
+    "minimum_binding_break_tpa_drop": 0.15,
+    "minimum_binding_break_regret_increase": 0.1,
+    "maximum_pair_preserving_metric_change": 0.01,
+    "maximum_slot_permutation_metric_change": 0.005,
+    "minimum_binding_witness_normalized_regret": 0.02
+  },
+  "method_admission_gates": {
+    "required_splits": [
+      "id_test",
+      "parameter_ood",
+      "sparse_history",
+      "observation_noise_ood",
+      "held_mechanism"
+    ],
+    "minimum_seeds": 5,
+    "minimum_twins_per_seed": 32,
+    "relative_regret_improvement_over_strongest_baseline": 0.1,
+    "minimum_seed_win_fraction": 0.8,
+    "bootstrap_lower_95_strictly_positive": true,
+    "minimum_top1_improvement": 0.03,
+    "minimum_binding_break_regret_increase": 0.05,
+    "minimum_binding_break_tpa_drop": 0.05,
+    "maximum_pair_preserving_metric_change": 0.005,
+    "minimum_twin_swap_regret_increase": 0.05,
+    "maximum_slot_permutation_regret_change": 0.005,
+    "maximum_original_tpa": 0.95,
+    "minimum_original_normalized_regret": 0.01
+  },
+  "mandatory_baselines": [
+    "current_only",
+    "candidate_id_only",
+    "candidate_slot_only",
+    "action_only",
+    "effect_only",
+    "unbound_equal_capacity",
+    "last_effect",
+    "nearest",
+    "knn5",
+    "local_linear",
+    "poly2_ridge",
+    "rbf_ridge",
+    "sparse_inverse_reachability"
+  ],
+  "compute_boundaries": {
+    "state_pilot": {
+      "minimum_vram_gib": 12,
+      "minimum_free_disk_gib": 50,
+      "maximum_gpu_hours": 8,
+      "maximum_output_gib": 10
+    },
+    "visual_stage": {
+      "minimum_vram_gib": 24,
+      "minimum_free_disk_gib": 200,
+      "maximum_gpu_hours": 48,
+      "maximum_output_gib": 120,
+      "requires_separate_authorization": true
+    },
+    "approved_cost_currency": "USD",
+    "approved_cost_amount": null,
+    "cost_authorized": false
+  },
+  "terminal_rules": {
+    "smoke_failure": "Stop without formal generation and record the exact environment/replay blocker.",
+    "dataset_gate_failure": "Do not train a learned verifier; publish or revise only under a new preregistration.",
+    "state_method_failure": "Retain the benchmark and negative baselines; do not start visual training.",
+    "all_state_gates_pass": "Authorize a separately reviewed visual-stage preregistration, not automatic execution.",
+    "threshold_or_split_change_after_outcome": "Create a new version and label the current run exploratory."
+  }
+}

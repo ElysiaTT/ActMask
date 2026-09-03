@@ -1,0 +1,103 @@
+{
+  "checks": {
+    "architecture": true,
+    "cost_amount_set": false,
+    "cost_authorized": false,
+    "cuda_available": false,
+    "dataset_license_reviewed": true,
+    "disk": false,
+    "gpu_hourly_price_set": false,
+    "gpu_hours_bounded": true,
+    "maniskill_import": false,
+    "nvidia_smi": false,
+    "packages": false,
+    "platform": false,
+    "python": true,
+    "remote_host_approved": false,
+    "remote_host_identity_set": false,
+    "torch_import": false,
+    "vram": false
+  },
+  "config": {
+    "approved_cost_amount": null,
+    "approved_cost_currency": "USD",
+    "cost_authorized": false,
+    "dataset_license": "Apache-2.0 for pinned ManiSkill demonstration card; procedural first-stage worlds only",
+    "dataset_license_reviewed": true,
+    "gpu_hourly_price": null,
+    "maximum_gpu_hours": 8,
+    "minimum_free_disk_gib": 50,
+    "minimum_vram_gib": 12,
+    "notes": "Fill the named host, provider, region, instance type, expected GPU, hourly price, and cost ceiling only after review. Any edit must be reviewed before execution.",
+    "remote_host": {
+      "expected_gpu_model": null,
+      "hostname": null,
+      "instance_type": null,
+      "provider": null,
+      "region": null
+    },
+    "remote_host_approved": false,
+    "required_architecture": "x86_64",
+    "required_cuda_available": true,
+    "required_nvidia_smi": true,
+    "required_packages": {
+      "mani-skill": "3.0.1",
+      "torch": null
+    },
+    "required_platform": "Linux",
+    "required_python_major_minor": "3.11",
+    "schema_version": "actmask-binding-gpu-readiness-config-v1"
+  },
+  "decision": "GPU_START_NO_GO",
+  "failures": [
+    "platform",
+    "packages",
+    "maniskill_import",
+    "torch_import",
+    "cuda_available",
+    "nvidia_smi",
+    "vram",
+    "disk",
+    "cost_amount_set",
+    "gpu_hourly_price_set",
+    "cost_authorized",
+    "remote_host_identity_set",
+    "remote_host_approved"
+  ],
+  "observed": {
+    "architecture": "x86_64",
+    "free_disk_gib": 42.17387008666992,
+    "maniskill": {
+      "execution": {
+        "returncode": 1,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'mani_skill'",
+        "stdout": ""
+      }
+    },
+    "maximum_vram_gib": 0.0,
+    "nvidia": {
+      "available": false,
+      "execution": null,
+      "gpus": []
+    },
+    "packages": {
+      "mani-skill": null,
+      "torch": "2.9.0"
+    },
+    "platform": "Windows",
+    "platform_release": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.7 | packaged by Anaconda, Inc. | (main, Dec 15 2023, 18:05:47) [MSC v.1916 64 bit (AMD64)]",
+    "python_major_minor": "3.11",
+    "torch": {
+      "execution": {
+        "returncode": 1,
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"C:\\Users\\76906\\AppData\\Roaming\\Python\\Python311\\site-packages\\torch\\__init__.py\", line 281, in <module>\n    _load_dll_libraries()\n  File \"C:\\Users\\76906\\AppData\\Roaming\\Python\\Python311\\site-packages\\torch\\__init__.py\", line 264, in _load_dll_libraries\n    raise err\nOSError: [WinError 1114] 动态链接库(DLL)初始化例程失败。 Error loading \"C:\\Users\\76906\\AppData\\Roaming\\Python\\Python311\\site-packages\\torch\\lib\\c10.dll\" or one of its dependencies.",
+        "stdout": ""
+      }
+    },
+    "workspace": "D:\\study\\CV\\ActMask"
+  },
+  "schema_version": "actmask-binding-gpu-readiness-v1",
+  "scope_note": "This read-only preflight does not install packages, download datasets, start training, or authorize spend.",
+  "utc": "2026-09-03T10:57:20.110856+00:00"
+}

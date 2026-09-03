@@ -1,0 +1,30 @@
+{
+  "schema_version": "actmask-binding-gpu-readiness-config-v1",
+  "required_platform": "Linux",
+  "required_architecture": "x86_64",
+  "required_python_major_minor": "3.11",
+  "required_packages": {
+    "mani-skill": "3.0.1",
+    "torch": null
+  },
+  "minimum_vram_gib": 12,
+  "minimum_free_disk_gib": 50,
+  "required_cuda_available": true,
+  "required_nvidia_smi": true,
+  "dataset_license_reviewed": true,
+  "dataset_license": "Apache-2.0 for pinned ManiSkill demonstration card; procedural first-stage worlds only",
+  "maximum_gpu_hours": 8,
+  "approved_cost_currency": "USD",
+  "approved_cost_amount": null,
+  "gpu_hourly_price": null,
+  "cost_authorized": false,
+  "remote_host": {
+    "hostname": null,
+    "provider": null,
+    "region": null,
+    "instance_type": null,
+    "expected_gpu_model": null
+  },
+  "remote_host_approved": false,
+  "notes": "Fill the named host, provider, region, instance type, expected GPU, hourly price, and cost ceiling only after review. Any edit must be reviewed before execution."
+}

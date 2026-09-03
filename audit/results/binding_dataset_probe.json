@@ -1,0 +1,153 @@
+{
+  "datasets": {
+    "maniskill": {
+      "bounded": true,
+      "download_verification": {
+        "bytes": 383621,
+        "matches_official_lfs": true,
+        "sha256": "0e6285c5e7a9293fbb1c10590a1be4fc115792cb816e00b37e9914369a0c3c94"
+      },
+      "hdf5": {
+        "actions_shape": [
+          105,
+          8
+        ],
+        "env_state_leaf_shapes": {
+          "actors/cube": [
+            106,
+            13
+          ],
+          "actors/goal_site": [
+            106,
+            13
+          ],
+          "actors/table-workspace": [
+            106,
+            13
+          ],
+          "articulations/panda": [
+            106,
+            31
+          ]
+        },
+        "env_states_storage": "state_dict_group",
+        "first_keys": [
+          "actions",
+          "env_states",
+          "obs",
+          "rewards",
+          "success",
+          "terminated",
+          "truncated"
+        ],
+        "first_trajectory": "traj_0",
+        "has_transition_alignment": true,
+        "root_keys": [
+          "traj_0",
+          "traj_1",
+          "traj_2",
+          "traj_3",
+          "traj_4",
+          "traj_5",
+          "traj_6",
+          "traj_7",
+          "traj_8",
+          "traj_9"
+        ],
+        "trajectory_count": 10
+      },
+      "lfs_sha256": "0e6285c5e7a9293fbb1c10590a1be4fc115792cb816e00b37e9914369a0c3c94",
+      "official_docs": "https://maniskill.readthedocs.io/en/latest/user_guide/datasets/replay.html",
+      "repo": "haosulab/ManiSkill_Demonstrations",
+      "repo_last_modified": "2025-07-06T18:30:34.000Z",
+      "repo_revision": "d674485bbffdd533914e52d272fdda34c0515608",
+      "selected_bytes": 383621,
+      "selected_path": "demos/PickCube-v1/teleop/trajectory.h5",
+      "trajectory_metadata": {
+        "all_success": true,
+        "env_info": {
+          "env_id": "PickCube-v1",
+          "env_kwargs": {
+            "control_mode": "pd_joint_pos",
+            "obs_mode": "none",
+            "render_mode": "rgb_array",
+            "reward_mode": "sparse"
+          },
+          "max_episode_steps": 50
+        },
+        "episodes": 10,
+        "source_commit": "ecc579b7567c31bb3d7176539d90e86ae49296be",
+        "source_type": "teleoperation"
+      }
+    },
+    "robomimic": {
+      "bounded": true,
+      "download_verification": {
+        "bytes": 36699586,
+        "matches_official_lfs": true,
+        "sha256": "68f2a8cfe2502de1224f0708fb82e46da07abce108c63e721d72fc1618272f37"
+      },
+      "hdf5": {
+        "actions_shape": [
+          59,
+          7
+        ],
+        "demonstration_count": 200,
+        "first_demonstration": "demo_0",
+        "first_keys": [
+          "actions",
+          "controller_info",
+          "interventions",
+          "policy_acting",
+          "states",
+          "user_acting",
+          "user_info"
+        ],
+        "has_env_args": true,
+        "has_equal_state_action_rows": true,
+        "has_model_file": true,
+        "root_keys": [
+          "data",
+          "mask"
+        ],
+        "states_shape": [
+          59,
+          32
+        ]
+      },
+      "lfs_sha256": "68f2a8cfe2502de1224f0708fb82e46da07abce108c63e721d72fc1618272f37",
+      "official_docs": "https://robomimic.github.io/docs/datasets/robosuite.html",
+      "repo": "robomimic/robomimic_datasets",
+      "repo_last_modified": "2025-04-13T21:45:01.000Z",
+      "repo_revision": "74fa018461f479cd9fd15b924a16103012096203",
+      "selected_bytes": 36699586,
+      "selected_path": "v1.5/lift/ph/demo_v15.hdf5"
+    }
+  },
+  "decision": {
+    "backup": "robomimic",
+    "data_probe_passed": true,
+    "metadata_passed": true,
+    "primary": "maniskill",
+    "reason": "Official files are structurally suitable, but simulator packages and a supported Linux/CUDA host are not present locally.",
+    "simulator_runtime_ready": false
+  },
+  "host": {
+    "h5py": "3.11.0",
+    "packages": {
+      "libero": false,
+      "mani_skill": false,
+      "robomimic": false,
+      "robosuite": false
+    },
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.7"
+  },
+  "policy": {
+    "maximum_file_bytes": 67108864,
+    "metadata_only": false,
+    "temporary_downloads_deleted": true
+  },
+  "schema_version": "actmask-binding-dataset-probe-v1",
+  "utc": "2026-09-03T02:21:17.039961+00:00"
+}

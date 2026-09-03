@@ -1,0 +1,108 @@
+{
+  "components": {
+    "cpu_benchmark_harness": {
+      "decision": "GO",
+      "example_checks": {
+        "all_frozen_checks": true,
+        "anti_saturation_regret": true,
+        "anti_saturation_tpa": true,
+        "schema": true,
+        "self_test_decision": true
+      },
+      "example_metrics": {
+        "normalized_regret": 0.0350582453072722,
+        "top1_accuracy": 0.64375,
+        "tpa": 0.88125
+      },
+      "missing_files": [],
+      "tests": {
+        "command": [
+          "D:\\anaconda\\python.exe",
+          "-m",
+          "pytest",
+          "tests/test_binding_bench.py",
+          "-q"
+        ],
+        "passed": true,
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "........                                                                 [100%]\n8 passed in 8.00s"
+      }
+    },
+    "current_learned_method_claim": {
+      "decision": "NO_GO",
+      "decisions": {
+        "learned_v1": "LEARNED_CPU_AUDIT_TRANSPORTS",
+        "learned_v2": "CPU_V2_NO_GO",
+        "learned_v3": "CPU_V3_NO_GO"
+      },
+      "historical_checks": {
+        "v1_is_diagnostic_only": true,
+        "v2_method_no_go": true,
+        "v3_method_no_go": true
+      },
+      "reason": "The benchmark plumbing is usable, but v2 and v3 fail frozen method gates; v1 remains a saturation diagnostic."
+    },
+    "gpu_generator_implementation": {
+      "decision": "NO_GO",
+      "module_presence": {
+        "actmask/experiments/binding_gpu/audit_dataset.py": false,
+        "actmask/experiments/binding_gpu/generate.py": false,
+        "actmask/experiments/binding_gpu/run_state_methods.py": false,
+        "actmask/experiments/binding_gpu/snapshot_smoke.py": false
+      },
+      "reason": "G1-G4 commands are preregistered but their simulator modules are not implemented."
+    },
+    "gpu_host_and_authorization": {
+      "decision": "NO_GO",
+      "failures": [
+        "platform",
+        "packages",
+        "maniskill_import",
+        "torch_import",
+        "cuda_available",
+        "nvidia_smi",
+        "vram",
+        "disk",
+        "cost_amount_set",
+        "gpu_hourly_price_set",
+        "cost_authorized",
+        "remote_host_identity_set",
+        "remote_host_approved"
+      ],
+      "local_preflight_decision": "GPU_START_NO_GO"
+    },
+    "gpu_protocol": {
+      "checks": {
+        "all_required_splits": true,
+        "candidate_rollout_restores_anchor": true,
+        "compute_bounded": true,
+        "cost_fail_closed": true,
+        "five_seeds": true,
+        "frozen_before_gpu": true
+      },
+      "decision": "GO"
+    },
+    "public_data_source_selection": {
+      "backup": "robomimic",
+      "checks": {
+        "backup_robomimic": true,
+        "bounded_file_probe": true,
+        "maniskill_sha_verified": true,
+        "metadata_probe": true,
+        "primary_maniskill": true,
+        "robomimic_sha_verified": true,
+        "temporary_downloads_deleted": true
+      },
+      "decision": "GO",
+      "primary": "maniskill",
+      "scope": "File authenticity and state/action structure only; not simulator replay."
+    }
+  },
+  "next_gate": "Approve a named Linux/NVIDIA host and cost ceiling, pass remote G0, then implement and execute only the G1 snapshot smoke and G2 bounded dataset smoke.",
+  "overall_decision": "GPU_START_NO_GO",
+  "root": "D:\\study\\CV\\ActMask",
+  "schema_version": "actmask-binding-project-readiness-v1",
+  "scope_note": "GO for the CPU harness or source selection is not evidence of a learned-method gain and is not permission to start GPU compute.",
+  "utc": "2026-09-03T14:20:35.282558+00:00"
+}

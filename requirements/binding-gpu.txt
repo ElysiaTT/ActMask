@@ -1,0 +1,4 @@
+# Install an exact CUDA-enabled torch build first, selected for the remote driver.
+# The bootstrap script requires BINDING_TORCH_SPEC and BINDING_TORCH_INDEX_URL.
+-r binding-cpu.txt
+mani-skill==3.0.1

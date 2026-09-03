@@ -1,0 +1,2048 @@
+{
+  "aggregate": {
+    "checks": {
+      "action_only_top1_near_chance": false,
+      "all_candidates_retained": true,
+      "declared_rule_search_does_not_saturate": true,
+      "id_headroom_at_least_0_05": true,
+      "ordered_beats_unordered_by_0_05": false,
+      "ordered_has_lower_id_regret": true,
+      "parameter_ood_headroom_at_least_0_03": true,
+      "world_splits_disjoint": true
+    },
+    "go_for_larger_simulator_experiment": false,
+    "metrics": {
+      "held_mechanism": {
+        "action_target": {
+          "normalized_regret": 0.05939114622452376,
+          "pair_order": 0.8841666666666667,
+          "top1": 0.46499999999999997
+        },
+        "best_declared_audit_rule": {
+          "normalized_regret": 0.04580957170784182,
+          "pair_order": 0.9144047619047619,
+          "top1": 0.465
+        },
+        "current": {
+          "normalized_regret": 0.057325817256302716,
+          "pair_order": 0.8757142857142858,
+          "top1": 0.4625
+        },
+        "ordered": {
+          "normalized_regret": 0.08668373981260831,
+          "pair_order": 0.8198809523809525,
+          "top1": 0.40499999999999997
+        },
+        "selected_analytic": {
+          "normalized_regret": 0.142410736255576,
+          "pair_order": 0.862142857142857,
+          "top1": 0.34500000000000003
+        },
+        "unordered": {
+          "normalized_regret": 0.06392831176798777,
+          "pair_order": 0.8360714285714286,
+          "top1": 0.4325
+        }
+      },
+      "id": {
+        "action_target": {
+          "normalized_regret": 0.0511917231795468,
+          "pair_order": 0.9588095238095239,
+          "top1": 0.6675000000000001
+        },
+        "best_declared_audit_rule": {
+          "normalized_regret": 0.17589894691277183,
+          "pair_order": 0.8796428571428571,
+          "top1": 0.33
+        },
+        "current": {
+          "normalized_regret": 0.046804267961735466,
+          "pair_order": 0.9609523809523809,
+          "top1": 0.6925000000000001
+        },
+        "ordered": {
+          "normalized_regret": 0.022863639164667562,
+          "pair_order": 0.9769047619047619,
+          "top1": 0.8225
+        },
+        "selected_analytic": {
+          "normalized_regret": 0.11143127001177403,
+          "pair_order": 0.9142857142857143,
+          "top1": 0.545
+        },
+        "unordered": {
+          "normalized_regret": 0.023893055728830295,
+          "pair_order": 0.978452380952381,
+          "top1": 0.82
+        }
+      },
+      "parameter_ood": {
+        "action_target": {
+          "normalized_regret": 0.10381939923159748,
+          "pair_order": 0.9212622612850485,
+          "top1": 0.5275000000000001
+        },
+        "best_declared_audit_rule": {
+          "normalized_regret": 0.09835704288354966,
+          "pair_order": 0.8910757283192531,
+          "top1": 0.5575
+        },
+        "current": {
+          "normalized_regret": 0.10311197364364255,
+          "pair_order": 0.9216332609620776,
+          "top1": 0.5275
+        },
+        "ordered": {
+          "normalized_regret": 0.08966297900253543,
+          "pair_order": 0.9397789983488881,
+          "top1": 0.5625
+        },
+        "selected_analytic": {
+          "normalized_regret": 0.10030451883299665,
+          "pair_order": 0.9064393440275854,
+          "top1": 0.61
+        },
+        "unordered": {
+          "normalized_regret": 0.08253123672416038,
+          "pair_order": 0.9395346898539063,
+          "top1": 0.5975
+        }
+      }
+    },
+    "selected_analytic_by_seed": [
+      "linear_system_id",
+      "linear_system_id",
+      "linear_system_id",
+      "linear_system_id",
+      "linear_system_id"
+    ]
+  },
+  "candidate_actions": [
+    -1.5,
+    -1.0,
+    -0.5,
+    0.0,
+    0.5,
+    1.0,
+    1.5
+  ],
+  "preregister": "docs/timearrow_v3_cpu_preregister.md",
+  "probe_actions": [
+    0.0,
+    1.0,
+    -0.5,
+    1.5,
+    -1.0,
+    0.5,
+    -1.5
+  ],
+  "runtime_seconds": 29.032303599989973,
+  "schema": "actmask-timearrow-v3-cpu-preregistered-v1",
+  "scope": "CPU synthetic feasibility only; not a learned-dynamics, real-robot, or safety claim.",
+  "seed_results": [
+    {
+      "evaluations": {
+        "held_mechanism": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.29356391705273416,
+              "pair_order": 0.7029761904761904,
+              "top1": 0.175
+            },
+            "last_velocity": {
+              "normalized_regret": 0.06140399248844408,
+              "pair_order": 0.9029761904761905,
+              "top1": 0.35
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.13293363969271837,
+              "pair_order": 0.8613095238095239,
+              "top1": 0.3
+            },
+            "unit_gain": {
+              "normalized_regret": 0.07559908000626367,
+              "pair_order": 0.9226190476190477,
+              "top1": 0.2875
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.6936067675064232,
+              "pair_order": 0.4160714285714286,
+              "top1": 0.15
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.07904146918993316,
+              "pair_order": 0.8958333333333334,
+              "top1": 0.325
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.3534874736741597,
+              "pair_order": 0.6714285714285714,
+              "top1": 0.225
+            },
+            "range_scaled": {
+              "normalized_regret": 0.03326323480281024,
+              "pair_order": 0.8952380952380953,
+              "top1": 0.4625
+            },
+            "velocity_action": {
+              "normalized_regret": 0.6626749198385985,
+              "pair_order": 0.40535714285714286,
+              "top1": 0.1375
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.05726713233169393,
+              "pair_order": 0.8767857142857143,
+              "top1": 0.475
+            },
+            "current": {
+              "normalized_regret": 0.05722148922143755,
+              "pair_order": 0.8708333333333333,
+              "top1": 0.475
+            },
+            "ordered": {
+              "normalized_regret": 0.07669451603146105,
+              "pair_order": 0.8035714285714286,
+              "top1": 0.3875
+            },
+            "unordered": {
+              "normalized_regret": 0.0652852773939345,
+              "pair_order": 0.8160714285714286,
+              "top1": 0.4
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.13293363969271837,
+            "pair_order": 0.8613095238095239,
+            "top1": 0.3
+          }
+        },
+        "id": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.20962708920282455,
+              "pair_order": 0.8696428571428572,
+              "top1": 0.375
+            },
+            "last_velocity": {
+              "normalized_regret": 0.23741312185245128,
+              "pair_order": 0.8660714285714286,
+              "top1": 0.4
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.12368523592507268,
+              "pair_order": 0.9041666666666667,
+              "top1": 0.4875
+            },
+            "unit_gain": {
+              "normalized_regret": 0.15001873392710058,
+              "pair_order": 0.8916666666666667,
+              "top1": 0.45
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.8239390190372582,
+              "pair_order": 0.36428571428571427,
+              "top1": 0.075
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.38411864338358803,
+              "pair_order": 0.8005952380952381,
+              "top1": 0.3125
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.21940076872677708,
+              "pair_order": 0.8571428571428571,
+              "top1": 0.3125
+            },
+            "range_scaled": {
+              "normalized_regret": 0.1740735513850868,
+              "pair_order": 0.8791666666666667,
+              "top1": 0.3875
+            },
+            "velocity_action": {
+              "normalized_regret": 0.5476914396914235,
+              "pair_order": 0.6357142857142857,
+              "top1": 0.2375
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.05030017255781575,
+              "pair_order": 0.9535714285714286,
+              "top1": 0.6375
+            },
+            "current": {
+              "normalized_regret": 0.03634270429146674,
+              "pair_order": 0.9583333333333334,
+              "top1": 0.7125
+            },
+            "ordered": {
+              "normalized_regret": 0.02087364528665519,
+              "pair_order": 0.9773809523809524,
+              "top1": 0.8125
+            },
+            "unordered": {
+              "normalized_regret": 0.021612733505545444,
+              "pair_order": 0.9779761904761904,
+              "top1": 0.8125
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.12368523592507268,
+            "pair_order": 0.9041666666666667,
+            "top1": 0.4875
+          }
+        },
+        "parameter_ood": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.21010167739014607,
+              "pair_order": 0.8674242424242424,
+              "top1": 0.4
+            },
+            "last_velocity": {
+              "normalized_regret": 0.24010384050559952,
+              "pair_order": 0.8333333333333334,
+              "top1": 0.325
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.1020383780056083,
+              "pair_order": 0.9040404040404041,
+              "top1": 0.6625
+            },
+            "unit_gain": {
+              "normalized_regret": 0.09585790433253777,
+              "pair_order": 0.9059343434343434,
+              "top1": 0.55
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.5850271947435022,
+              "pair_order": 0.5833333333333334,
+              "top1": 0.2
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.3669371557339074,
+              "pair_order": 0.8005050505050505,
+              "top1": 0.275
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.1077078960911499,
+              "pair_order": 0.8882575757575758,
+              "top1": 0.5375
+            },
+            "range_scaled": {
+              "normalized_regret": 0.10845443119618539,
+              "pair_order": 0.8933080808080808,
+              "top1": 0.55
+            },
+            "velocity_action": {
+              "normalized_regret": 0.7570459141539019,
+              "pair_order": 0.4166666666666667,
+              "top1": 0.075
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.10190191483105293,
+              "pair_order": 0.9267676767676768,
+              "top1": 0.525
+            },
+            "current": {
+              "normalized_regret": 0.11159998448682824,
+              "pair_order": 0.9255050505050505,
+              "top1": 0.5
+            },
+            "ordered": {
+              "normalized_regret": 0.08476343965396078,
+              "pair_order": 0.9431818181818182,
+              "top1": 0.6
+            },
+            "unordered": {
+              "normalized_regret": 0.08330722970691781,
+              "pair_order": 0.9425505050505051,
+              "top1": 0.625
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.1020383780056083,
+            "pair_order": 0.9040404040404041,
+            "top1": 0.6625
+          }
+        },
+        "validation": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.17751647170828724,
+              "pair_order": 0.8865079365079365,
+              "top1": 0.4166666666666667
+            },
+            "last_velocity": {
+              "normalized_regret": 0.2352503766153767,
+              "pair_order": 0.8706349206349207,
+              "top1": 0.36666666666666664
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.10720103503053902,
+              "pair_order": 0.9261904761904762,
+              "top1": 0.5166666666666667
+            },
+            "unit_gain": {
+              "normalized_regret": 0.11978643978160647,
+              "pair_order": 0.9142857142857143,
+              "top1": 0.45
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.6724584127852676,
+              "pair_order": 0.49126984126984125,
+              "top1": 0.11666666666666667
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.335157157282558,
+              "pair_order": 0.8253968253968254,
+              "top1": 0.3
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.17675304829173535,
+              "pair_order": 0.8896825396825396,
+              "top1": 0.36666666666666664
+            },
+            "range_scaled": {
+              "normalized_regret": 0.14772775661404053,
+              "pair_order": 0.9071428571428571,
+              "top1": 0.4166666666666667
+            },
+            "velocity_action": {
+              "normalized_regret": 0.6544642210568969,
+              "pair_order": 0.5087301587301587,
+              "top1": 0.18333333333333332
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.042938741361723015,
+              "pair_order": 0.957936507936508,
+              "top1": 0.6833333333333333
+            },
+            "current": {
+              "normalized_regret": 0.032892952179016284,
+              "pair_order": 0.9650793650793651,
+              "top1": 0.7833333333333333
+            },
+            "ordered": {
+              "normalized_regret": 0.027313511961262946,
+              "pair_order": 0.9753968253968254,
+              "top1": 0.7833333333333333
+            },
+            "unordered": {
+              "normalized_regret": 0.024610795499382686,
+              "pair_order": 0.9801587301587301,
+              "top1": 0.8333333333333334
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.10720103503053902,
+            "pair_order": 0.9261904761904762,
+            "top1": 0.5166666666666667
+          }
+        }
+      },
+      "integrity": {
+        "held_mechanism": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "id": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "parameter_ood": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "train": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 1400,
+          "worlds": 200
+        },
+        "validation": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 420,
+          "worlds": 60
+        }
+      },
+      "seed": 7301,
+      "selected_analytic": "linear_system_id",
+      "validation_analytic_selection": {
+        "constant_acceleration": {
+          "normalized_regret": 0.17751647170828724,
+          "pair_order": 0.8865079365079365,
+          "top1": 0.4166666666666667
+        },
+        "last_velocity": {
+          "normalized_regret": 0.2352503766153767,
+          "pair_order": 0.8706349206349207,
+          "top1": 0.36666666666666664
+        },
+        "linear_system_id": {
+          "normalized_regret": 0.10720103503053902,
+          "pair_order": 0.9261904761904762,
+          "top1": 0.5166666666666667
+        },
+        "unit_gain": {
+          "normalized_regret": 0.11978643978160647,
+          "pair_order": 0.9142857142857143,
+          "top1": 0.45
+        }
+      },
+      "world_splits_disjoint": true
+    },
+    {
+      "evaluations": {
+        "held_mechanism": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.4340910661391667,
+              "pair_order": 0.6059523809523809,
+              "top1": 0.1125
+            },
+            "last_velocity": {
+              "normalized_regret": 0.0876701327873351,
+              "pair_order": 0.9053571428571429,
+              "top1": 0.375
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.16229204778012452,
+              "pair_order": 0.85,
+              "top1": 0.275
+            },
+            "unit_gain": {
+              "normalized_regret": 0.09524546257444655,
+              "pair_order": 0.9220238095238096,
+              "top1": 0.25
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.5518444511284578,
+              "pair_order": 0.5684523809523809,
+              "top1": 0.1875
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.10840821321583569,
+              "pair_order": 0.8958333333333334,
+              "top1": 0.3
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.31525528752159865,
+              "pair_order": 0.7214285714285714,
+              "top1": 0.2625
+            },
+            "range_scaled": {
+              "normalized_regret": 0.039003087368446696,
+              "pair_order": 0.9172619047619047,
+              "top1": 0.5375
+            },
+            "velocity_action": {
+              "normalized_regret": 0.6371791337005123,
+              "pair_order": 0.4494047619047619,
+              "top1": 0.125
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.07023937765355585,
+              "pair_order": 0.8886904761904761,
+              "top1": 0.475
+            },
+            "current": {
+              "normalized_regret": 0.07479543522463761,
+              "pair_order": 0.888095238095238,
+              "top1": 0.4375
+            },
+            "ordered": {
+              "normalized_regret": 0.13553797427117983,
+              "pair_order": 0.8494047619047619,
+              "top1": 0.3
+            },
+            "unordered": {
+              "normalized_regret": 0.07742903968212532,
+              "pair_order": 0.8625,
+              "top1": 0.4125
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.16229204778012452,
+            "pair_order": 0.85,
+            "top1": 0.275
+          }
+        },
+        "id": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.2001960097492562,
+              "pair_order": 0.8696428571428572,
+              "top1": 0.3375
+            },
+            "last_velocity": {
+              "normalized_regret": 0.1867109022852312,
+              "pair_order": 0.8797619047619047,
+              "top1": 0.35
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.07674789305124412,
+              "pair_order": 0.9333333333333333,
+              "top1": 0.5875
+            },
+            "unit_gain": {
+              "normalized_regret": 0.11485820629473335,
+              "pair_order": 0.9041666666666667,
+              "top1": 0.45
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.6204084164257286,
+              "pair_order": 0.5416666666666666,
+              "top1": 0.2
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.3342431748563452,
+              "pair_order": 0.8297619047619048,
+              "top1": 0.3
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.1779601236633396,
+              "pair_order": 0.8720238095238095,
+              "top1": 0.3
+            },
+            "range_scaled": {
+              "normalized_regret": 0.15370914840534602,
+              "pair_order": 0.8892857142857142,
+              "top1": 0.3375
+            },
+            "velocity_action": {
+              "normalized_regret": 0.7033470990331132,
+              "pair_order": 0.4583333333333333,
+              "top1": 0.1
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.05261159440067239,
+              "pair_order": 0.9577380952380953,
+              "top1": 0.675
+            },
+            "current": {
+              "normalized_regret": 0.05490608738754199,
+              "pair_order": 0.9601190476190476,
+              "top1": 0.6625
+            },
+            "ordered": {
+              "normalized_regret": 0.022383123142647933,
+              "pair_order": 0.9797619047619047,
+              "top1": 0.85
+            },
+            "unordered": {
+              "normalized_regret": 0.023290983053860972,
+              "pair_order": 0.975,
+              "top1": 0.8375
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.07674789305124412,
+            "pair_order": 0.9333333333333333,
+            "top1": 0.5875
+          }
+        },
+        "parameter_ood": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.2000397750775368,
+              "pair_order": 0.8725124378109452,
+              "top1": 0.375
+            },
+            "last_velocity": {
+              "normalized_regret": 0.245845689195514,
+              "pair_order": 0.8296019900497512,
+              "top1": 0.3
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.09978905702328851,
+              "pair_order": 0.9060945273631841,
+              "top1": 0.5625
+            },
+            "unit_gain": {
+              "normalized_regret": 0.09826077664745651,
+              "pair_order": 0.9054726368159204,
+              "top1": 0.5375
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.5652319919444602,
+              "pair_order": 0.599502487562189,
+              "top1": 0.15
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.36227752914991285,
+              "pair_order": 0.7947761194029851,
+              "top1": 0.225
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.130333188028388,
+              "pair_order": 0.8700248756218906,
+              "top1": 0.4375
+            },
+            "range_scaled": {
+              "normalized_regret": 0.11588761518485244,
+              "pair_order": 0.878731343283582,
+              "top1": 0.5
+            },
+            "velocity_action": {
+              "normalized_regret": 0.7757289633845326,
+              "pair_order": 0.40049751243781095,
+              "top1": 0.075
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.12831099046427794,
+              "pair_order": 0.9148009950248757,
+              "top1": 0.4625
+            },
+            "current": {
+              "normalized_regret": 0.11061042375959682,
+              "pair_order": 0.9160447761194029,
+              "top1": 0.5
+            },
+            "ordered": {
+              "normalized_regret": 0.10600403784440511,
+              "pair_order": 0.9371890547263682,
+              "top1": 0.475
+            },
+            "unordered": {
+              "normalized_regret": 0.09912868475670097,
+              "pair_order": 0.9334577114427861,
+              "top1": 0.5125
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.09978905702328851,
+            "pair_order": 0.9060945273631841,
+            "top1": 0.5625
+          }
+        },
+        "validation": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.1935015658259556,
+              "pair_order": 0.8920634920634921,
+              "top1": 0.38333333333333336
+            },
+            "last_velocity": {
+              "normalized_regret": 0.2165728071071342,
+              "pair_order": 0.8896825396825396,
+              "top1": 0.4
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.11817847302875369,
+              "pair_order": 0.9222222222222223,
+              "top1": 0.5166666666666667
+            },
+            "unit_gain": {
+              "normalized_regret": 0.10968854943673856,
+              "pair_order": 0.9166666666666666,
+              "top1": 0.5
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.6811166002731863,
+              "pair_order": 0.4746031746031746,
+              "top1": 0.15
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.31402306621767057,
+              "pair_order": 0.8333333333333334,
+              "top1": 0.3333333333333333
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.17270147285244122,
+              "pair_order": 0.888095238095238,
+              "top1": 0.36666666666666664
+            },
+            "range_scaled": {
+              "normalized_regret": 0.16304819376183624,
+              "pair_order": 0.8952380952380953,
+              "top1": 0.38333333333333336
+            },
+            "velocity_action": {
+              "normalized_regret": 0.6190345660332358,
+              "pair_order": 0.5253968253968254,
+              "top1": 0.18333333333333332
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.05127160234792047,
+              "pair_order": 0.9547619047619048,
+              "top1": 0.6833333333333333
+            },
+            "current": {
+              "normalized_regret": 0.035860067770732376,
+              "pair_order": 0.957936507936508,
+              "top1": 0.7666666666666667
+            },
+            "ordered": {
+              "normalized_regret": 0.024675403112631444,
+              "pair_order": 0.9793650793650793,
+              "top1": 0.8333333333333334
+            },
+            "unordered": {
+              "normalized_regret": 0.022566437771011152,
+              "pair_order": 0.9761904761904762,
+              "top1": 0.8333333333333334
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.11817847302875369,
+            "pair_order": 0.9222222222222223,
+            "top1": 0.5166666666666667
+          }
+        }
+      },
+      "integrity": {
+        "held_mechanism": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "id": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "parameter_ood": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "train": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 1400,
+          "worlds": 200
+        },
+        "validation": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 420,
+          "worlds": 60
+        }
+      },
+      "seed": 7302,
+      "selected_analytic": "linear_system_id",
+      "validation_analytic_selection": {
+        "constant_acceleration": {
+          "normalized_regret": 0.1935015658259556,
+          "pair_order": 0.8920634920634921,
+          "top1": 0.38333333333333336
+        },
+        "last_velocity": {
+          "normalized_regret": 0.2165728071071342,
+          "pair_order": 0.8896825396825396,
+          "top1": 0.4
+        },
+        "linear_system_id": {
+          "normalized_regret": 0.11817847302875369,
+          "pair_order": 0.9222222222222223,
+          "top1": 0.5166666666666667
+        },
+        "unit_gain": {
+          "normalized_regret": 0.10968854943673856,
+          "pair_order": 0.9166666666666666,
+          "top1": 0.5
+        }
+      },
+      "world_splits_disjoint": true
+    },
+    {
+      "evaluations": {
+        "held_mechanism": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.3810898866357578,
+              "pair_order": 0.638095238095238,
+              "top1": 0.15
+            },
+            "last_velocity": {
+              "normalized_regret": 0.09771173515798162,
+              "pair_order": 0.906547619047619,
+              "top1": 0.325
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.16858916373337413,
+              "pair_order": 0.8523809523809524,
+              "top1": 0.35
+            },
+            "unit_gain": {
+              "normalized_regret": 0.09654941507092944,
+              "pair_order": 0.9196428571428571,
+              "top1": 0.25
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.6279992486517051,
+              "pair_order": 0.49464285714285716,
+              "top1": 0.1375
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.11018628160128138,
+              "pair_order": 0.8922619047619048,
+              "top1": 0.275
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.23336026120738115,
+              "pair_order": 0.7714285714285715,
+              "top1": 0.2
+            },
+            "range_scaled": {
+              "normalized_regret": 0.04194373727777881,
+              "pair_order": 0.9226190476190477,
+              "top1": 0.4875
+            },
+            "velocity_action": {
+              "normalized_regret": 0.6109216382496709,
+              "pair_order": 0.4636904761904762,
+              "top1": 0.1375
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.05757492821360348,
+              "pair_order": 0.8910714285714286,
+              "top1": 0.5375
+            },
+            "current": {
+              "normalized_regret": 0.055460823934779725,
+              "pair_order": 0.8738095238095238,
+              "top1": 0.525
+            },
+            "ordered": {
+              "normalized_regret": 0.07449255078273553,
+              "pair_order": 0.8047619047619048,
+              "top1": 0.4875
+            },
+            "unordered": {
+              "normalized_regret": 0.06882490579212634,
+              "pair_order": 0.825595238095238,
+              "top1": 0.5125
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.16858916373337413,
+            "pair_order": 0.8523809523809524,
+            "top1": 0.35
+          }
+        },
+        "id": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.20146046637852458,
+              "pair_order": 0.875,
+              "top1": 0.4375
+            },
+            "last_velocity": {
+              "normalized_regret": 0.20831203360480063,
+              "pair_order": 0.8755952380952381,
+              "top1": 0.4
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.11071278257425558,
+              "pair_order": 0.919047619047619,
+              "top1": 0.5
+            },
+            "unit_gain": {
+              "normalized_regret": 0.1043307635571444,
+              "pair_order": 0.9005952380952381,
+              "top1": 0.525
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.7349226069303166,
+              "pair_order": 0.4446428571428571,
+              "top1": 0.175
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.3598967147948427,
+              "pair_order": 0.8095238095238095,
+              "top1": 0.325
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.20034099360288254,
+              "pair_order": 0.8660714285714286,
+              "top1": 0.35
+            },
+            "range_scaled": {
+              "normalized_regret": 0.15386639669627974,
+              "pair_order": 0.8857142857142857,
+              "top1": 0.425
+            },
+            "velocity_action": {
+              "normalized_regret": 0.616193642764064,
+              "pair_order": 0.5553571428571429,
+              "top1": 0.15
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.04381346198657319,
+              "pair_order": 0.9636904761904762,
+              "top1": 0.6875
+            },
+            "current": {
+              "normalized_regret": 0.03977423854696279,
+              "pair_order": 0.9648809523809524,
+              "top1": 0.7
+            },
+            "ordered": {
+              "normalized_regret": 0.031061754580440942,
+              "pair_order": 0.9738095238095238,
+              "top1": 0.75
+            },
+            "unordered": {
+              "normalized_regret": 0.03365866912016228,
+              "pair_order": 0.9767857142857143,
+              "top1": 0.725
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.11071278257425558,
+            "pair_order": 0.919047619047619,
+            "top1": 0.5
+          }
+        },
+        "parameter_ood": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.18668728704697615,
+              "pair_order": 0.86691776522285,
+              "top1": 0.4875
+            },
+            "last_velocity": {
+              "normalized_regret": 0.246020286048992,
+              "pair_order": 0.8355304456999372,
+              "top1": 0.3625
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.12101431208802818,
+              "pair_order": 0.8895166352793471,
+              "top1": 0.5875
+            },
+            "unit_gain": {
+              "normalized_regret": 0.08216934693444881,
+              "pair_order": 0.9083490269930948,
+              "top1": 0.6
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.5693932044775378,
+              "pair_order": 0.5988700564971752,
+              "top1": 0.2
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.3734755583126355,
+              "pair_order": 0.7846829880728186,
+              "top1": 0.3125
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.10020210392613593,
+              "pair_order": 0.8876333961079724,
+              "top1": 0.5625
+            },
+            "range_scaled": {
+              "normalized_regret": 0.07789039185583839,
+              "pair_order": 0.8957940991839297,
+              "top1": 0.6125
+            },
+            "velocity_action": {
+              "normalized_regret": 0.7758347289410633,
+              "pair_order": 0.4011299435028249,
+              "top1": 0.1125
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.09930340463438474,
+              "pair_order": 0.9296924042686755,
+              "top1": 0.5625
+            },
+            "current": {
+              "normalized_regret": 0.09806583747681488,
+              "pair_order": 0.9303201506591338,
+              "top1": 0.575
+            },
+            "ordered": {
+              "normalized_regret": 0.08745073114074212,
+              "pair_order": 0.9397363465160076,
+              "top1": 0.6125
+            },
+            "unordered": {
+              "normalized_regret": 0.07189669464366596,
+              "pair_order": 0.9447583176396736,
+              "top1": 0.65
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.12101431208802818,
+            "pair_order": 0.8895166352793471,
+            "top1": 0.5875
+          }
+        },
+        "validation": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.1635109905006942,
+              "pair_order": 0.9103174603174603,
+              "top1": 0.35
+            },
+            "last_velocity": {
+              "normalized_regret": 0.17726864911291754,
+              "pair_order": 0.9047619047619048,
+              "top1": 0.31666666666666665
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.08026806472219362,
+              "pair_order": 0.9365079365079365,
+              "top1": 0.6
+            },
+            "unit_gain": {
+              "normalized_regret": 0.1160541403642341,
+              "pair_order": 0.9277777777777778,
+              "top1": 0.4666666666666667
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.5699233989354934,
+              "pair_order": 0.5523809523809524,
+              "top1": 0.13333333333333333
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.24525475054444298,
+              "pair_order": 0.8746031746031746,
+              "top1": 0.2833333333333333
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.1735362481057174,
+              "pair_order": 0.9023809523809524,
+              "top1": 0.31666666666666665
+            },
+            "range_scaled": {
+              "normalized_regret": 0.15041950769761447,
+              "pair_order": 0.9134920634920635,
+              "top1": 0.36666666666666664
+            },
+            "velocity_action": {
+              "normalized_regret": 0.6710043603493558,
+              "pair_order": 0.44761904761904764,
+              "top1": 0.15
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.052367843793173954,
+              "pair_order": 0.9563492063492064,
+              "top1": 0.7
+            },
+            "current": {
+              "normalized_regret": 0.04442039588309511,
+              "pair_order": 0.957936507936508,
+              "top1": 0.7166666666666667
+            },
+            "ordered": {
+              "normalized_regret": 0.02851618407300849,
+              "pair_order": 0.9738095238095238,
+              "top1": 0.8
+            },
+            "unordered": {
+              "normalized_regret": 0.04002437413254397,
+              "pair_order": 0.9666666666666667,
+              "top1": 0.7333333333333333
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.08026806472219362,
+            "pair_order": 0.9365079365079365,
+            "top1": 0.6
+          }
+        }
+      },
+      "integrity": {
+        "held_mechanism": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "id": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "parameter_ood": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "train": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 1400,
+          "worlds": 200
+        },
+        "validation": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 420,
+          "worlds": 60
+        }
+      },
+      "seed": 7303,
+      "selected_analytic": "linear_system_id",
+      "validation_analytic_selection": {
+        "constant_acceleration": {
+          "normalized_regret": 0.1635109905006942,
+          "pair_order": 0.9103174603174603,
+          "top1": 0.35
+        },
+        "last_velocity": {
+          "normalized_regret": 0.17726864911291754,
+          "pair_order": 0.9047619047619048,
+          "top1": 0.31666666666666665
+        },
+        "linear_system_id": {
+          "normalized_regret": 0.08026806472219362,
+          "pair_order": 0.9365079365079365,
+          "top1": 0.6
+        },
+        "unit_gain": {
+          "normalized_regret": 0.1160541403642341,
+          "pair_order": 0.9277777777777778,
+          "top1": 0.4666666666666667
+        }
+      },
+      "world_splits_disjoint": true
+    },
+    {
+      "evaluations": {
+        "held_mechanism": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.4411303057288937,
+              "pair_order": 0.6113095238095239,
+              "top1": 0.175
+            },
+            "last_velocity": {
+              "normalized_regret": 0.08236966332562633,
+              "pair_order": 0.8988095238095238,
+              "top1": 0.35
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.1556782455864501,
+              "pair_order": 0.8577380952380952,
+              "top1": 0.3875
+            },
+            "unit_gain": {
+              "normalized_regret": 0.10097025298529834,
+              "pair_order": 0.9208333333333333,
+              "top1": 0.225
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.6238577342214106,
+              "pair_order": 0.49047619047619045,
+              "top1": 0.1375
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.10948886611180239,
+              "pair_order": 0.8988095238095238,
+              "top1": 0.3125
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.3178432033712898,
+              "pair_order": 0.7077380952380953,
+              "top1": 0.25
+            },
+            "range_scaled": {
+              "normalized_regret": 0.04489554134506625,
+              "pair_order": 0.9160714285714285,
+              "top1": 0.4875
+            },
+            "velocity_action": {
+              "normalized_regret": 0.565494269248207,
+              "pair_order": 0.5119047619047619,
+              "top1": 0.1875
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.06954862006245341,
+              "pair_order": 0.8690476190476191,
+              "top1": 0.4
+            },
+            "current": {
+              "normalized_regret": 0.061379930756821466,
+              "pair_order": 0.8630952380952381,
+              "top1": 0.4375
+            },
+            "ordered": {
+              "normalized_regret": 0.08098510671508316,
+              "pair_order": 0.8244047619047619,
+              "top1": 0.425
+            },
+            "unordered": {
+              "normalized_regret": 0.05594869177727539,
+              "pair_order": 0.8404761904761905,
+              "top1": 0.4625
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.1556782455864501,
+            "pair_order": 0.8577380952380952,
+            "top1": 0.3875
+          }
+        },
+        "id": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.17222587145722507,
+              "pair_order": 0.8803571428571428,
+              "top1": 0.3625
+            },
+            "last_velocity": {
+              "normalized_regret": 0.3105151363513465,
+              "pair_order": 0.843452380952381,
+              "top1": 0.2125
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.11838014681733462,
+              "pair_order": 0.9113095238095238,
+              "top1": 0.5625
+            },
+            "unit_gain": {
+              "normalized_regret": 0.15056502899688845,
+              "pair_order": 0.8904761904761904,
+              "top1": 0.35
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.6370688278239445,
+              "pair_order": 0.5642857142857143,
+              "top1": 0.1125
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.40844399511204055,
+              "pair_order": 0.7803571428571429,
+              "top1": 0.2
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.20251837967840602,
+              "pair_order": 0.8571428571428571,
+              "top1": 0.225
+            },
+            "range_scaled": {
+              "normalized_regret": 0.1915842083799042,
+              "pair_order": 0.8714285714285714,
+              "top1": 0.2375
+            },
+            "velocity_action": {
+              "normalized_regret": 0.7521330692651491,
+              "pair_order": 0.4357142857142857,
+              "top1": 0.0875
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.051211068325694685,
+              "pair_order": 0.9589285714285715,
+              "top1": 0.7
+            },
+            "current": {
+              "normalized_regret": 0.04738309192627484,
+              "pair_order": 0.9589285714285715,
+              "top1": 0.725
+            },
+            "ordered": {
+              "normalized_regret": 0.017031763834535318,
+              "pair_order": 0.9744047619047619,
+              "top1": 0.85
+            },
+            "unordered": {
+              "normalized_regret": 0.015503925899838483,
+              "pair_order": 0.9809523809523809,
+              "top1": 0.875
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.11838014681733462,
+            "pair_order": 0.9113095238095238,
+            "top1": 0.5625
+          }
+        },
+        "parameter_ood": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.1600102201909551,
+              "pair_order": 0.8764044943820225,
+              "top1": 0.475
+            },
+            "last_velocity": {
+              "normalized_regret": 0.2567766406250973,
+              "pair_order": 0.8426966292134831,
+              "top1": 0.3375
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.09765382066599729,
+              "pair_order": 0.920099875156055,
+              "top1": 0.5875
+            },
+            "unit_gain": {
+              "normalized_regret": 0.0750622480623373,
+              "pair_order": 0.920099875156055,
+              "top1": 0.6
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.607405145487366,
+              "pair_order": 0.5399500624219725,
+              "top1": 0.1625
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.3073611015232912,
+              "pair_order": 0.8227215980024969,
+              "top1": 0.3625
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.09572489808477405,
+              "pair_order": 0.9013732833957553,
+              "top1": 0.575
+            },
+            "range_scaled": {
+              "normalized_regret": 0.0819452882777757,
+              "pair_order": 0.9051186017478152,
+              "top1": 0.5875
+            },
+            "velocity_action": {
+              "normalized_regret": 0.681773392164742,
+              "pair_order": 0.4600499375780275,
+              "top1": 0.2
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.09578301975208792,
+              "pair_order": 0.918227215980025,
+              "top1": 0.55
+            },
+            "current": {
+              "normalized_regret": 0.10080628563578738,
+              "pair_order": 0.9207240948813983,
+              "top1": 0.5375
+            },
+            "ordered": {
+              "normalized_regret": 0.08698148216976179,
+              "pair_order": 0.9394506866416978,
+              "top1": 0.5625
+            },
+            "unordered": {
+              "normalized_regret": 0.08391384164688549,
+              "pair_order": 0.9419475655430711,
+              "top1": 0.6
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.09765382066599729,
+            "pair_order": 0.920099875156055,
+            "top1": 0.5875
+          }
+        },
+        "validation": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.17819761657518166,
+              "pair_order": 0.8833333333333333,
+              "top1": 0.43333333333333335
+            },
+            "last_velocity": {
+              "normalized_regret": 0.19497006654456805,
+              "pair_order": 0.8873015873015873,
+              "top1": 0.4
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.08636412990531744,
+              "pair_order": 0.9301587301587302,
+              "top1": 0.6166666666666667
+            },
+            "unit_gain": {
+              "normalized_regret": 0.1373957782638678,
+              "pair_order": 0.9,
+              "top1": 0.45
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.7432560970598108,
+              "pair_order": 0.4222222222222222,
+              "top1": 0.13333333333333333
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.32575309938018615,
+              "pair_order": 0.8285714285714286,
+              "top1": 0.36666666666666664
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.19090503159682032,
+              "pair_order": 0.8777777777777778,
+              "top1": 0.38333333333333336
+            },
+            "range_scaled": {
+              "normalized_regret": 0.17756913180709674,
+              "pair_order": 0.8904761904761904,
+              "top1": 0.38333333333333336
+            },
+            "velocity_action": {
+              "normalized_regret": 0.5770420780504989,
+              "pair_order": 0.5777777777777777,
+              "top1": 0.23333333333333334
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.034616415454283476,
+              "pair_order": 0.9626984126984127,
+              "top1": 0.8
+            },
+            "current": {
+              "normalized_regret": 0.034568476115655736,
+              "pair_order": 0.9642857142857143,
+              "top1": 0.8
+            },
+            "ordered": {
+              "normalized_regret": 0.017916283690340422,
+              "pair_order": 0.9761904761904762,
+              "top1": 0.85
+            },
+            "unordered": {
+              "normalized_regret": 0.021852484737828318,
+              "pair_order": 0.9785714285714285,
+              "top1": 0.8333333333333334
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.08636412990531744,
+            "pair_order": 0.9301587301587302,
+            "top1": 0.6166666666666667
+          }
+        }
+      },
+      "integrity": {
+        "held_mechanism": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "id": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "parameter_ood": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "train": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 1400,
+          "worlds": 200
+        },
+        "validation": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 420,
+          "worlds": 60
+        }
+      },
+      "seed": 7304,
+      "selected_analytic": "linear_system_id",
+      "validation_analytic_selection": {
+        "constant_acceleration": {
+          "normalized_regret": 0.17819761657518166,
+          "pair_order": 0.8833333333333333,
+          "top1": 0.43333333333333335
+        },
+        "last_velocity": {
+          "normalized_regret": 0.19497006654456805,
+          "pair_order": 0.8873015873015873,
+          "top1": 0.4
+        },
+        "linear_system_id": {
+          "normalized_regret": 0.08636412990531744,
+          "pair_order": 0.9301587301587302,
+          "top1": 0.6166666666666667
+        },
+        "unit_gain": {
+          "normalized_regret": 0.1373957782638678,
+          "pair_order": 0.9,
+          "top1": 0.45
+        }
+      },
+      "world_splits_disjoint": true
+    },
+    {
+      "evaluations": {
+        "held_mechanism": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.32558270775535963,
+              "pair_order": 0.694047619047619,
+              "top1": 0.2125
+            },
+            "last_velocity": {
+              "normalized_regret": 0.06791879265210184,
+              "pair_order": 0.9095238095238095,
+              "top1": 0.3625
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.09256058448521291,
+              "pair_order": 0.8892857142857142,
+              "top1": 0.4125
+            },
+            "unit_gain": {
+              "normalized_regret": 0.05878059747880106,
+              "pair_order": 0.9297619047619048,
+              "top1": 0.325
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.647953090673309,
+              "pair_order": 0.444047619047619,
+              "top1": 0.175
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.06709106249504967,
+              "pair_order": 0.9154761904761904,
+              "top1": 0.375
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.3185749518890361,
+              "pair_order": 0.7029761904761904,
+              "top1": 0.3
+            },
+            "range_scaled": {
+              "normalized_regret": 0.024164023357984198,
+              "pair_order": 0.9202380952380952,
+              "top1": 0.4875
+            },
+            "velocity_action": {
+              "normalized_regret": 0.5715713077808882,
+              "pair_order": 0.48392857142857143,
+              "top1": 0.225
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.04232567286131212,
+              "pair_order": 0.8952380952380953,
+              "top1": 0.4375
+            },
+            "current": {
+              "normalized_regret": 0.03777140714383721,
+              "pair_order": 0.8827380952380952,
+              "top1": 0.4375
+            },
+            "ordered": {
+              "normalized_regret": 0.0657085512625819,
+              "pair_order": 0.8172619047619047,
+              "top1": 0.425
+            },
+            "unordered": {
+              "normalized_regret": 0.05215364419447729,
+              "pair_order": 0.8357142857142857,
+              "top1": 0.375
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.09256058448521291,
+            "pair_order": 0.8892857142857142,
+            "top1": 0.4125
+          }
+        },
+        "id": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.19957391960392523,
+              "pair_order": 0.8720238095238095,
+              "top1": 0.35
+            },
+            "last_velocity": {
+              "normalized_regret": 0.2265568634743515,
+              "pair_order": 0.8738095238095238,
+              "top1": 0.3125
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.12763029169096313,
+              "pair_order": 0.9035714285714286,
+              "top1": 0.5875
+            },
+            "unit_gain": {
+              "normalized_regret": 0.14019156309594433,
+              "pair_order": 0.8940476190476191,
+              "top1": 0.4
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.6926015151124807,
+              "pair_order": 0.5095238095238095,
+              "top1": 0.125
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.4052859304708158,
+              "pair_order": 0.7845238095238095,
+              "top1": 0.225
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.22769127457281177,
+              "pair_order": 0.8553571428571428,
+              "top1": 0.225
+            },
+            "range_scaled": {
+              "normalized_regret": 0.20626142969724234,
+              "pair_order": 0.8726190476190476,
+              "top1": 0.2625
+            },
+            "velocity_action": {
+              "normalized_regret": 0.6949277113917288,
+              "pair_order": 0.49047619047619045,
+              "top1": 0.1
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.058022318626978,
+              "pair_order": 0.9601190476190476,
+              "top1": 0.6375
+            },
+            "current": {
+              "normalized_regret": 0.05561521765643094,
+              "pair_order": 0.9625,
+              "top1": 0.6625
+            },
+            "ordered": {
+              "normalized_regret": 0.02296790897905843,
+              "pair_order": 0.9791666666666666,
+              "top1": 0.85
+            },
+            "unordered": {
+              "normalized_regret": 0.025398967064744305,
+              "pair_order": 0.981547619047619,
+              "top1": 0.85
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.12763029169096313,
+            "pair_order": 0.9035714285714286,
+            "top1": 0.5875
+          }
+        },
+        "parameter_ood": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.16874723176264972,
+              "pair_order": 0.8692933083176986,
+              "top1": 0.425
+            },
+            "last_velocity": {
+              "normalized_regret": 0.2755669242990484,
+              "pair_order": 0.8005003126954346,
+              "top1": 0.2875
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.08102702638206098,
+              "pair_order": 0.9124452782989368,
+              "top1": 0.65
+            },
+            "unit_gain": {
+              "normalized_regret": 0.09499910531667234,
+              "pair_order": 0.9055659787367104,
+              "top1": 0.5625
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.6443320114534609,
+              "pair_order": 0.5284552845528455,
+              "top1": 0.1125
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.3811405129317361,
+              "pair_order": 0.7904940587867417,
+              "top1": 0.225
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.1179172528572419,
+              "pair_order": 0.8767979987492183,
+              "top1": 0.5
+            },
+            "range_scaled": {
+              "normalized_regret": 0.1076074879030963,
+              "pair_order": 0.8824265165728581,
+              "top1": 0.5375
+            },
+            "velocity_action": {
+              "normalized_regret": 0.7104555402418886,
+              "pair_order": 0.4715447154471545,
+              "top1": 0.1125
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.09379766647618396,
+              "pair_order": 0.9168230143839899,
+              "top1": 0.5375
+            },
+            "current": {
+              "normalized_regret": 0.09447733685918541,
+              "pair_order": 0.9155722326454033,
+              "top1": 0.525
+            },
+            "ordered": {
+              "normalized_regret": 0.08311520420380736,
+              "pair_order": 0.9393370856785491,
+              "top1": 0.5625
+            },
+            "unordered": {
+              "normalized_regret": 0.0744097328666317,
+              "pair_order": 0.9349593495934959,
+              "top1": 0.6
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.08102702638206098,
+            "pair_order": 0.9124452782989368,
+            "top1": 0.65
+          }
+        },
+        "validation": {
+          "analytic_all": {
+            "constant_acceleration": {
+              "normalized_regret": 0.1544596102195716,
+              "pair_order": 0.9142857142857143,
+              "top1": 0.43333333333333335
+            },
+            "last_velocity": {
+              "normalized_regret": 0.20631547321590507,
+              "pair_order": 0.8928571428571429,
+              "top1": 0.4
+            },
+            "linear_system_id": {
+              "normalized_regret": 0.05185678038171958,
+              "pair_order": 0.9468253968253968,
+              "top1": 0.7333333333333333
+            },
+            "unit_gain": {
+              "normalized_regret": 0.12365099438576649,
+              "pair_order": 0.9246031746031746,
+              "top1": 0.48333333333333334
+            }
+          },
+          "audit_rules": {
+            "endpoint_action": {
+              "normalized_regret": 0.6140862066084449,
+              "pair_order": 0.5055555555555555,
+              "top1": 0.2
+            },
+            "goal_action_sign": {
+              "normalized_regret": 0.24518544738560938,
+              "pair_order": 0.8817460317460317,
+              "top1": 0.36666666666666664
+            },
+            "probe_correlation": {
+              "normalized_regret": 0.16306196268926698,
+              "pair_order": 0.9119047619047619,
+              "top1": 0.4166666666666667
+            },
+            "range_scaled": {
+              "normalized_regret": 0.14949602109333124,
+              "pair_order": 0.9158730158730158,
+              "top1": 0.43333333333333335
+            },
+            "velocity_action": {
+              "normalized_regret": 0.6285642820919739,
+              "pair_order": 0.49444444444444446,
+              "top1": 0.16666666666666666
+            }
+          },
+          "learned": {
+            "action_target": {
+              "normalized_regret": 0.02750330953384814,
+              "pair_order": 0.9634920634920635,
+              "top1": 0.8
+            },
+            "current": {
+              "normalized_regret": 0.038048097744367765,
+              "pair_order": 0.9611111111111111,
+              "top1": 0.75
+            },
+            "ordered": {
+              "normalized_regret": 0.029920037951969052,
+              "pair_order": 0.9793650793650793,
+              "top1": 0.8333333333333334
+            },
+            "unordered": {
+              "normalized_regret": 0.023327922898157376,
+              "pair_order": 0.9785714285714285,
+              "top1": 0.85
+            }
+          },
+          "selected_analytic": {
+            "normalized_regret": 0.05185678038171958,
+            "pair_order": 0.9468253968253968,
+            "top1": 0.7333333333333333
+          }
+        }
+      },
+      "integrity": {
+        "held_mechanism": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "id": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "parameter_ood": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 560,
+          "worlds": 80
+        },
+        "train": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 1400,
+          "worlds": 200
+        },
+        "validation": {
+          "all_seven_candidates": true,
+          "maximum_candidates": 7,
+          "minimum_candidates": 7,
+          "rows": 420,
+          "worlds": 60
+        }
+      },
+      "seed": 7305,
+      "selected_analytic": "linear_system_id",
+      "validation_analytic_selection": {
+        "constant_acceleration": {
+          "normalized_regret": 0.1544596102195716,
+          "pair_order": 0.9142857142857143,
+          "top1": 0.43333333333333335
+        },
+        "last_velocity": {
+          "normalized_regret": 0.20631547321590507,
+          "pair_order": 0.8928571428571429,
+          "top1": 0.4
+        },
+        "linear_system_id": {
+          "normalized_regret": 0.05185678038171958,
+          "pair_order": 0.9468253968253968,
+          "top1": 0.7333333333333333
+        },
+        "unit_gain": {
+          "normalized_regret": 0.12365099438576649,
+          "pair_order": 0.9246031746031746,
+          "top1": 0.48333333333333334
+        }
+      },
+      "world_splits_disjoint": true
+    }
+  ],
+  "seeds": [
+    7301,
+    7302,
+    7303,
+    7304,
+    7305
+  ],
+  "sizes": {
+    "held_mechanism": 80,
+    "id": 80,
+    "parameter_ood": 80,
+    "train": 200,
+    "validation": 60
+  }
+}
