@@ -1,0 +1,43 @@
+name: Binding CPU G1-G2
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cpu-smoke:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    env:
+      CUDA_VISIBLE_DEVICES: ""
+      OMP_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements/binding*-cpu.txt
+      - name: Install CPU-only runtime
+        run: |
+          python -m pip install torch==2.6.0+cpu --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r requirements/binding-sim-cpu.txt
+          python -c "import torch; assert torch.version.cuda is None; assert not torch.cuda.is_available()"
+      - name: Required contract and real-physics regression tests
+        run: python -m pytest tests/test_binding_bench.py tests/test_binding_sim_cpu.py -q
+      - name: G1 snapshot replay
+        run: python -m actmask.experiments.binding_gpu.snapshot_smoke --output-dir artifacts/binding_cpu/g1
+      - name: G2 bounded twins
+        run: python -m actmask.experiments.binding_gpu.generate --output-dir artifacts/binding_cpu/g2 --twins-per-seed 8
+      - name: Independent replay, isolation, and benchmark audit
+        run: python -m actmask.experiments.binding_gpu.audit_dataset --dataset-dir artifacts/binding_cpu/g2 --output-dir artifacts/binding_cpu/g2_audit
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: binding-cpu-${{ github.sha }}
+          path: artifacts/binding_cpu/
+          if-no-files-found: warn
+          retention-days: 14

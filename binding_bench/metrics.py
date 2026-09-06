@@ -116,12 +116,20 @@ def score_prediction(dataset: BindingDataset, prediction: PredictionBundle) -> d
     ):
         difficulty[name] = {
             "count": int(selected.sum()),
-            "normalized_regret": float(normalized[selected].mean()),
-            "top1_accuracy": float(top1_credit[selected].mean()),
+            "normalized_regret": float(normalized[selected].mean()) if selected.any() else None,
+            "top1_accuracy": float(top1_credit[selected].mean()) if selected.any() else None,
         }
 
-    preference = _twin_preference(truth, scores)
-    centered = scores - scores.mean(axis=2, keepdims=True)
+    # Branch-local alignment is insufficient for a cross-branch comparison:
+    # intervention suites independently permute candidate slots in each branch.
+    twin_truth, twin_scores = truth.copy(), scores.copy()
+    for twin in range(dataset.twins):
+        index = {str(cid): slot for slot, cid in enumerate(dataset.candidate_ids[twin, 1])}
+        order = [index[str(cid)] for cid in dataset.candidate_ids[twin, 0]]
+        twin_truth[twin, 1] = truth[twin, 1, order]
+        twin_scores[twin, 1] = scores[twin, 1, order]
+    preference = _twin_preference(twin_truth, twin_scores)
+    centered = twin_scores - twin_scores.mean(axis=2, keepdims=True)
     output: dict[str, Any] = {
         "normalized_regret": float(normalized.mean()),
         "mean_regret": float(regret.mean()),

@@ -17,7 +17,7 @@
       "missing_files": [],
       "tests": {
         "command": [
-          "D:\\anaconda\\python.exe",
+          "D:\\study\\CV\\ActMask\\.venv-binding-sim-cpu\\Scripts\\python.exe",
           "-m",
           "pytest",
           "tests/test_binding_bench.py",
@@ -26,8 +26,13 @@
         "passed": true,
         "returncode": 0,
         "stderr": "",
-        "stdout": "........                                                                 [100%]\n8 passed in 8.00s"
+        "stdout": "..........                                                               [100%]\n10 passed in 5.58s"
       }
+    },
+    "cpu_g1_g2_transport": {
+      "decision": "GO",
+      "evidence": "audit/results/binding_cpu_transport.json",
+      "scope": "Archived CPU replay/schema/isolation/plumbing only; not scientific admission or GPU execution."
     },
     "current_learned_method_claim": {
       "decision": "NO_GO",
@@ -46,12 +51,12 @@
     "gpu_generator_implementation": {
       "decision": "NO_GO",
       "module_presence": {
-        "actmask/experiments/binding_gpu/audit_dataset.py": false,
-        "actmask/experiments/binding_gpu/generate.py": false,
+        "actmask/experiments/binding_gpu/audit_dataset.py": true,
+        "actmask/experiments/binding_gpu/generate.py": true,
         "actmask/experiments/binding_gpu/run_state_methods.py": false,
-        "actmask/experiments/binding_gpu/snapshot_smoke.py": false
+        "actmask/experiments/binding_gpu/snapshot_smoke.py": true
       },
-      "reason": "G1-G4 commands are preregistered but their simulator modules are not implemented."
+      "reason": "CPU G1/G2 fixture implemented; full GPU backend, G3 scientific admission and G4 methods remain pending."
     },
     "gpu_host_and_authorization": {
       "decision": "NO_GO",
@@ -99,10 +104,10 @@
       "scope": "File authenticity and state/action structure only; not simulator replay."
     }
   },
-  "next_gate": "Approve a named Linux/NVIDIA host and cost ceiling, pass remote G0, then implement and execute only the G1 snapshot smoke and G2 bounded dataset smoke.",
+  "next_gate": "Pull the frozen GitHub commit on Linux, reproduce CPU G1/G2, then pass remote G0 before separately implementing GPU backend and scientific G3/G4.",
   "overall_decision": "GPU_START_NO_GO",
   "root": "D:\\study\\CV\\ActMask",
   "schema_version": "actmask-binding-project-readiness-v1",
   "scope_note": "GO for the CPU harness or source selection is not evidence of a learned-method gain and is not permission to start GPU compute.",
-  "utc": "2026-09-03T14:20:35.282558+00:00"
+  "utc": "2026-09-06T09:30:13.112093+00:00"
 }

@@ -154,6 +154,13 @@ def audit(root: Path, *, run_tests: bool) -> dict[str, Any]:
     gpu_module_presence = {
         relative: (root / relative).is_file() for relative in PLANNED_GPU_MODULES
     }
+    transport_path = root / "audit/results/binding_cpu_transport.json"
+    transport = _load_json(transport_path) if transport_path.is_file() else {}
+    cpu_transport_ready = (
+        transport.get("g1", {}).get("passed") is True
+        and transport.get("g2", {}).get("passed") is True
+        and all(gpu_module_presence[path] for path in PLANNED_GPU_MODULES[:3])
+    )
     harness_ready = (
         not missing_files
         and tests.get("passed") is not False
@@ -173,6 +180,11 @@ def audit(root: Path, *, run_tests: bool) -> dict[str, Any]:
         "utc": datetime.now(timezone.utc).isoformat(),
         "root": str(root),
         "components": {
+            "cpu_g1_g2_transport": {
+                "decision": "GO" if cpu_transport_ready else "NO_GO",
+                "evidence": "audit/results/binding_cpu_transport.json",
+                "scope": "Archived CPU replay/schema/isolation/plumbing only; not scientific admission or GPU execution.",
+            },
             "cpu_benchmark_harness": {
                 "decision": "GO" if harness_ready else "NO_GO",
                 "missing_files": missing_files,
@@ -209,7 +221,7 @@ def audit(root: Path, *, run_tests: bool) -> dict[str, Any]:
             "gpu_generator_implementation": {
                 "decision": "GO" if gpu_generator_ready else "NO_GO",
                 "module_presence": gpu_module_presence,
-                "reason": "G1-G4 commands are preregistered but their simulator modules are not implemented.",
+                "reason": "CPU G1/G2 fixture implemented; full GPU backend, G3 scientific admission and G4 methods remain pending.",
             },
             "gpu_host_and_authorization": {
                 "decision": "GO" if gpu_host_ready else "NO_GO",
@@ -219,8 +231,8 @@ def audit(root: Path, *, run_tests: bool) -> dict[str, Any]:
         },
         "overall_decision": "GPU_START_GO" if gpu_start_ready else "GPU_START_NO_GO",
         "next_gate": (
-            "Approve a named Linux/NVIDIA host and cost ceiling, pass remote G0, then implement "
-            "and execute only the G1 snapshot smoke and G2 bounded dataset smoke."
+            "Pull the frozen GitHub commit on Linux, reproduce CPU G1/G2, then pass remote G0 "
+            "before separately implementing GPU backend and scientific G3/G4."
         ),
         "scope_note": (
             "GO for the CPU harness or source selection is not evidence of a learned-method gain "
@@ -236,6 +248,7 @@ def render_markdown(result: dict[str, Any]) -> str:
     gpu = components["gpu_host_and_authorization"]
     rows = []
     labels = {
+        "cpu_g1_g2_transport": "CPU G1/G2 transport smoke (archived evidence)",
         "cpu_benchmark_harness": "CPU benchmark harness",
         "current_learned_method_claim": "Current learned-method claim",
         "public_data_source_selection": "Public data/source selection",
@@ -269,8 +282,9 @@ Overall decision: **{result['overall_decision']}**
 
 The reusable CPU benchmark and the public-source decision are ready. Actual GPU
 execution is not ready: the current host is unsupported, spending and the exact
-remote host are unapproved, and the preregistered G1-G4 simulator modules have
-not yet been implemented. Planned commands are not completion evidence.
+remote host are unapproved. CPU G1/G2 is a limited physical transport fixture;
+full GPU backend, G3 scientific admission and G4 methods remain pending.
+Archived smoke reports are not evidence that the current checkout was rerun.
 
 Next gate: {result['next_gate']}
 """

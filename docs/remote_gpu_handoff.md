@@ -4,6 +4,11 @@ Date: 2026-09-03
 Repository focus: counterfactual action-effect binding audit
 Current compute decision: **GPU_START_NO_GO**
 
+2026-09-06 addendum: CPU G1/G2 source and Ubuntu CI are available; follow
+`docs/binding_cpu_g1_g2.md` to reproduce them after pulling GitHub. The user
+will choose and operate the Linux machine; this change does not perform SSH
+migration. G3/G4 and GPU backend implementation remain pending.
+
 ## What should move through Git
 
 Commit source code, configs, documentation, focused tests, and the curated JSON

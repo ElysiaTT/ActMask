@@ -33,6 +33,31 @@ def small_dataset():
     return make_example_dataset(seeds=(31, 32), twins_per_seed=6, history_length=8, candidate_count=7)
 
 
+def test_public_view_strips_audit_metadata_and_cannot_mutate_evaluator():
+    dataset = small_dataset()
+    public = dataset.public_view()
+    assert not public.true_utility.size and public.candidate_effects is None
+    assert np.all(public.seed_ids == 0)
+    assert np.all(public.episode_ids == "") and np.all(public.split_group_ids == "")
+    with pytest.raises(ValueError):
+        public.history_effects[0, 0, 0, 0] = 42
+    assert not np.shares_memory(public.history_effects, dataset.history_effects)
+
+
+def test_tpa_invariant_to_independent_branch_slot_permutation():
+    dataset = small_dataset()
+    cases = make_cases(dataset, seed=99)
+    metrics = []
+    for case in ("original", "candidate_slot_permutation"):
+        current = cases[case]
+        prediction = PredictionBundle(method_id="fixture", dataset_id=current.dataset_id,
+            split=current.split, intervention=case, scores=_linear_binding(current.public_view())["scores"],
+            candidate_ids=current.candidate_ids, twin_ids=current.twin_ids, dataset_digest=dataset_digest(current))
+        metrics.append(score_prediction(current, prediction))
+    assert metrics[0]["tpa"] == pytest.approx(metrics[1]["tpa"])
+    assert metrics[0]["normalized_regret"] == pytest.approx(metrics[1]["normalized_regret"])
+
+
 def test_schema_round_trip_and_digest_rejects_mismatched_truth(tmp_path) -> None:
     dataset = small_dataset()
     audit = save_dataset(tmp_path / "dataset.npz", dataset)

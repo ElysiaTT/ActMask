@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import json
-from dataclasses import dataclass, replace
+from dataclasses import dataclass, fields, replace
 from pathlib import Path
 from typing import Any, Mapping
 
@@ -106,11 +106,23 @@ class BindingDataset:
     def public_view(self) -> "BindingDataset":
         """Return the exact verifier view with all evaluator-only truth removed."""
 
-        return replace(
+        public = replace(
             self,
             true_utility=np.empty((0, 2, 0), dtype=np.float64),
             candidate_effects=None,
+            episode_ids=np.full(self.episode_ids.shape, "", dtype=str),
+            split_group_ids=np.full(self.split_group_ids.shape, "", dtype=str),
+            seed_ids=np.zeros_like(self.seed_ids),
         )
+        # The frozen dataclass alone does not protect its NumPy storage.
+        arrays = {}
+        for field in fields(public):
+            value = getattr(public, field.name)
+            if isinstance(value, np.ndarray):
+                value = value.copy()
+                value.flags.writeable = False
+                arrays[field.name] = value
+        return replace(public, **arrays)
 
 
 @dataclass(frozen=True)

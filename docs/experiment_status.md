@@ -47,9 +47,11 @@ directories are retained to avoid breaking historical manuscripts and tests.
 They are out of scope for the first binding GPU run unless a preregistered
 comparison explicitly names them.
 
-## Planned, not implemented
+## CPU transport implementation; GPU stages still pending
 
-The G1-G4 modules under `actmask/experiments/binding_gpu/` do not yet exist.
-Their commands in the GPU preregistration are a frozen interface, not evidence
-of execution. Implementation begins only after a named Linux/NVIDIA host passes
-G0 and the cost boundary is approved.
+As of 2026-09-06, `actmask/experiments/binding_gpu/` implements CPU G1 snapshot
+smoke, G2 bounded rod-COM twins, and an independent replay/schema/isolation audit.
+See `docs/binding_cpu_g1_g2.md`. This is an asset-free force fixture, not the
+complete preregistered robot benchmark. G3 scientific dataset admission, G4
+state-method comparison and CUDA simulation are not implemented. The frozen
+GPU preregistration remains unchanged; do not infer GPU readiness from filenames.

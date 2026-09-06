@@ -8,7 +8,9 @@ is not a positive result: v1 is a saturation diagnostic and v2/v3 are NO-GO.
 
 The public-source decision is ManiSkill 3 as the primary counterfactual
 simulator and RoboMimic/robosuite as the backup. Bounded format probes passed;
-simulator replay on the target host has not yet been run.
+CPU-only physical replay now has implemented G1/G2 checks and Ubuntu CI;
+simulator replay on the target GPU host has not yet been run. Start with
+`docs/binding_cpu_g1_g2.md` for the new smoke scope and reproduction commands.
 
 ## Start here
 
@@ -40,7 +42,8 @@ baseline. It is not an ActMask method claim.
 - `binding_bench/`: active, dependency-light benchmark package.
 - `scripts/cpu_binding_*` and `scripts/cpu_timearrow_*`: retained historical
   experiments and negative-result provenance.
-- `actmask/`: original model code and older experimental generations.
+- `actmask/experiments/binding_gpu/`: active CPU G1/G2 physical transport smoke.
+- Other `actmask/` paths: original model code and older experimental generations.
 - `docs/`, `audit/`: frozen protocols, reports, and curated evidence.
 - `paper*`, `submission/`, `release_candidate/`: historical manuscript and
   packaging material; drafts are not accepted claims.

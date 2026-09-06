@@ -1,6 +1,13 @@
 {
   "schema_version": "actmask-binding-remote-manifest-v1",
   "active_code": [
+    ".github/workflows/binding-cpu.yml",
+    "actmask/experiments/binding_gpu/__init__.py",
+    "actmask/experiments/binding_gpu/rod.py",
+    "actmask/experiments/binding_gpu/snapshot_smoke.py",
+    "actmask/experiments/binding_gpu/generate.py",
+    "actmask/experiments/binding_gpu/audit_dataset.py",
+    "tests/test_binding_sim_cpu.py",
     ".gitattributes",
     ".gitignore",
     "binding_bench/__init__.py",
@@ -25,6 +32,7 @@
     "scripts/remote/bootstrap_binding_env.sh"
   ],
   "active_configs": [
+    "requirements/binding-sim-cpu.txt",
     "configs/binding_gpu_readiness.json",
     "configs/binding_remote_manifest.json",
     "docs/binding_gpu_preregister.json",
@@ -33,6 +41,7 @@
     "requirements/binding-gpu.txt"
   ],
   "active_docs": [
+    "docs/binding_cpu_g1_g2.md",
     "README.md",
     "HANDOFF.md",
     "docs/experiment_status.md",
@@ -72,6 +81,7 @@
     "audit/results/binding_cpu_v1_pre_admission.json"
   ],
   "curated_evidence": [
+    "audit/results/binding_cpu_transport.json",
     "audit/results/binding_bench_example/evaluation.json",
     "audit/results/binding_cpu_learned_v1.json",
     "audit/results/binding_cpu_v2_antisaturation.json",
@@ -98,9 +108,6 @@
     "-q"
   ],
   "planned_not_implemented": [
-    "actmask/experiments/binding_gpu/snapshot_smoke.py",
-    "actmask/experiments/binding_gpu/generate.py",
-    "actmask/experiments/binding_gpu/audit_dataset.py",
     "actmask/experiments/binding_gpu/run_state_methods.py"
   ]
 }
