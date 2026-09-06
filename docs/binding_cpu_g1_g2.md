@@ -90,6 +90,12 @@ or CPU/GPU trajectory equivalence is not claimed.
 
 ## Handoff boundary
 
+`configs/binding_cpu_freeze.json` records LF-normalized source SHA-256 hashes,
+runtime pins and the successful pre-freeze Linux CI run. Run
+`python scripts/check_binding_cpu_freeze.py` to detect source drift. This is
+a review checkpoint, not a prohibition on future changes: a reviewed change
+requires explicit re-freezing and rerunning CI. No Git tag is needed.
+
 Push source, tests, CI and small curated reports to GitHub; recreate artifacts
 from the reviewed commit on the Linux machine. Do not copy the Windows venv.
 The CPU modules deliberately force `physx_cpu`; merely installing a CUDA wheel

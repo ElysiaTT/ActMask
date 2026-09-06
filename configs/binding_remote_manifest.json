@@ -21,6 +21,7 @@
     "tests/test_binding_bench.py"
   ],
   "active_scripts": [
+    "scripts/check_binding_cpu_freeze.py",
     "scripts/run_binding_bench_example.py",
     "scripts/evaluate_binding_bench.py",
     "scripts/evaluate_binding_benchmark.py",
@@ -32,6 +33,7 @@
     "scripts/remote/bootstrap_binding_env.sh"
   ],
   "active_configs": [
+    "configs/binding_cpu_freeze.json",
     "requirements/binding-sim-cpu.txt",
     "configs/binding_gpu_readiness.json",
     "configs/binding_remote_manifest.json",
@@ -81,6 +83,7 @@
     "audit/results/binding_cpu_v1_pre_admission.json"
   ],
   "curated_evidence": [
+    "audit/results/binding_cpu_transport_linux.json",
     "audit/results/binding_cpu_transport.json",
     "audit/results/binding_bench_example/evaluation.json",
     "audit/results/binding_cpu_learned_v1.json",

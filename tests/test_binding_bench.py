@@ -33,6 +33,21 @@ def small_dataset():
     return make_example_dataset(seeds=(31, 32), twins_per_seed=6, history_length=8, candidate_count=7)
 
 
+def test_source_freeze_detects_drift_and_accepts_crlf(tmp_path):
+    import hashlib
+    from scripts.check_binding_cpu_freeze import check
+    (tmp_path / "configs").mkdir()
+    source = tmp_path / "source.py"
+    source.write_bytes(b"value = 1\r\n")
+    manifest = {"schema_version": "actmask-cpu-freeze-v1", "scope": "test",
+                "files": {"source.py": hashlib.sha256(b"value = 1\n").hexdigest()}}
+    (tmp_path / "configs/binding_cpu_freeze.json").write_text(json.dumps(manifest), encoding="utf-8")
+    assert check(tmp_path)["passed"]
+    source.write_bytes(b"value = 2\n")
+    with pytest.raises(ValueError, match="drift"):
+        check(tmp_path)
+
+
 def test_public_view_strips_audit_metadata_and_cannot_mutate_evaluator():
     dataset = small_dataset()
     public = dataset.public_view()
