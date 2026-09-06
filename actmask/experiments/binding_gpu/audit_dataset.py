@@ -8,8 +8,7 @@ from pathlib import Path
 import numpy as np
 from binding_bench.adapters import CallableAdapter, run_adapter
 from binding_bench.evaluator import evaluate_suite, write_evaluation
-from binding_bench.schema import dataset_arrays, load_dataset
-from .generate import PUBLIC_KEYS, sha256, utility
+from .contracts import joint_marginal_error, utility, validate_artifacts
 from .rod import RodCOMEnv, load_snapshot
 
 
@@ -26,24 +25,11 @@ def uniform(inputs):
 
 
 def audit(directory: Path, report_dir: Path):
-    manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
-    if manifest.get("schema_version") != "actmask-cpu-g2-v1":
-        raise ValueError("unsupported G2 manifest")
-    for relative, expected in manifest["files"].items():
-        path = (directory / relative).resolve()
-        if not path.is_relative_to(directory.resolve()) or sha256(path) != expected:
-            raise ValueError(f"artifact digest mismatch or unsafe path: {relative}")
-    dataset = load_dataset(directory / "evaluator/dataset.npz")
-    with np.load(directory / "public/inputs.npz", allow_pickle=False) as raw:
-        if set(raw.files) != PUBLIC_KEYS:
-            raise ValueError("public schema contains missing or hidden fields")
-        arrays = dataset_arrays(dataset)
-        for key in PUBLIC_KEYS:
-            if not np.array_equal(raw[key], arrays[key]):
-                raise ValueError(f"public/evaluator mismatch: {key}")
-    attempts = json.loads((directory / "evaluator/attempts.json").read_text(encoding="utf-8"))
-    if len(attempts) != manifest["attempts"] or sum(a["accepted"] for a in attempts) != dataset.twins:
-        raise ValueError("attempt/retention accounting mismatch")
+    if report_dir.resolve().is_relative_to(directory.resolve()):
+        raise ValueError("report output must be outside the immutable dataset")
+    if report_dir.exists() and any(report_dir.iterdir()):
+        raise ValueError("report output must be empty; never overwrite evidence")
+    manifest, dataset = validate_artifacts(directory)
     env = RodCOMEnv()
     max_replay, marginal_error = 0., 0.
     try:
@@ -60,10 +46,12 @@ def audit(directory: Path, report_dir: Path):
                     expected_effects = np.concatenate([dataset.history_effects[twin, branch], dataset.candidate_effects[twin, branch]])
                     for index in reversed(range(len(actions))):
                         effect, trajectory = env.rollout(state, float(actions[index]))
+                        if not np.isfinite(effect).all() or not np.isfinite(trajectory).all():
+                            raise ValueError("non-finite simulator replay")
                         max_replay = max(max_replay, float(np.max(np.abs(trajectory - raw["trajectories"][branch, index]))),
                                          float(np.max(np.abs(effect - expected_effects[index]))))
-            marginal_error = max(marginal_error, float(np.max(np.abs(
-                np.sort(dataset.history_effects[twin, 0], axis=0) - np.sort(dataset.history_effects[twin, 1], axis=0)))))
+            marginal_error = max(marginal_error, joint_marginal_error(
+                dataset.history_effects[twin, 0], dataset.history_effects[twin, 1]))
     finally:
         env.close()
     if max_replay > 1e-5 or marginal_error > 1e-4:
@@ -81,7 +69,9 @@ def audit(directory: Path, report_dir: Path):
     report = {"schema_version": "actmask-cpu-g2-audit-v1", "passed": True,
               "twins": dataset.twins, "attempts": manifest["attempts"], "retention": manifest["retention"],
               "maximum_replay_error": max_replay, "effect_marginal_error": marginal_error,
-              "public_allowlist_passed": True, "benchmark_cases": list(result["scores"]["uniform"]),
+              "public_allowlist_passed": True, "exact_inventory_passed": True,
+              "attempt_ledger_passed": True, "suite_bound_to_replay": True,
+              "benchmark_cases": list(result["scores"]["uniform"]),
               "method_decision": result["decision"], "admission_evaluable": result["admission_evaluable"],
               "scope": "G1/G2 plumbing only; no model or scientific dataset admission"}
     (report_dir / "report.json").write_text(json.dumps(report, indent=2, allow_nan=False) + "\n", encoding="utf-8")

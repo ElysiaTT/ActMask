@@ -35,6 +35,15 @@ the other COM. Maximum full-trajectory error must be <= 1e-5.
 
 ## G2 data boundary
 
+Validation hardening after `e672a1c` is specified in
+`cpu_transport_improvement_task.md`. The artifact schema and physics are unchanged.
+The audit now requires exact file coverage, validates finite raw data and all
+attempt snapshots, recomputes admission accounting, checks that only COM differs
+between twins, and binds the benchmark suite to the replayed dataset digest.
+Marginal matching operates on complete effect vectors using exact bottleneck
+matching; coordinate-wise sorting is insufficient to preserve correlations.
+Audit reports require a fresh directory outside the immutable input dataset.
+
 Default: two seeds, eight twins per seed (16 total); eight independent anchor
 probes and 12 candidates per branch. Each execution restores the anchor.
 History times are zero because these are independent reset probes, **not**
@@ -91,7 +100,9 @@ or CPU/GPU trajectory equivalence is not claimed.
 ## Handoff boundary
 
 `configs/binding_cpu_freeze.json` records LF-normalized source SHA-256 hashes,
-runtime pins and the successful pre-freeze Linux CI run. Run
+runtime pins and prior successful Linux CI provenance. For every new freeze,
+the current commit's `Binding CPU G1-G2` GitHub check must also pass; an older
+green run is not evidence for modified source. Run
 `python scripts/check_binding_cpu_freeze.py` to detect source drift. This is
 a review checkpoint, not a prohibition on future changes: a reviewed change
 requires explicit re-freezing and rerunning CI. No Git tag is needed.

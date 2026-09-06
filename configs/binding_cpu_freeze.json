@@ -1,11 +1,14 @@
 {
   "schema_version": "actmask-cpu-freeze-v1",
   "status": "FROZEN_CPU_TRANSPORT_ONLY",
+  "revision": "g1-g2-validation-hardening-v1",
   "date": "2026-09-06",
   "scope": "G1/G2 CPU replay, schema, hidden-mechanism isolation, benchmark plumbing; no GPU or method admission",
-  "pre_freeze_source_commit": "793056d4a5d712d1f5aef362e8bd416667c7a028",
-  "linux_ci": "https://github.com/ElysiaTT/ActMask/actions/runs/34024954991",
-  "linux_ci_conclusion": "success",
+  "previous_freeze_commit": "e672a1c16c6f81904fd029d820c9c41fdc53353f",
+  "previous_linux_ci": "https://github.com/ElysiaTT/ActMask/actions/runs/34025132794",
+  "previous_linux_ci_conclusion": "success",
+  "current_local_evidence": "audit/results/binding_cpu_hardening.json",
+  "handoff_requirement": "The current commit must pass the Binding CPU G1-G2 GitHub check; previous CI is provenance only.",
   "hash_normalization": "UTF-8 file bytes with CRLF normalized to LF",
   "files": {
     ".gitattributes": "54b7eb7c3c3e25ca6ea8fbf929b173b05b37e671edee1fe316ffdc0e2faefbd5",
@@ -14,10 +17,12 @@
     "actmask/__init__.py": "6af56161e98497819caab934b083ffefaa62948356e1484ca3a777bf09475066",
     "actmask/experiments/__init__.py": "71495c5f458d0ceecc64a41713f4407c4bdccccf45479cf707b706b838ac676e",
     "actmask/experiments/binding_gpu/__init__.py": "0d9638815fa7aadf72739b1e7b676d907d8ad18bf33ac56725b993e7f277c931",
-    "actmask/experiments/binding_gpu/audit_dataset.py": "a8fe7669e7db7d95e96e53b9f0c33254bc7df79fd638ef8322a161dc30e3caf2",
-    "actmask/experiments/binding_gpu/generate.py": "692d3c82ecbb76a156cb093131293334bdc80b822ddd9b6f3aeaddc60424c30a",
-    "actmask/experiments/binding_gpu/rod.py": "27664122b7d75188440a742eb85cefdb2e54a051eb8113c731e077bceed4a229",
+    "actmask/experiments/binding_gpu/audit_dataset.py": "42420357daf93b1c0089860749e9ceb8e5a9140d53f41b41e19e24b430310b0e",
+    "actmask/experiments/binding_gpu/contracts.py": "6ca88fc7453399d5e1954e8bca67b8802a51b7f91f977f51f4435361e65f5197",
+    "actmask/experiments/binding_gpu/generate.py": "b6d5a4816f0fadf190aa2e159b1af37739ccf93275352faa9b00590b3c782941",
+    "actmask/experiments/binding_gpu/rod.py": "0fe6796edfecd036722b5a966a452ad0832dca7441fb342a82f73689ca34d2e9",
     "actmask/experiments/binding_gpu/snapshot_smoke.py": "1b95b99fdc22bc048f32be077e949f624a482041847485465a9ad66ece0e1567",
+    "audit/results/binding_cpu_hardening.json": "314e8629691f4e2608b8518be6be6825b07fcece3d5f129d55ba252cb55c69d5",
     "audit/results/binding_cpu_transport.json": "a03a22e9ebcb977766914ad8c527421656622aaae6935455c1061020be32613e",
     "audit/results/binding_cpu_transport_linux.json": "97023d8566773bdc2f80d11b859423aa819d0cc579498cf78bf5dde54885f481",
     "binding_bench/__init__.py": "117c1541ede23526c1affecf49304f841a28c7e68f9ee9bf221cfe470a36ebba",
@@ -28,11 +33,12 @@
     "binding_bench/interventions.py": "54620dc214d5a804c9ad16c0473231c7c39916bc6aa0a483c1cf97e88681e684",
     "binding_bench/metrics.py": "64687c1da1fb552ca4929bade7c914785b5492fc2bb58ede4887b4eaacd45408",
     "binding_bench/schema.py": "dd6721b48dc6cdd3d8d3d47e1344e51347ba67542a580d1b2bd3fc6cfb9511fb",
-    "docs/binding_cpu_g1_g2.md": "86e3866f3d9ecf06a418df6b2f51e90fc02d4e0f7bbaa78422f8c9fda4614067",
+    "docs/binding_cpu_g1_g2.md": "8480ae9f3884112a5fbb358bac4ae4f9951a640e089f6d0d0348139fc5d5a7e5",
+    "docs/cpu_transport_improvement_task.md": "ee06bbc96a86d86e369c9695a22accd96fead5fbd90c1aa43ddd731d197e0ecd",
     "requirements/binding-cpu.txt": "8ca5607a7eb607df553735a72f6863734fb09003c069e07ab47140444c67e0b2",
     "requirements/binding-sim-cpu.txt": "a7009ee249022a26ea8a99cd4cba048beebfda55ec5d218439a4a58683d292c9",
     "scripts/check_binding_cpu_freeze.py": "d658e718a75dda3cf94efcf8a07b6885f72d6b76e8a31015ebb947428deefb8c",
     "tests/test_binding_bench.py": "2d0a370f7e483dc15e943ab8ed8b8d9976a8f07ae089a392c68a7d4d5a73bbdf",
-    "tests/test_binding_sim_cpu.py": "825198abbb9b6a739cf7fc95be40259d8c24f8cd2f1a641470c0f21ebed008f5"
+    "tests/test_binding_sim_cpu.py": "d3b71dbeeee80a4726edfb96ec4e9730576a5d4b8ee2c080c99c7120e1ec59c9"
   }
 }

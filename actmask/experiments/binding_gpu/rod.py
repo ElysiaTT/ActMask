@@ -14,9 +14,7 @@ import numpy as np
 import sapien
 import torch
 from mani_skill.envs.sapien_env import BaseEnv
-
-
-SNAPSHOT_KEYS = {"version", "body", "com", "mass", "inertia", "elapsed"}
+from .contracts import validate_snapshot
 
 
 class RodCOMEnv(BaseEnv):
@@ -87,17 +85,12 @@ class RodCOMEnv(BaseEnv):
                 **{key: value.cpu().numpy().copy() for key, value in self.get_state_dict().items()}}
 
     def restore(self, state):
-        if set(state) != SNAPSHOT_KEYS or np.asarray(state["version"]).shape != () or int(state["version"]) != 1:
-            raise ValueError("unsupported snapshot schema")
-        shapes = {"body": (1, 13), "com": (3,), "mass": (1,), "inertia": (3,), "elapsed": (1,)}
-        for key, shape in shapes.items():
-            if np.asarray(state[key]).shape != shape or not np.isfinite(state[key]).all():
-                raise ValueError(f"invalid snapshot {key}")
-        if state["mass"][0] <= 0 or np.any(state["inertia"] <= 0) or abs(state["com"][0]) > .1:
-            raise ValueError("invalid snapshot mass properties")
+        validate_snapshot(state)
         self.set_state_dict(state)
 
     def rollout(self, snapshot, action: float, steps: int = 8):
+        if type(steps) is not int or not 1 <= steps <= 8:
+            raise ValueError("rollout steps must be an integer in [1,8]")
         self.restore(snapshot)
         trajectory = []
         for _ in range(steps):

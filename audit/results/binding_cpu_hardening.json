@@ -1,0 +1,61 @@
+{
+  "schema_version": "actmask-cpu-hardening-evidence-v1",
+  "date": "2026-09-06",
+  "platform": "Windows CPU",
+  "base_commit": "e672a1c16c6f81904fd029d820c9c41fdc53353f",
+  "g1": {
+    "schema_version": "actmask-cpu-g1-v1",
+    "passed": true,
+    "checks": {
+      "replay": true,
+      "elapsed_restored": true,
+      "nonzero_motion": true,
+      "mechanism_changes_outcome": true
+    },
+    "maximum_replay_error": 0,
+    "replay_errors": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "mechanism_effect_difference": 2.165136800004589,
+    "backend": "physx_cpu",
+    "render_backend": "none",
+    "versions": {
+      "torch": "2.6.0+cpu",
+      "mani-skill": "3.0.1",
+      "sapien": "3.0.0b1",
+      "numpy": "1.26.4"
+    }
+  },
+  "g2": {
+    "schema_version": "actmask-cpu-g2-audit-v1",
+    "passed": true,
+    "twins": 16,
+    "attempts": 16,
+    "retention": 1,
+    "maximum_replay_error": 0,
+    "effect_marginal_error": 0,
+    "public_allowlist_passed": true,
+    "exact_inventory_passed": true,
+    "attempt_ledger_passed": true,
+    "suite_bound_to_replay": true,
+    "benchmark_cases": [
+      "original",
+      "pair_preserving",
+      "binding_breaking",
+      "twin_history_swap",
+      "candidate_slot_permutation"
+    ],
+    "method_decision": "METHOD_NO_GO",
+    "admission_evaluable": false,
+    "scope": "G1/G2 plumbing only; no model or scientific dataset admission"
+  },
+  "focused_tests": 37,
+  "dataset_digest": "4c4f3413c7c677ee8cd7f3be6ceb1324fcc8a8879801a924c0b26b5d944f515e",
+  "dataset_unchanged_from_previous_freeze": true,
+  "gpu_executed": false,
+  "scientific_thresholds_changed": false
+}

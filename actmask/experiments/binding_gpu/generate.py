@@ -10,18 +10,7 @@ import numpy as np
 from binding_bench.schema import BindingDataset, dataset_arrays, save_dataset
 from binding_bench.interventions import build_intervention_suite
 from .rod import RodCOMEnv, save_snapshot
-
-
-PUBLIC_KEYS = {"schema_version", "dataset_id", "split", "history_actions", "history_effects",
-               "history_times", "history_mask", "context", "candidates", "candidate_ids", "twin_ids"}
-
-
-def sha256(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
-
-
-def utility(effects):
-    return effects[..., 0] - .1 * effects[..., 1]
+from .contracts import PUBLIC_KEYS, attempt_checks, sha256, utility
 
 
 def generate(output: Path, *, twins_per_seed=8, seeds=(17001, 17002)):
@@ -58,11 +47,7 @@ def generate(output: Path, *, twins_per_seed=8, seeds=(17001, 17002)):
                     truths.append(outcomes)
                     trajectories.append(np.concatenate([probe_paths, paths], axis=0))
                 effects, truths, contexts = map(np.asarray, (effects, truths, contexts))
-                marginal_error = float(np.max(np.abs(np.sort(effects[0], axis=0) - np.sort(effects[1], axis=0))))
-                checks = {"public_context_equal": np.array_equal(contexts[0], contexts[1]),
-                          "effect_marginal_matched": marginal_error <= 1e-4,
-                          "utility_span": bool(np.min(np.ptp(utility(truths), axis=1)) > .05),
-                          "different_best_action": int(np.argmax(utility(truths)[0])) != int(np.argmax(utility(truths)[1]))}
+                checks, marginal_error = attempt_checks(contexts, effects, truths)
                 accepted = all(checks.values())
                 np.savez_compressed(private / f"raw-{uid}.npz", mechanisms=mechanisms,
                                     history=history, candidates=candidates, history_effects=effects,

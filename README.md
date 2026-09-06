@@ -15,6 +15,9 @@ next-owner actions are in [HANDOFF.md](HANDOFF.md).
 CPU G1 snapshot replay and G2 bounded physical twins are now implemented,
 with an Ubuntu CPU CI workflow. See [the CPU smoke contract and commands](docs/binding_cpu_g1_g2.md).
 This is transport validation, not a new model result or GPU authorization.
+The [bounded hardening task](docs/cpu_transport_improvement_task.md) records the
+follow-up prompt and acceptance checks for corrupted artifacts, joint effect
+matching, snapshot isolation and deterministic regeneration.
 
 The current research priority is the model-agnostic action-effect binding
 audit, not a claim that the existing learned verifier is better. Start with:
