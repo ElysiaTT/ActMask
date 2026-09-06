@@ -83,7 +83,10 @@ do not overwrite evidence. CI runs these commands on Ubuntu without CUDA and
 uploads generated evidence for 14 days. Missing simulator dependencies fail
 the job; integration tests are never skipped. SAPIEN's missing Pinocchio warning
 is expected: this fixture has no robot. Core dependency versions are pinned;
-transitive dependencies are not a fully hermetic lock.
+transitive dependencies are not a fully hermetic lock. SAPIEN is pinned to
+3.0.0b1 on Windows and 3.0.0 on Linux, matching ManiSkill's platform-specific
+requirements. Replay checks are within each runtime; bitwise Windows/Linux
+or CPU/GPU trajectory equivalence is not claimed.
 
 ## Handoff boundary
 

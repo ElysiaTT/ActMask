@@ -1,7 +1,8 @@
 -r binding-cpu.txt
 # Install torch==2.6.0+cpu from the PyTorch CPU index separately.
 mani-skill==3.0.1
-sapien==3.0.0b1
+sapien==3.0.0b1; platform_system == "Windows"
+sapien==3.0.0; platform_system == "Linux"
 gymnasium==0.29.1
 opencv-python==4.10.0.84
 # SAPIEN 3.0.0b1 imports pkg_resources (removed in newer setuptools).
